@@ -59,26 +59,31 @@ window.addEventListener("load", function () {
     //Start loading resources
     imageResources = {};
     audioResources = {};
-    //When the loading screen image is loaded -> draw it -> load resources
-    let loadingImg = document.createElement('img');
-    loadingImg.addEventListener('load', function(){
-        context.drawImage(loadingImg, 0, 0);
-        resourcesLoader(
-            //Image list
-            [{name: "player", path: "placeholderPlayer.png"}, {name: "enemy", path: "placeholderEnemy.png"},
-             {name: "background", path: "background.jpg"}, {name: "columns", path: "columns.png"}, 
-             {name: "floor", path: "floor.png"}],
-            //Audio list
-            [{name: "background", path: "creepy.mp3", loop: true}, {name: "dash", path: "youwin.ogg", loop: false},
-             {name: "hit", path: "powerUp.ogg", loop: false}]
-        );
-    });
-    loadingImg.src = "assets/sprites/loading.png";
+
+    //Load resources
+    resourcesLoader(
+        //Image list
+        [{name: "player", path: "placeholderPlayer.png"}, {name: "enemy", path: "placeholderEnemy.png"},
+            {name: "background", path: "background.jpg"}, {name: "columns", path: "columns.png"}, 
+            {name: "floor", path: "floor.png"}],
+        //Audio list
+        [{name: "background", path: "creepy.mp3", loop: true}, {name: "dash", path: "youwin.ogg", loop: false},
+            {name: "hit", path: "powerUp.ogg", loop: false}]
+    );
 });
 
 function initialize(){
-    //Initialize all the variables and listeners
+    window.removeEventListener("keydown", initialize);
+    window.removeEventListener("keyup", initialize);
+    window.removeEventListener("mousedown", initialize);
+    window.removeEventListener("mouseup", initialize);
+    window.removeEventListener("touchstart", initialize);
+    window.removeEventListener("touchend", initialize);
 
+    //Remove the loading screen
+    document.getElementById("loading").remove();
+
+    //Initialize all the variables and listeners
     //Input
     inputDisponibility = true;
     pressedKeys = {
@@ -156,7 +161,7 @@ function loadImages(images, callback) {
     //When all the images are loaded -> callback()
     let name,
         count  = images.length,
-        onload = function() { if (--count == 0) callback(); };
+        onload = function() { if (--count == 0) callback();}   
 
     for(let i = 0 ; i < images.length ; i++) {
         //Assing name and path
@@ -171,7 +176,20 @@ function loadSounds(audios, callback) {
     //When all the audio is loaded -> callback()
     let name,
         count  = audios.length,
-        canplay = function() { if (--count == 0) callback(); };
+        canplay = function() { if (--count == 0) {
+                load = document.getElementById("loading");
+                load.textContent = "Loaded";
+                load.style.color = "#ffffff";
+                load.style.backgroundColor = "#ff00bf";
+                load.style.animation = "none";
+                window.addEventListener("keydown", callback, false);
+                window.addEventListener("keyup", callback, false);
+                window.addEventListener("mousedown", callback, false);
+                window.addEventListener("mouseup", callback, false);
+                window.addEventListener("touchstart", callback, false);
+                window.addEventListener("touchend", callback, false); 
+            }
+        };
   
     for(let i = 0 ; i < audios.length ; i++) {
         //Assing name, path and loop
