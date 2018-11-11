@@ -10,7 +10,7 @@ class Game {
         this.GUI = new GUI();
         this.entities = [this.map, this.player, this.GUI];
 
-        //audioResources["background"].play();
+        audioResources["background"].play();
 
         this.gameState = "walk";
     }

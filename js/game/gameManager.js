@@ -67,8 +67,8 @@ window.addEventListener("load", function () {
             {name: "background", path: "background.jpg"}, {name: "columns", path: "columns.png"}, 
             {name: "floor", path: "floor.png"}],
         //Audio list
-        [{name: "background", path: "creepy.mp3", loop: true}, {name: "dash", path: "youwin.ogg", loop: false},
-            {name: "hit", path: "powerUp.ogg", loop: false}]
+        [{name: "background", path: "MusicaPurgatorio_v2.ogg", loop: true}, {name: "dash", path: "dash.mp3", loop: false},
+            {name: "hit", path: "hit.mp3", loop: false}]
     );
 });
 
@@ -196,7 +196,7 @@ function loadSounds(audios, callback) {
         name = audios[i].name;
         audioResources[name] = document.createElement('audio');
         audioResources[name].addEventListener('canplay', canplay, false);    
-        if(audios[i].loop) audioResources[name].setAttribute("controls", "true");
+        if(audios[i].loop) audioResources[name].loop = true;
         audioResources[name].src = "assets/audio/" + audios[i].path;
         audioResources[name].stop = function(){ this.pause(); this.currentTime = 0; }
     }
@@ -209,7 +209,7 @@ function resize() {
 
     maxHeight = window.innerHeight;
     width = window.innerWidth;
-    height = Math.min(width / aspectRatio, 640);
+    height = Math.min(width/aspectRatio, maxHeight, 640);
     canvas.style.width = height * aspectRatio + 'px';
 	canvas.style.height = height + 'px';
 }
