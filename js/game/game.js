@@ -1,10 +1,9 @@
 class Game {
     constructor() {     
         this.pause =  false;
-        this.freeze = false;
         
         this.player = new Player();
-        this.structure = "SSESSESSS";
+        this.structure = "SSSESESSS";
         this.room = 0;
         this.map = new Map();
         this.GUI = new GUI();

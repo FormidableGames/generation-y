@@ -73,6 +73,7 @@ window.addEventListener("load", function () {
 });
 
 function initialize(){
+    
     window.removeEventListener("keydown", initialize);
     window.removeEventListener("keyup", initialize);
     window.removeEventListener("mousedown", initialize);
@@ -207,9 +208,9 @@ function resize() {
     let aspectRatio = canvas.width / canvas.height;
     let height, width;
 
-    maxHeight = window.innerHeight;
-    width = window.innerWidth;
+    maxHeight = window.visualViewport.height;
+    width = window.visualViewport.width;
     height = Math.min(width/aspectRatio, maxHeight, 640);
     canvas.style.width = height * aspectRatio + 'px';
-	canvas.style.height = height + 'px';
+    canvas.style.height = height + 'px';
 }
