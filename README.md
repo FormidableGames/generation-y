@@ -68,15 +68,15 @@ Fuera de combate utilizarás este mismo ataque para desplazarte a lo largo del n
 
 
 ### Lista de enemigos  
-1. Infierno (fácil)   
+1. **Infierno (fácil)**   
 
 + **Guardia enigma**: Vidas: /3 corazones/  Daño (que quita): /medio corazón/ 
-    + Fase **Defensa**: 1-3 segundos (variará aleatoriamente el tiempo que tengas que esperar) --> Si le atacas quedarás estuneado.  
+    + Fase **Defensa**: 1-3 segundos (variará aleatoriamente el tiempo que tengas que esperar) --> Si le atacas quedarás aturdida.  
     + Fase **Preparación de Ataque**: 0.7 segundos --> Si le atacas en este momento le quitarás una vida, entonces el enemigo se dará la vuelta inmediatamente y cambiará a modo de defensa. Sino pasará a modo de ataque.  
     + Fase **Ataque**: 0.5 segundos --> al acabar pasará a modo defensa.  
   
 + **Esquiva**: Vidas: /2 corazones/ Daño (que quita): /1 corazón/  
-    + Fase **Defensa**: 1-2 segundos --> Si le atacas quedarás estuneado.
+    + Fase **Defensa**: 1-2 segundos --> Si le atacas quedarás aturdida.
     + Fase **Preparación de Ataque**: 0.5-0.6 segundos --> Si le atacas te esquivará y pasará a fase de defensa hacia el lado al que has ido. Sino pasará a fase de ataque.  
     + Fase **Ataque**: 0.5 segundos --> después de hacerte daño pasará a fase de celebración.  
     + Fase **Celebración**: 0.5 segundos --> al haberte hecho daño lo celebrará, por lo que estará distraido y podrás atacarle (harás solo media vida de daño, a diferencia de la fase de mareo). Una vez golpeado pasará a la fase de defensa hacia el lado en el que estés.
@@ -156,8 +156,37 @@ Paradiso, uno de los 3 niveles del juego:
 
 ### Sprites
 Siguiendo la estética visual establecida:
-- Sprites en 2d de la protagonista y los distintos enemigos del juego.
-- Fondos 2d en diferentes capas.
+- Sprites en 2d de la **protagonista**:
+    - Tranquila
+    - Ataque
+    - Aturdida
+    - Herida
+- Sprites en 2d de los enemigos:  
+    - **Guardia Enigma** (Guerrero demonio):
+        -En guardia
+        -Preparación ataque
+        -Ataque
+        -Herido
+    - **Esquiva** (Un tengu(?)):
+        -En guardia
+        -Preparación ataque
+        -Esquiva
+        -Ataque
+        -Mareado
+        -Celebración
+        -Herido
+    - **El Ilusionista (modo infierno)** (Kitsune-yako):
+        -Presentación (antes de que lance las llamas, estará en posición neutral)
+        -Lanzando llamas al cielo
+        -Llamas (como bolitas de fuego (?))
+        -Halo del suelo (para indicar en la fase de aparción donde va a hacer el ataque)
+        -Llamas del suelo
+        -Aparición (con nubes grises(?))/Desaparición
+        -Herido
+- Fondos 2d en diferentes capas:  
+    - Infierno
+    - Purgatorio
+    - Cielo
 
 ### Interfaces
 - Iconos y fondos de la interfaz del juego.
