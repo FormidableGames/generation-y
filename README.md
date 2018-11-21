@@ -61,11 +61,28 @@ Al hacer tap en la pantalla (en dispositivos móviles) o al pulsar una tecla/hac
 ![Combate2](https://github.com/FormidableGames/generation-y/blob/master/concept/combate2.png "Bloqueo")
 Para hacer un ataque efectivo tendrás que esperar a que el enemigo cargue su ataque y anticiparte:
 ![Combate3](https://github.com/FormidableGames/generation-y/blob/master/concept/combate3.png "Anticipación")
-Si lo consigues le dañarás y pasarás al otro lado de la pantalla:
+Si lo consigues le dañarás (le quitarás una vida) y pasarás al otro lado de la pantalla:
 ![Combate4](https://github.com/FormidableGames/generation-y/blob/master/concept/combate4.png "Dash")
 
 Fuera de combate utilizarás este mismo ataque para desplazarte a lo largo del nivel y llegar hasta el siguiente enemigo.
 
+
+### Lista de enemigos  
+1. Infierno (fácil)   
+
++ **Guardia enigma**: Vidas /3 corazones/  Daño (que quita) /0.5 corazones/ 
+    + Fase **Defensa**: 1-3 segundos (variará aleatoriamente el tiempo que tengas que esperar) --> Si le atacas quedarás estuneado.  
+    + Fase **Preparación de Ataque**: 0.7 segundos --> Si le atacas en este momento le quitarás una vida, entonces el enemigo se dará la vuelta inmediatamente y cambiará a modo de defensa. Sino pasará a modo de ataque.  
+    + Fase **Ataque**: 0.5 segundos --> al acabar pasará a modo defensa.  
+  
++ **Esquiva**: Vidas /2 corazones/ Daño (que quita)/1 corazón/  
+    + Fase **Defensa**: 1-2 segundos --> Si le atacas quedarás estuneado.
+    + Fase **Preparación de Ataque**: 0.5-0.6 segundos --> Si le atacas te esquivará y pasará a fase de defensa hacia el lado al que has ido. Sino pasará a fase de ataque.  
+    + Fase **Ataque**: 0.5 segundos --> después de hacerte daño pasará a fase de celebración.  
+    + Fase **Celebración**: 0.5 segundos --> al haberte hecho daño lo celebrará, por lo que estará distraido y podrás atacarle (harás solo media vida de daño, a diferencia de la fase de mareo). Una vez golpeado pasará a la fase de defensa hacia el lado en el que estés.
+    + Fase **Mareo**: 1-1.5 segundos --> si le atacas 3 veces seguidas en la fase de preparación el enemigo se "mareará" al haber esquivado tantas veces. Entonces podrás dañarle de manera normal (un corazón). Una vez golpeado pasará a la fase de defensa hacia el lado en el que estés.  
+      
++ **El ilusionista (fase Infierno)**: Vidas /SEGUIR COMPLETANDO LUEGO/...
 
 ### Flujo de juego
 Desde el menú principal puedes acceder a la pantalla de selección de nivel. Aquí podrás empezar una partida en el nivel que elijas. Avanzarás por el escenario hasta encontrar a un enemigo al que enfrentarte. Durante el combate no podrás continuar hasta derrotarlo. Al terminar el combate seguirás avanzando por el nivel hasta que encuentres a otro enemigo. 
