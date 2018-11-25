@@ -72,13 +72,13 @@ Fuera de combate utilizarás este mismo ataque para desplazarte a lo largo del n
 1. **Infierno (fácil)**   
 
 + **Guardia enigma**: Vidas: /3 corazones/  Daño: /medio corazón/ 
-    + Fase **Defensa**: 1-3 segundos (variará aleatoriamente el tiempo que tengas que esperar) --> Si le atacas quedarás aturdida.  
-    + Fase **Preparación de Ataque**: 0.7 segundos --> Si le atacas en este momento le quitarás una vida, entonces el enemigo se dará la vuelta inmediatamente y cambiará a modo de defensa. Sino pasará a modo de ataque.  
+    + Fase **Defensa**: 1-3 segundos (variará aleatoriamente el tiempo que tengas que esperar) --> si le atacas quedarás aturdida.  
+    + Fase **Preparación de Ataque**: 0.7 segundos --> si le atacas en este momento le quitarás una vida, entonces el enemigo se dará la vuelta inmediatamente y cambiará a modo de defensa. Sino pasará a modo de ataque.  
     + Fase **Ataque**: 0.5 segundos --> al acabar pasará a modo defensa.  
   
 + **Esquiva**: Vidas: /2 corazones/ Daño: /1 corazón/  
-    + Fase **Defensa**: 1-2 segundos --> Si le atacas quedarás aturdida.
-    + Fase **Preparación de Ataque**: 0.5-0.6 segundos --> Si le atacas te esquivará y pasará a fase de defensa hacia el lado al que has ido. Sino pasará a fase de ataque.  
+    + Fase **Defensa**: 1-2 segundos --> si le atacas quedarás aturdida.
+    + Fase **Preparación de Ataque**: 0.5-0.6 segundos --> si le atacas te esquivará y pasará a fase de defensa hacia el lado al que has ido. Sino pasará a fase de ataque.  
     + Fase **Ataque**: 0.5 segundos --> después de hacerte daño pasará a fase de celebración.  
     + Fase **Celebración**: 0.5 segundos --> al haberte hecho daño lo celebrará, por lo que estará distraido y podrás atacarle (harás solo media vida de daño, a diferencia de la fase de mareo). Una vez golpeado pasará a la fase de defensa hacia el lado en el que estés.
     + Fase **Mareo**: 1-1.5 segundos --> si le atacas 3 veces seguidas en la fase de preparación el enemigo se "mareará" al haber esquivado tantas veces. Entonces podrás dañarle de manera normal (un corazón). Una vez golpeado pasará a la fase de defensa hacia el lado en el que estés.  
@@ -86,7 +86,23 @@ Fuera de combate utilizarás este mismo ataque para desplazarte a lo largo del n
 + **El ilusionista (fase Infierno)**: Vidas (modo *NO ILUSIÓN*): /2 corazones/ Daño: /medio corazón/  
     + Fase **Ilusión**: hasta que le venzas --> se hará pasar por un *Guardia Enigma* pero de solo un corazón, en todo lo demás funcionará igual que este, cuando le derrotes pasará a modo *NO ILUSIÓN*.  
     + Fase **Ataque a Distancia**: 3-5 ataques --> en esta fase no podrás atacar al enemigo (lanzará ataques hacia el cielo primero y desaparecerá), los ataques a distancia caerán del cielo lentamente (desde el cielo hasta tu posición: 2-3 segundos de manera aleatoria), deberás esquivarlos para que no te dañen, es decir, caerán uno detrás de otro en un lado u otro de manera aleatoria (50-50 de posibildades en cada lado).   
-    + Fase **Aparición**: 6 ataques --> en esta fase deberás esperar a que aparezca el enemigo mientras esquivas sus ataques de *halo*. Cada vez que vaya a hacer un ataque el lado en el que vaya a atacar (se escogerá aleatoriamente igual que en la anterior fase) se "encenderá" en forma de *halo* para indicar que va a atacar ahí (durante 0.7-1 segundos), entonces deberás cambiar de lado para evitar ser dañado (el ataque durará 0.3 segundos). Cada vez que acaba de hacer un ataque el enemigo aparecerá y podrás atacarle en ese momento (0.5 segundos). Si le golpeas desaparecerá immediatamente y pasará a hacer otro ataque. Una vez acabada esta fase pasará de nuevo a la fase de Ataque a Distancia.
+    + Fase **Aparición**: 6 ataques --> en esta fase deberás esperar a que aparezca el enemigo mientras esquivas sus ataques de *halo*. Cada vez que vaya a hacer un ataque el lado en el que vaya a atacar (se escogerá aleatoriamente igual que en la anterior fase) se "encenderá" en forma de *halo* para indicar que va a atacar ahí (durante 0.7-1 segundos), entonces deberás cambiar de lado para evitar ser dañado (el ataque durará 0.3 segundos). Cada vez que acaba de hacer un ataque el enemigo aparecerá y podrás atacarle en ese momento (0.5 segundos). Si le golpeas desaparecerá immediatamente y pasará a hacer otro ataque. Una vez acabada esta fase pasará de nuevo a la fase de Ataque a Distancia.  
+      
+2. **Purgatorio (normal)**  
+  
++ **Punto Débil**: Vidas: /3 corazones/ Daño: /1 corazón/  
+    + Fase **Defensa**: 2-4 segundos --> si le atacas quedarás aturdida.  
+    + Fase **Preparación de Ataque**: 0.5 segundos --> si le atacas no le causarás daño (por culpa de su escudo/barrera especial) pero pasarás al otro lado, entonces entrarás en la fase Zona Débil ya que el enemigo no se dará la vuelta al instante; sino pasará a la fase de Ataque.  
+    + Fase **Zona Débil**: 0.3 segundos --> si le atacas recibirá daño, sino se dará la vuelta y se pondrá en modo Defensa.  
+    + Fase **Ataque**: 0.7 segundos --> después de hacerte daño pasará al modo Defensa.    
+    
++ **Contraataque**: Vidas: /3 corazones/ Daño (en fase Ataque): /medio corazón/  
+    + Fase **En Guardia**: 2-5 segundos --> si le golpeas pasará a la fase de Contraataque.  
+    + Fase **Preparación de Ataque**: 0.5 segundos --> si le atacas en este momento le quitarás una vida, entonces el enemigo se dará la vuelta inmediatamente y cambiará a modo de defensa. Sino pasará a modo de ataque.  
+    + Fase **Ataque**: 0.3 segundos --> después de hacerte daño pasará al modo En Guardia.  
+    + Fase **Contraataque**: 0.3 segundos --> es lo mismo que en ataque pero te quitará 1 corazón en vez de medio.  
+      
++ **Invisible(?)**: CONTINUAR ESCRIBIENDO 
 
 ### Flujo de juego
 Desde el menú principal puedes acceder a la pantalla de selección de nivel. Aquí podrás empezar una partida en el nivel que elijas. Avanzarás por el escenario hasta encontrar a un enemigo al que enfrentarte. Durante el combate no podrás continuar hasta derrotarlo. Al terminar el combate seguirás avanzando por el nivel hasta que encuentres a otro enemigo. 
@@ -164,26 +180,38 @@ Siguiendo la estética visual establecida:
     - Herida
 - Sprites en 2d de los enemigos:  
     - **Guardia Enigma** (Guerrero demonio):
-        -En guardia
-        -Preparación ataque
-        -Ataque
-        -Herido
+        - En guardia
+        - Preparación ataque
+        - Ataque
+        - Herido
     - **Esquiva** (Un tengu(?)):
-        -En guardia
-        -Preparación ataque
-        -Esquiva
-        -Ataque
-        -Mareado
-        -Celebración
-        -Herido
+        - En guardia
+        - Preparación ataque
+        - Esquiva
+        - Ataque
+        - Mareado
+        - Celebración
+        - Herido
     - **El Ilusionista (modo infierno)** (Kitsune-yako):
-        -Presentación (antes de que lance las llamas, estará en posición neutral)
-        -Lanzando llamas al cielo
-        -Llamas (como bolitas de fuego (?))
-        -Halo del suelo (para indicar en la fase de aparición donde va a hacer el ataque)
-        -Llamas del suelo
-        -Aparición (con nubes grises(?))/Desaparición
-        -Herido
+        - Presentación (antes de que lance las llamas, estará en posición neutral)
+        - Lanzando llamas al cielo
+        - Llamas (como bolitas de fuego (?))
+        - Halo del suelo (para indicar en la fase de aparición donde va a hacer el ataque)
+        - Llamas del suelo
+        - Aparición (con nubes grises(?))/Desaparición
+        - Herido  
+    - **Punto Débil** (un ser con un escudo especial o una barrera mágica):
+        - En guardia (se usará para modo Defensa y modo Zona Débil)
+        - Preparación ataque (pero sigue defendiendose mientras)
+        - Ataque
+        - Herido  
+    - **Contraataque**:
+        - En guardia
+        - Contraataque
+        - Preparación ataque
+        - Ataque
+        - Herido  
+    - **Invisible(?)**: CONTINUAR
 - Fondos 2d en diferentes capas:  
     - Infierno
     - Purgatorio
