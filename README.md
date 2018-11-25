@@ -90,7 +90,7 @@ Fuera de combate utilizarás este mismo ataque para desplazarte a lo largo del n
       
 2. **Purgatorio (normal)**  
   
-+ **Punto Débil**: Vidas: /3 corazones/ Daño: /1 corazón/  
++ **Punto débil**: Vidas: /3 corazones/ Daño: /1 corazón/  
     + Fase **Defensa**: 2-4 segundos --> si le atacas quedarás aturdida.  
     + Fase **Preparación de Ataque**: 0.5 segundos --> si le atacas no le causarás daño (por culpa de su escudo/barrera especial) pero pasarás al otro lado, entonces entrarás en la fase Zona Débil ya que el enemigo no se dará la vuelta al instante; sino pasará a la fase de Ataque.  
     + Fase **Zona Débil**: 0.3 segundos --> si le atacas recibirá daño, sino se dará la vuelta y se pondrá en modo Defensa.  
@@ -102,7 +102,21 @@ Fuera de combate utilizarás este mismo ataque para desplazarte a lo largo del n
     + Fase **Ataque**: 0.3 segundos --> después de hacerte daño pasará al modo En Guardia.  
     + Fase **Contraataque**: 0.3 segundos --> es lo mismo que en ataque pero te quitará 1 corazón en vez de medio.  
       
-+ **Invisible(?)**: CONTINUAR ESCRIBIENDO 
++ **Invisible(?)**: CONTINUAR ESCRIBIENDO  
+  
+3. **Paraiso (difícil)**  
+  
++ **Ronda de ataques**: Vidas: /5 corazones/ Daño: /1-3 corazones/  
+    + Fase **Defensa**: 1-1.5 segundos --> si le atacas quedarás aturdida.  
+    + Fase **Preparación de Ataque**: 0.3 segundos --> si le atacas le quitarás un corazón y se pondrá otra vez en modo Preparación de Ataque, sino pasará a modo Ataque.
+    + Fase **Ataque**: 0.3 segundos por cada ataque (cada ataque quita 1 corazón) --> se calcurará de manera aleatoria el número de veces que te ataque, las probabilidades serán: 50%-1 ataque, 40%-2 ataques, 10%-3 ataques. Cuando acabe de atacarte se pondrá en modo Defensa.  
+    
++ **El ilusionista (fase Paraiso)**: Vidas (modo *NO ILUSIÓN*): /3 corazones/ Daño: /1 corazón(excepto Ataque a Distancia)/  
+    + Fase **Ilusión**: hasta que le venzas --> se hará pasar por un *Ronda de ataques* pero de solo un corazón, si te hace daño solo recibirás un ataque, cuando le derrotes pasará a modo *NO ILUSIÓN*.  
+    + Fase **Ataque a Distancia**: 4-7 ataques --> en esta fase no podrás atacar al enemigo (lanzará ataques hacia el cielo primero y desaparecerá), los ataques a distancia caerán del cielo (desde el cielo hasta tu posición: **0.8-1(?)** segundos de manera aleatoria), deberás esquivarlos para que no te dañen, es decir, caerán uno detrás de otro en un lado u otro de manera aleatoria (50-50 de posibildades en cada lado). Estos ataques te quitarán medio corazón.   
+    + Fase **Aparición**: 5 ataques --> en esta fase deberás esperar a que aparezca el enemigo por uno de los lados (de manera aleatoria (50-50 de posibilidades en cada lado), este mostrará parte de su cuerpo primero (su cabeza) para avisarte de que va a salir por ese lado (0.3 segundos), entonces cargará contra ti (de lado a lado: **0.7(?)** segundos). Si estás de espaldas a él cuando carga recibirás daño, si estás de frente sin atacar también, pero si le atacas mientras carga contra ti (es decir le contraatacas) él será quien reciba daño. Si le golpeas desaparecerá immediatamente y pasará a hacer otro ataque. Una vez acabada esta fase pasará de nuevo a la fase de Ataque a Distancia.  
+      
++ **Dragón**: CONTINUAR ESCRIBIENDO
 
 ### Flujo de juego
 Desde el menú principal puedes acceder a la pantalla de selección de nivel. Aquí podrás empezar una partida en el nivel que elijas. Avanzarás por el escenario hasta encontrar a un enemigo al que enfrentarte. Durante el combate no podrás continuar hasta derrotarlo. Al terminar el combate seguirás avanzando por el nivel hasta que encuentres a otro enemigo. 
@@ -179,7 +193,7 @@ Siguiendo la estética visual establecida:
     - Aturdida
     - Herida
 - Sprites en 2d de los enemigos:  
-    - **Guardia Enigma** (Guerrero demonio):
+    - **Guardia enigma** (Guerrero demonio):
         - En guardia
         - Preparación ataque
         - Ataque
@@ -192,7 +206,7 @@ Siguiendo la estética visual establecida:
         - Mareado
         - Celebración
         - Herido
-    - **El Ilusionista (modo infierno)** (Kitsune-yako):
+    - **El ilusionista (modo infierno)** (Kitsune-yako):
         - Presentación (antes de que lance las llamas, estará en posición neutral)
         - Lanzando llamas al cielo
         - Llamas (como bolitas de fuego (?))
@@ -200,7 +214,7 @@ Siguiendo la estética visual establecida:
         - Llamas del suelo
         - Aparición (con nubes grises(?))/Desaparición
         - Herido  
-    - **Punto Débil** (un ser con un escudo especial o una barrera mágica):
+    - **Punto débil** (un ser con un escudo especial o una barrera mágica):
         - En guardia (se usará para modo Defensa y modo Zona Débil)
         - Preparación ataque (pero sigue defendiendose mientras)
         - Ataque
@@ -212,6 +226,19 @@ Siguiendo la estética visual establecida:
         - Ataque
         - Herido  
     - **Invisible(?)**: CONTINUAR
+    - **Ronda de ataques** (Byakko el tigre blanco):
+        - En guardia
+        - Preparación ataque
+        - Ataque (2 sprites para que se ve que ataca varias veces, podría ser una tempestad que invoca(?))
+        - Herido
+    - **El ilusionista (modo paraiso)** (Kitsune-zenko):
+        - Presentación (antes de que lance los haces de luz(?), estará en posición neutral, además para cuando vaya a cargar contra ti)
+        - Lanzando haces de luz(?)
+        - Haces de luz(?)
+        - Cargando contra ti (2 sprites mínimo para que se entienda bien)
+        - Desaparición (para cuando le golpeas, después de estar herido)
+        - Herido  
+    - **Dragón**: CONTINUAR
 - Fondos 2d en diferentes capas:  
     - Infierno
     - Purgatorio
