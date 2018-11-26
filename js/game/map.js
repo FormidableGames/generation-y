@@ -66,8 +66,11 @@ class Map {
     }
     add(char){
         switch(char){
-            case 'E':
+            case 'B':
                 this.enemy = new BasicEnemy();
+                break;
+            case 'D':
+                this.enemy = new DodgeEnemy();
                 break;
         }
     }

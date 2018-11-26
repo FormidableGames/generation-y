@@ -44,8 +44,12 @@ function keyup(event) {
 //Game
 var game;
 
+//Level
+var level;
+
 //Onload
 window.addEventListener("load", function () {
+    level = 0;
     //Create the canvas and get the context
     canvas = document.getElementById("canvas");
     context = canvas.getContext("2d");
@@ -60,16 +64,19 @@ window.addEventListener("load", function () {
     imageResources = {};
     audioResources = {};
 
-    //Load resources
-    resourcesLoader(
-        //Image list
-        [{name: "player", path: "placeholderPlayer.png"}, {name: "enemy", path: "placeholderEnemy.png"},
-            {name: "background", path: "background.jpg"}, {name: "columns", path: "columns.png"}, 
-            {name: "floor", path: "floor.png"}],
-        //Audio list
-        [{name: "background", path: "MusicaPurgatorio_v2.ogg", loop: true}, {name: "dash", path: "dash.mp3", loop: false},
-            {name: "hit", path: "hit.mp3", loop: false}]
-    );
+    //Load hell resources
+    if(level == 0){
+        //Load resources
+        resourcesLoader(
+            //Image list
+            [{name: "player", path: "placeholderPlayer.png"}, {name: "enemy", path: "placeholderEnemy.png"},
+                {name: "background", path: "background.jpg"}, {name: "columns", path: "columns.png"}, 
+                {name: "floor", path: "floor.png"}, {name: "dodgeEnemy", path: "placeHolderDodgeEnemy.png"}],
+            //Audio list
+            [{name: "background", path: "MusicaPurgatorio_v2.ogg", loop: true}, {name: "dash", path: "dash.mp3", loop: false},
+                {name: "hit", path: "hit.mp3", loop: false}]
+        );
+    }
 });
 
 function initialize(){

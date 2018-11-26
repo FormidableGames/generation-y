@@ -1,15 +1,12 @@
-class BasicEnemy extends Enemy{
-    constructor(){
-        super(3, 0.5);
-    }
+class RoundOfAttacksEnemy extends Enemy{
     setTimes(){
-        this.initialAttackTime = Math.random() * 2 + 1; //In seconds
+        this.initialAttackTime = 0.5; //In seconds
         this.attackTime = this.initialAttackTime;
-        this.initialAnticipationTime = 0.7; //In seconds
+        this.initialAnticipationTime = 0.3; //In seconds
         this.anticipationTime = this.initialAnticipationTime;
         this.initialRecoverTime = 0.5; //In seconds
         this.recoverTime = this.initialRecoverTime;
-        this.initialProtectTime = 0.3; //In seconds
+        this.initialProtectTime = 0.2; //In seconds
         this.protectTime = this.initialProtectTime;
     }
     idleBehaviour(deltaTime){
@@ -18,7 +15,7 @@ class BasicEnemy extends Enemy{
     }
     protectBehaviour(deltaTime){
         this.protectTime -= deltaTime / 1000;
-        if (this.protectTime <= 0) this.toIdle();
+        if (this.protectTime <= 0) this.toAnticipate();
     }
     anticipateBehaviour(deltaTime){
         this.anticipationTime -= deltaTime / 1000;
@@ -36,7 +33,7 @@ class BasicEnemy extends Enemy{
         if(this.health > 0){
             this.facing *= -1;
             this.chofSound.play();
-            this.toIdle();
+            this.toAnticipate();
         }else{
             game.toWalk();
         }

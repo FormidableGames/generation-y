@@ -3,7 +3,7 @@ class Game {
         this.pause =  false;
         
         this.player = new Player();
-        this.structure = "SSSESESSS";
+        this.structure = "SSDSSDSS";
         this.room = 0;
         this.map = new Map();
         this.GUI = new GUI();

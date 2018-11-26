@@ -11,6 +11,7 @@ class Player {
         this.spd = 2;
         this.health = 3;
         this.attackable = true;
+        this.hit = false;
 
         this.initialWalkTime = 0.5; //In seconds
         this.walkTime = this.initialWalkTime;
@@ -43,9 +44,10 @@ class Player {
                 //Detects when the player cross the middle of the canvas
                 if(Math.sign(canvasWidth / 2 - this.x - this.width / 2) !=
                     Math.sign(canvasWidth / 2 - nextFramePos - this.width / 2)){
-                        if(game.map.enemy.attackable){                        
+                        if(this.hit || game.map.enemy.attackable){                        
                             this.side *= -1;
                             game.map.enemy.damaged();
+                            this.hit = false;
                         }else{
                             game.map.enemy.toProtect();
                             this.toStun();
@@ -133,6 +135,7 @@ class Player {
         this.spriteH = 1;
         this.attackable = false;    
         this.dashSound.play();
+        if(game.map.enemy.attackable) this.hit = true;
     }
     toStun(){
         this.state = "stun";
@@ -141,9 +144,9 @@ class Player {
         this.attackable = true;
         this.dashSound.stop();
     }
-    toHurt(){      
+    toHurt(damage){      
         this.state = "hurt";
-        this.health--;
+        this.health -= damage;
         this.spriteH = 2;
         this.attackable = false;
         this.dashSound.stop();

@@ -1,5 +1,5 @@
 class Enemy {
-    constructor() {        
+    constructor(health, damage) {        
         this.state = "walk";
 
         this.width = 610;
@@ -14,7 +14,8 @@ class Enemy {
         this.attackable = false;
         this.facing = -1;
         this.spd = 5;
-        this.health = 3;
+        this.health = health;
+        this.damage = damage;
 
         this.depth = 2;
 
@@ -49,6 +50,9 @@ class Enemy {
             case "attack":
                 this.attackBehaviour(deltaTime);
                 break;
+            case "hurt":
+                this.hurtBehaviour(deltaTime);
+                break;
         }
     }
     draw() {
@@ -68,6 +72,9 @@ class Enemy {
     attackBehaviour(deltaTime){
         console.log("papu attack");
     }
+    hurtBehaviour(deltaTime){
+        console.log("papu hurt");
+    }
     toIdle() {
         this.state = "idle";
         this.spriteH = 0;
@@ -76,18 +83,23 @@ class Enemy {
     }
     toProtect(){
         this.state = "protect";
-        this.spriteH = 1;
+        this.spriteH = 3;
         this.setTimes();
     }
     toAnticipate() {
         this.state = "anticipate";
-        this.spriteH = 2;
+        this.spriteH = 1;
         this.attackable = true;
         this.setTimes();
     }
     toAttack() {
         this.state = "attack";
-        this.spriteH = 3;
+        this.spriteH = 2;
+        this.setTimes();
+    }
+    toHurt(){
+        this.state = "hurt";
+        this.spriteH = 4;
         this.setTimes();
     }
     damaged(){
