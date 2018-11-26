@@ -256,20 +256,21 @@ Siguiendo la estética visual establecida:
 
 ### Efectos de sonido  
 - Efectos de sonido de la protagonista:  
-    - *Dash*
-    - Sonido de espada (cuando ataca)
-    - Golpe (cuando la hieren)
+    - __*Dash*__
+    - __Sonido de espada__ (cuando ataca)
+    - __Golpe__ (cuando la hieren)
 - Enemigos:  
 
     Base (cada uno una versión aguda y una grave): 
-    - Preparación ataque
-    - Ataque
-    - Herido 
+    - __Preparación ataque__
+    - __Ataque__
+    - __Herido__
+    - __Aturde__  
     
     Específico:
     - **Guardia enigma**: Base grave.
     - **Esquiva**: Base aguda.
-        - Esquiva (soindo de aire *whushh*)
+        - __Esquiva__ (soindo de aire *whushh*)
         - Mareado
         - Celebración
     - **El ilusionista (modo infierno (I)/modo paraiso (P))**:
@@ -278,13 +279,13 @@ Siguiendo la estética visual establecida:
         - Halo del suelo (sonido mágico?) (I)
         - Llamas del suelo (más fuertes que los fuegos fatuos) (I)
         - Aparición/Desaparición (nubes grises como ninja(?)) *las dos versiones son iguales*
-        - Herido  (I) (P)
-        - Cargando contra ti (sonido trotando, ten en cuenta que es un zorro no un caballo) (P)
+        - __Herido__ (I) (P)
+        - __Cargando contra ti__ (sonido trotando, ten en cuenta que es un zorro no un caballo) (P)  
     - **Punto débil**: Base grave.
     - **Contraataque**: Base aguda.
     - **Invisible(?)**: CONTINUAR
     - **Ronda de ataques**:
-        - Preparación ataque (gruñidos de tigre)
-        - Ataque (gruñidos de tigre)
-        - Herido (gruñidos de tigre)
+        - __Preparación ataque__ (gruñidos de tigre)
+        - __Ataque__ (gruñidos de tigre)
+        - __Herido__ (gruñidos de tigre)
     - **Dragón**: CONTINUAR
