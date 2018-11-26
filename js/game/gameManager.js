@@ -210,11 +210,9 @@ function loadSounds(audios, callback) {
 function resize() {
     let height, width;
 
-    maxHeight = window.visualViewport.height;
-    width = window.visualViewport.width;
+    maxHeight = window.innerHeight;
+    width = window.innerWidth;
     height = Math.min(width/aspectRatio, maxHeight, 640);
-    console.log("width/aspectRatio: " + width/aspectRatio);
-    console.log("maxHeight: " + maxHeight);
     canvas.style.width = height * aspectRatio + 'px';
     canvas.style.height = height + 'px';
 }
