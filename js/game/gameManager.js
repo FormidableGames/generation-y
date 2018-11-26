@@ -4,8 +4,8 @@
 var canvas,
     context,
     canvasWidth, 
-    canvasHeight;  
-
+    canvasHeight, 
+    aspectRatio;
 //Resources
 var imageResources,
     audioResources;
@@ -55,10 +55,10 @@ window.addEventListener("load", function () {
     context = canvas.getContext("2d");
     canvasWidth = canvas.width, 
     canvasHeight = canvas.height;  
+    aspectRatio = canvas.width / canvas.height;
     //Listeners to resize the screen
     window.addEventListener( 'orientationchange', resize, false);
     window.addEventListener( 'resize', resize, false);
-    resize();
 
     //Start loading resources
     imageResources = {};
@@ -81,12 +81,11 @@ window.addEventListener("load", function () {
 
 function initialize(){
     
+    resize();
+
     window.removeEventListener("keydown", initialize);
-    window.removeEventListener("keyup", initialize);
-    window.removeEventListener("mousedown", initialize);
-    window.removeEventListener("mouseup", initialize);
+    window.removeEventListener("click", initialize);
     window.removeEventListener("touchstart", initialize);
-    window.removeEventListener("touchend", initialize);
 
     //Remove the loading screen
     document.getElementById("loading").remove();
@@ -191,11 +190,8 @@ function loadSounds(audios, callback) {
                 load.style.backgroundColor = "#ff00bf";
                 load.style.animation = "none";
                 window.addEventListener("keydown", callback, false);
-                window.addEventListener("keyup", callback, false);
-                window.addEventListener("mousedown", callback, false);
-                window.addEventListener("mouseup", callback, false);
+                window.addEventListener("click", callback, false);
                 window.addEventListener("touchstart", callback, false);
-                window.addEventListener("touchend", callback, false); 
             }
         };
   
@@ -212,12 +208,13 @@ function loadSounds(audios, callback) {
 }
 //Resize the screen to fit the new resolution
 function resize() {
-    let aspectRatio = canvas.width / canvas.height;
     let height, width;
 
     maxHeight = window.visualViewport.height;
     width = window.visualViewport.width;
     height = Math.min(width/aspectRatio, maxHeight, 640);
+    console.log("width/aspectRatio: " + width/aspectRatio);
+    console.log("maxHeight: " + maxHeight);
     canvas.style.width = height * aspectRatio + 'px';
     canvas.style.height = height + 'px';
 }
