@@ -73,12 +73,12 @@ Fuera de combate utilizarás este mismo ataque para desplazarte a lo largo del n
 
 + **Guardia enigma**: Vidas: /3 corazones/  Daño: /medio corazón/ 
     + Fase **Defensa**: 1-3 segundos (variará aleatoriamente el tiempo que tengas que esperar) --> si le atacas quedarás aturdida.  
-    + Fase **Preparación de Ataque**: 0.7 segundos --> si le atacas en este momento le quitarás una vida, entonces el enemigo se dará la vuelta inmediatamente y cambiará a modo de defensa. Sino pasará a modo de ataque.  
+    + Fase **Preparación de Ataque**: 0.7 segundos --> si le atacas en este momento le quitarás una vida, entonces el enemigo se dará la vuelta inmediatamente y cambiará a modo de defensa. Si no, pasará a modo de ataque.  
     + Fase **Ataque**: 0.5 segundos --> al acabar pasará a modo defensa.  
   
 + **Esquiva**: Vidas: /2 corazones/ Daño: /1 corazón/  
     + Fase **Defensa**: 1-2 segundos --> si le atacas quedarás aturdida.
-    + Fase **Preparación de Ataque**: 0.5-0.6 segundos --> si le atacas te esquivará y pasará a fase de defensa hacia el lado al que has ido. Sino pasará a fase de ataque.  
+    + Fase **Preparación de Ataque**: 0.5-0.6 segundos --> si le atacas te esquivará y pasará a fase de defensa hacia el lado al que has ido. Si no, pasará a fase de ataque.  
     + Fase **Ataque**: 0.5 segundos --> después de hacerte daño pasará a fase de celebración.  
     + Fase **Celebración**: 0.5 segundos --> al haberte hecho daño lo celebrará, por lo que estará distraido y podrás atacarle (harás solo media vida de daño, a diferencia de la fase de mareo). Una vez golpeado pasará a la fase de defensa hacia el lado en el que estés.
     + Fase **Mareo**: 1-1.5 segundos --> si le atacas 3 veces seguidas en la fase de preparación el enemigo se "mareará" al haber esquivado tantas veces. Entonces podrás dañarle de manera normal (un corazón). Una vez golpeado pasará a la fase de defensa hacia el lado en el que estés.  
@@ -92,13 +92,13 @@ Fuera de combate utilizarás este mismo ataque para desplazarte a lo largo del n
   
 + **Punto débil**: Vidas: /3 corazones/ Daño: /1 corazón/  
     + Fase **Defensa**: 2-4 segundos --> si le atacas quedarás aturdida.  
-    + Fase **Preparación de Ataque**: 0.5 segundos --> si le atacas no le causarás daño (por culpa de su escudo/barrera especial) pero pasarás al otro lado, entonces entrarás en la fase Zona Débil ya que el enemigo no se dará la vuelta al instante; sino pasará a la fase de Ataque.  
-    + Fase **Zona Débil**: 0.3 segundos --> si le atacas recibirá daño, sino se dará la vuelta y se pondrá en modo Defensa.  
+    + Fase **Preparación de Ataque**: 0.5 segundos --> si le atacas no le causarás daño (por culpa de su escudo/barrera especial) pero pasarás al otro lado, entonces entrarás en la fase Zona Débil ya que el enemigo no se dará la vuelta al instante; si no, pasará a la fase de Ataque.  
+    + Fase **Zona Débil**: 0.3 segundos --> si le atacas recibirá daño, si no, se dará la vuelta y se pondrá en modo Defensa.  
     + Fase **Ataque**: 0.7 segundos --> después de hacerte daño pasará al modo Defensa.    
     
 + **Contraataque**: Vidas: /3 corazones/ Daño (en fase Ataque): /medio corazón/  
     + Fase **En Guardia**: 2-5 segundos --> si le golpeas pasará a la fase de Contraataque.  
-    + Fase **Preparación de Ataque**: 0.5 segundos --> si le atacas en este momento le quitarás una vida, entonces el enemigo se dará la vuelta inmediatamente y cambiará a modo de defensa. Sino pasará a modo de ataque.  
+    + Fase **Preparación de Ataque**: 0.5 segundos --> si le atacas en este momento le quitarás una vida, entonces el enemigo se dará la vuelta inmediatamente y cambiará a modo de defensa. Si no, pasará a modo de ataque.  
     + Fase **Ataque**: 0.3 segundos --> después de hacerte daño pasará al modo En Guardia.  
     + Fase **Contraataque**: 0.3 segundos --> es lo mismo que en ataque pero te quitará 1 corazón en vez de medio.  
       
@@ -108,7 +108,7 @@ Fuera de combate utilizarás este mismo ataque para desplazarte a lo largo del n
   
 + **Ronda de ataques**: Vidas: /5 corazones/ Daño: /1-3 corazones/  
     + Fase **Defensa**: 1-1.5 segundos --> si le atacas quedarás aturdida.  
-    + Fase **Preparación de Ataque**: 0.3 segundos --> si le atacas le quitarás un corazón y se pondrá otra vez en modo Preparación de Ataque, sino pasará a modo Ataque.
+    + Fase **Preparación de Ataque**: 0.3 segundos --> si le atacas le quitarás un corazón y se pondrá otra vez en modo Preparación de Ataque, si no, pasará a modo Ataque.
     + Fase **Ataque**: 0.3 segundos por cada ataque (cada ataque quita 1 corazón) --> se calcurará de manera aleatoria el número de veces que te ataque, las probabilidades serán: 50%-1 ataque, 40%-2 ataques, 10%-3 ataques. Cuando acabe de atacarte se pondrá en modo Defensa.  
     
 + **El ilusionista (fase Paraiso)**: Vidas (modo *NO ILUSIÓN*): /3 corazones/ Daño: /1 corazón(excepto Ataque a Distancia)/  
@@ -250,14 +250,41 @@ Siguiendo la estética visual establecida:
 ## Audio 
 
 ### Pistas
-- Menú principal.
 - Nivel infierno.
 - Nivel purgatorio.
 - Nivel paraíso.
-- Fin del juego (victoria y derrota).
 
-### Efectos de sonido
-- *Dash*.
-- Enemigos.
-- Sonidos del combate.
-- Navegación por menús.
+### Efectos de sonido  
+- Efectos de sonido de la protagonista:  
+    - *Dash*
+    - Sonido de espada (cuando ataca)
+    - Golpe (cuando la hieren)
+- Enemigos:  
+
+    Base (cada uno una versión aguda y una grave): 
+    - Preparación ataque
+    - Ataque
+    - Herido 
+    
+    Específico:
+    - **Guardia enigma**: Base grave.
+    - **Esquiva**: Base aguda.
+        - Esquiva (soindo de aire *whushh*)
+        - Mareado
+        - Celebración
+    - **El ilusionista (modo infierno (I)/modo paraiso (P))**:
+        - Lanzando llamas al cielo (I) (--)
+        - Fuegos fatuos (I) (--)
+        - Halo del suelo (sonido mágico?) (I)
+        - Llamas del suelo (más fuertes que los fuegos fatuos) (I)
+        - Aparición/Desaparición (nubes grises como ninja(?)) *las dos versiones son iguales*
+        - Herido  (I) (P)
+        - Cargando contra ti (sonido trotando, ten en cuenta que es un zorro no un caballo) (P)
+    - **Punto débil**: Base grave.
+    - **Contraataque**: Base aguda.
+    - **Invisible(?)**: CONTINUAR
+    - **Ronda de ataques**:
+        - Preparación ataque (gruñidos de tigre)
+        - Ataque (gruñidos de tigre)
+        - Herido (gruñidos de tigre)
+    - **Dragón**: CONTINUAR
