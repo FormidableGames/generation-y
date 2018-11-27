@@ -59,6 +59,8 @@ window.addEventListener("load", function () {
     //Listeners to resize the screen
     window.addEventListener( 'orientationchange', resize, false);
     window.addEventListener( 'resize', resize, false);
+    
+    resize();
 
     //Start loading resources
     imageResources = {};
@@ -80,9 +82,6 @@ window.addEventListener("load", function () {
 });
 
 function initialize(){
-    
-    resize();
-
     window.removeEventListener("keydown", initialize);
     window.removeEventListener("click", initialize);
     window.removeEventListener("touchstart", initialize);
