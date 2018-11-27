@@ -57,10 +57,10 @@ window.addEventListener("load", function () {
     canvasHeight = canvas.height;  
     aspectRatio = canvas.width / canvas.height;
     //Listeners to resize the screen
-    window.addEventListener( 'orientationchange', resize, false);
+    /*window.addEventListener( 'orientationchange', resize, false);
     window.addEventListener( 'resize', resize, false);
     
-    resize();
+    resize();*/
 
     //Start loading resources
     imageResources = {};

@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- Latest compiled and minified CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!-- jQuery library -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- Latest compiled JavaScript -->
     <link rel="stylesheet" type="text/css" href="style/game.css">
     <title>Er jueguito siberpanc</title>
 </head>
 <body bgcolor="#ff00bf">
     <div id = "loading" style = "background-color: #303030;">Loading</div>
-    <canvas id = "canvas" width = "960" height = "640" > </canvas>
+    <div class="main-container">
+        <div class="row row-centered pos">
+            <div id="columnDiv" class="col col-12 col-centered">
+                <canvas id = "canvas" width = "960" height = "640" > </canvas> 
+            </div>
+        </div>
+    </div>
     <div id="fpsDisplay"></div> 
     
     <script src = "js/game/sprite.js"></script>
