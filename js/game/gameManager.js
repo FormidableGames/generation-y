@@ -56,12 +56,10 @@ window.addEventListener("load", function () {
     canvasWidth = canvas.width, 
     canvasHeight = canvas.height;  
     aspectRatio = canvas.width / canvas.height;
-    //Listeners to resize the screen
-    /*window.addEventListener( 'orientationchange', resize, false);
-    window.addEventListener( 'resize', resize, false);
-    
-    resize();*/
 
+    window.addEventListener("resize", resize, false);
+    window.addEventListener("orientationchange", resize, false);
+    resize();
     //Start loading resources
     imageResources = {};
     audioResources = {};
@@ -208,9 +206,10 @@ function loadSounds(audios, callback) {
 //Resize the screen to fit the new resolution
 function resize() {
     let height, width;
-
-    maxHeight = window.innerHeight;
-    width = window.innerWidth;
+    let container = document.getElementById('columnDiv');
+    console.log("entro");
+    maxHeight = container.offsetHeight;
+    width = container.offsetWidth;
     height = Math.min(width/aspectRatio, maxHeight, 640);
     canvas.style.width = height * aspectRatio + 'px';
     canvas.style.height = height + 'px';

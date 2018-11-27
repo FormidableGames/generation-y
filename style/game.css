@@ -5,15 +5,15 @@ body {
     overflow: hidden;
 }
 canvas {
-    position:relative;
+    position: relative;
+    /*width: 100%;
     height: auto;
-    width: 100%;
-    max-width: "960";
-    max-height: "640";
+    max-width: 960px;
+    max-height: 640px;*/
     image-rendering: optimizeSpeed;
     image-rendering: -moz-crisp-edges;
     image-rendering: -webkit-optimize-contrast;
-    image-rendering: optimize-contrast
+    image-rendering: optimize-contrast;
 }
 #columnDiv {
     height: 100vh;
