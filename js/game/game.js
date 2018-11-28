@@ -1,9 +1,22 @@
 class Game {
     constructor() {     
+        this.that = this;
+
         this.pause =  false;
         
         this.player = new Player();
-        this.structure = "SSDSSDSS";
+
+        this.structure;
+        this.getJSONFromFile(function(list, that){
+            that.structure = list;
+        }, this);
+     
+
+        //var data = '{"easy" : "SSDSSDSS"}';
+        //var mydata = JSON.parse(dataaa);
+        //this.structure = mydata.easy;
+        
+
         this.room = 0;
         this.map = new Map();
         this.GUI = new GUI();
@@ -13,6 +26,13 @@ class Game {
 
         this.gameState = "walk";
     }
+
+    getJSONFromFile(callback, that){
+        $.getJSON('js/game/levels.json', function(data) {
+            callback(data.easy, that);
+        });
+    }
+
     update(deltaTime) {
         this.inputHandler();
         if(!this.pause){
