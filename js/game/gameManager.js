@@ -58,6 +58,11 @@ window.addEventListener("load", function () {
     canvasHeight = canvas.height;  
     aspectRatio = canvas.width / canvas.height;
 
+    //Responsive canvas
+    window.addEventListener("resize", resize, false);
+    window.addEventListener("orientationchange", resize, false);
+    resize();
+    
     drawProgressIndicator();
 
     //Start loading resources
@@ -91,10 +96,7 @@ function initialize(){
     //Remove the loading screen
     //document.getElementById("loading").remove();
 
-    //Responsive canvas
-    window.addEventListener("resize", resize, false);
-    window.addEventListener("orientationchange", resize, false);
-    resize();
+    
     
     //Initialize all the variables and listeners
     //Input
