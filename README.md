@@ -194,11 +194,13 @@ Siguiendo la estética visual establecida:
     - Herida
 - Sprites en 2d de los enemigos:  
     - **Guardia enigma** (Guerrero demonio):
+        - Idle
         - En guardia
         - Preparación ataque
         - Ataque
         - Herido
     - **Esquiva** (Un tengu(?)):
+        - Idle
         - En guardia
         - Preparación ataque
         - Esquiva
@@ -215,11 +217,13 @@ Siguiendo la estética visual establecida:
         - Aparición (con nubes grises(?))/Desaparición
         - Herido  
     - **Punto débil** (un ser con un escudo especial o una barrera mágica):
+        - Idle
         - En guardia (se usará para modo Defensa y modo Zona Débil)
         - Preparación ataque (pero sigue defendiendose mientras)
         - Ataque
         - Herido  
     - **Contraataque**:
+        - Idle
         - En guardia
         - Contraataque
         - Preparación ataque
@@ -227,6 +231,7 @@ Siguiendo la estética visual establecida:
         - Herido  
     - **Invisible(?)**: CONTINUAR
     - **Ronda de ataques** (Byakko el tigre blanco):
+        - Idle
         - En guardia
         - Preparación ataque
         - Ataque (2 sprites para que se ve que ataca varias veces, podría ser una tempestad que invoca(?))
