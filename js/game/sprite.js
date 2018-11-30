@@ -7,8 +7,10 @@ class Sprite {
         this.totalFramesV = totalFramesV
         this.actualFrameH = 0;
         this.actualFrameV = 0;
+        this.alpha = 1;
     }
     draw(x, y) {
+        context.globalAlpha = this.alpha;
         context.drawImage(
             this.sprite,
             this.actualFrameH * this.width, this.actualFrameV * this.height,
@@ -16,5 +18,7 @@ class Sprite {
             x, y,
             this.width, this.height
         );
+        context.globalAlpha = 1;
     }
+    
 }

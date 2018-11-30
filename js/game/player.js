@@ -98,10 +98,6 @@ class Player {
         this.sprite.actualFrameH = this.spriteH;      
         this.sprite.actualFrameV = this.spriteV + (-0.5 * this.facing + 0.5);
         this.sprite.draw(this.x, this.y);
-        
-        context.beginPath();
-        context.rect(this.x,this.y,this.width,this.height);
-        context.stroke();
     }
     relocate(){
         switch(game.gameState){

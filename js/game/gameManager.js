@@ -53,13 +53,13 @@ window.addEventListener("load", function () {
     //Create the canvas and get the context
     canvas = document.getElementById("canvas");
     context = canvas.getContext("2d");
+
     canvasWidth = canvas.width, 
     canvasHeight = canvas.height;  
     aspectRatio = canvas.width / canvas.height;
 
-    window.addEventListener("resize", resize, false);
-    window.addEventListener("orientationchange", resize, false);
-    resize();
+    drawProgressIndicator();
+
     //Start loading resources
     imageResources = {};
     audioResources = {};
@@ -71,7 +71,11 @@ window.addEventListener("load", function () {
             //Image list
             [{name: "player", path: "placeholderPlayer.png"}, {name: "enemy", path: "placeholderEnemy.png"},
                 {name: "background", path: "background.jpg"}, {name: "columns", path: "columns.png"}, 
-                {name: "floor", path: "floor.png"}, {name: "dodgeEnemy", path: "placeHolderDodgeEnemy.png"}],
+                {name: "floor", path: "floor.png"}, {name: "dodgeEnemy", path: "placeHolderDodgeEnemy.png"},
+                {name: "textParticles", path: "textParticles.png"}, {name: "illusionistEnemy", path: "placeHolderIllusionistEnemy.png"},
+                {name: "halo", path: "placeHolderHalo.png"}, {name: "fireball", path: "placeHolderFireBall.png"},
+                {name: "smoke", path: "placeHolderHumo.png"}
+            ],
             //Audio list
             [{name: "background", path: "MusicaPurgatorio_v2.ogg", loop: true}, {name: "dash", path: "dash.mp3", loop: false},
                 {name: "hit", path: "hit.mp3", loop: false}]
@@ -85,8 +89,13 @@ function initialize(){
     window.removeEventListener("touchstart", initialize);
 
     //Remove the loading screen
-    document.getElementById("loading").remove();
+    //document.getElementById("loading").remove();
 
+    //Responsive canvas
+    window.addEventListener("resize", resize, false);
+    window.addEventListener("orientationchange", resize, false);
+    resize();
+    
     //Initialize all the variables and listeners
     //Input
     inputDisponibility = true;
@@ -181,11 +190,11 @@ function loadSounds(audios, callback) {
     let name,
         count  = audios.length,
         canplay = function() { if (--count == 0) {
-                load = document.getElementById("loading");
+                /*load = document.getElementById("loading");
                 load.textContent = "Loaded";
                 load.style.color = "#ffffff";
                 load.style.backgroundColor = "#ff00bf";
-                load.style.animation = "none";
+                load.style.animation = "none";*/
                 window.addEventListener("keydown", callback, false);
                 window.addEventListener("click", callback, false);
                 window.addEventListener("touchstart", callback, false);
@@ -213,4 +222,35 @@ function resize() {
     canvas.style.width = height * aspectRatio + 'px';
     canvas.style.height = height + 'px';
     
+}
+function drawProgressIndicator(){
+    context.save();
+    context.clearRect(0, 0, canvasWidth, canvasHeight);
+    context.translate(canvasWidth / 2, canvasHeight/ 2);
+    context.scale(0.4, 0.4);
+    context.rotate(-Math.PI / 2);
+    context.strokeStyle = "black";
+    context.fillStyle = "white";
+    context.lineWidth = 8;
+    context.lineCap = "round";
+    var step = this.animationStep;
+    context.fillStyle = "black";
+    context.save();
+    context.rotate(step * Math.PI / 30);
+    context.strokeStyle = "#33ccff";
+    context.fillStyle = "#33ccff";
+    context.lineWidth = 10;
+    context.beginPath();
+    context.moveTo(0, 0);
+    context.lineTo(68, 0);
+    context.stroke();
+    context.fill();
+    context.restore();
+    context.beginPath();
+    context.lineWidth = 14;
+    context.strokeStyle = 'gray';
+    context.arc(0, 0, 80, 0, Math.PI * 2, true);
+    context.stroke();
+    context.restore();
+    this.animationStep += 1;
 }

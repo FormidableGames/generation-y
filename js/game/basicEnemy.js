@@ -11,6 +11,8 @@ class BasicEnemy extends Enemy{
         this.recoverTime = this.initialRecoverTime;
         this.initialProtectTime = 0.3; //In seconds
         this.protectTime = this.initialProtectTime;
+        this.initialHurtTime = 0.1; //In seconds
+        this.hurtTime = this.initialHurtTime;
     }
     idleBehaviour(deltaTime){
         this.attackTime -= deltaTime / 1000;
@@ -31,14 +33,20 @@ class BasicEnemy extends Enemy{
         this.recoverTime -= deltaTime / 1000;
         if (this.recoverTime <= 0) this.toIdle();
     }
+    hurtBehaviour(deltaTime){
+        this.hurtTime -= deltaTime / 1000;
+        if (this.hurtTime <= 0){   
+            if(this.health == 0)
+                game.toWalk();      
+            else{
+                this.facing *= -1;
+                this.toIdle();
+            }
+        }
+    }
     damaged(){
         this.health--;
-        if(this.health > 0){
-            this.facing *= -1;
-            this.chofSound.play();
-            this.toIdle();
-        }else{
-            game.toWalk();
-        }
+        this.chofSound.play();
+        this.toHurt();
     }
 }

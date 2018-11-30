@@ -69,7 +69,14 @@ class DodgeEnemy extends Enemy{
     }
     hurtBehaviour(deltaTime){
         this.hurtTime -= deltaTime / 1000;
-        if (this.hurtTime <= 0) this.toIdle();
+        if (this.hurtTime <= 0){    
+            if(this.health == 0)    
+                game.toWalk();
+            else{
+                this.facing *= -1;
+                this.toIdle();
+            }
+        }
     }
     celebrateBehaviour(deltaTime){
         this.celebrateTime -= deltaTime / 1000;
@@ -103,21 +110,20 @@ class DodgeEnemy extends Enemy{
             this.health -= 1;
             damaged = true;
         }else if(this.dodge == 2){
-            this.toSick();       
+            this.toSick();      
+            game.particleController.create("miss", game.particleController.getRandomRange(this.x+this.width/3, this.x+2*this.width/3), 
+                                                    game.particleController.getRandomRange(this.y+this.height/3, this.y+2*this.height/3));
             this.facing *= -1;
         }else{
             this.dodge++;
+            game.particleController.create("miss", game.particleController.getRandomRange(this.x+this.width/3, this.x+2*this.width/3), 
+                                                    game.particleController.getRandomRange(this.y+this.height/3, this.y+2*this.height/3));
             this.facing *= -1;
             this.toIdle();
         }
         if(damaged){
-            if(this.health > 0){
-                this.facing *= -1;
-                this.chofSound.play();
-                this.toHurt();
-            }else{
-                game.toWalk();
-            }
+            this.chofSound.play();
+            this.toHurt();
         }       
     }
 }

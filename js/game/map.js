@@ -70,7 +70,10 @@ class Map {
                 this.enemy = new BasicEnemy();
                 break;
             case 'D':
-                this.enemy = new DodgeEnemy();
+                this.enemy = new BasicEnemyIllusion();
+                break;
+            case 'I':
+                this.enemy = new IllusionistEnemy();
                 break;
         }
     }

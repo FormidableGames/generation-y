@@ -6,32 +6,28 @@ class Game {
         
         this.player = new Player();
 
-        this.structure;
-        this.getJSONFromFile(function(list, that){
-            that.structure = list;
-        }, this);
-     
 
-        //var data = '{"easy" : "SSDSSDSS"}';
-        //var mydata = JSON.parse(dataaa);
-        //this.structure = mydata.easy;
-        
+        this.structure = "SSDSSDS";
+        /*this.getJSONFromFile(function(list, that){
+            that.structure = list;
+        }, this);*/
 
         this.room = 0;
         this.map = new Map();
+        this.particleController = new ParticleController();
         this.GUI = new GUI();
-        this.entities = [this.map, this.player, this.GUI];
+        this.entities = [this.map, this.player, this.particleController, this.GUI];
 
         audioResources["background"].play();
 
         this.gameState = "walk";
     }
 
-    getJSONFromFile(callback, that){
+    /*getJSONFromFile(callback, that){
         $.getJSON('js/game/levels.json', function(data) {
             callback(data.easy, that);
         });
-    }
+    }*/
 
     update(deltaTime) {
         this.inputHandler();
@@ -78,6 +74,9 @@ class Game {
                         if(this.player.state == "idle") this.player.toAttack();
                         inputDisponibility = false;
                     }
+                    break;
+                case "walkTransition":
+
                     break;
             }
         }
