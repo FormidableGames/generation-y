@@ -246,7 +246,6 @@ Siguiendo la estética visual establecida:
         - Herido  
     - **Contraataque**:
         - Idle
-        - En guardia
         - Contraataque
         - Preparación ataque
         - Ataque
