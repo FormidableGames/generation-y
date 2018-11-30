@@ -102,7 +102,12 @@ Fuera de combate utilizarás este mismo ataque para desplazarte a lo largo del n
     + Fase **Ataque**: 0.3 segundos --> después de hacerte daño pasará al modo En Guardia.  
     + Fase **Contraataque**: 0.3 segundos --> es lo mismo que en ataque pero te quitará 1 corazón en vez de medio.  
       
-+ **Invisible(?)**: CONTINUAR ESCRIBIENDO  
++ **Invisible**: Vidas: /1 corazón/ Daño: /medio corazón/  
+    + Fase **Inicio**: no se ve ningún enemigo, ¥ detecta algo extraño (?).
+    + Fase **Escondido**: hasta que le golpees cunado es visible --> cuando ¥ detecte algún movimiento te avisará (!) entonces deberás atacar para contrarrestar el ataque del enemigo. Si contrarrestas el ataque del enemigo pasarás al otro lado (sin hacerle daño), si no recibirás daño. El aviso será 0.7 segundos antes del ataque del enemigo. Si consigues contrarrestar el ataque 3 veces el enemigo se mostrará ante ti, estará inmóvil en el centro hasta que le golpees (no le hará daño ya que estará transparente), entonces pasará a modo Furia.
+    + Fase **Furia**: hasta que le vuelvas "sólido" --> el enemigo se ha enfurezido (seguirá siendo invisible a no ser que se diga lo contrario), ahora cada vez que ataque serán dos golpes seguidos. Cada vez que te vaya a atacar ¥ te alertará igual que antes pero con solo 0.5 segundos de diferencia. De vez en cuando entre ataques el enemigo se mostrará en el centro (durante 0.4 segundos) y desaparecerá. Si le golpeas 3 veces seguidas cuando se muestra este se volverá completamente opaco (cada vez que golpees se volverá menos transparente), es decir "sólido". Si no golpeas cada vez que se muestra el ciclo de veces que tengas que golpearle se reiniciará (volverá a estar completamente transparente). Al volverle "sólido" pasará al modo Fin.
+    + Fase **Fin**: en esta fase será visible. Realizará ataques igual que en la fase anterior (dos cada vez) pero si le contrarrestas, al estar "sólido", le quitarás vida (y al tener solo una le eliminarás).  
+    **NOTAS**: el tiempo entre ataque y ataque es de 2-2.5 segundos, el tiempo entre ataque y aparición en el centro es de 0.3 segundos. En la fase Furia seguirá un patrón de: 2 ataques (cada uno de dos golpes) 1 aparición 2 ataques 1 aparición 1 ataque 1 aparición (se repite en bucle)
   
 3. **Paraiso (difícil)**  
   
@@ -192,6 +197,10 @@ Siguiendo la estética visual establecida:
     - Ataque
     - Aturdida
     - Herida
+    - Alerta (!)*
+    - Extrañada (?)*
+    
+    *es solo meter la exclamación y el interrogante
 - Sprites en 2d de los enemigos:  
     - **Guardia enigma** (Guerrero demonio):
         - Idle
@@ -229,7 +238,11 @@ Siguiendo la estética visual establecida:
         - Preparación ataque
         - Ataque
         - Herido  
-    - **Invisible(?)**: CONTINUAR
+    - **Invisible** (Honjo Masamune, la katana legendaria): 
+        - Idle (se muestra)
+        - Ataque (2 frames para ataques seguidos)
+        - Efecto ataque (2 frames igual que el anterior)
+        - Aura de furia (?)
     - **Ronda de ataques** (Byakko el tigre blanco):
         - Idle
         - En guardia
@@ -288,7 +301,10 @@ Siguiendo la estética visual establecida:
         - __Cargando contra ti__ (sonido trotando, ten en cuenta que es un zorro no un caballo) (P)  
     - **Punto débil**: Base grave.
     - **Contraataque**: Base aguda.
-    - **Invisible(?)**: CONTINUAR
+    - **Invisible(?)**: 
+        - Sonido aura (?)
+        - Sonido espada golpeando
+        - __Sonido espadas chocandose__
     - **Ronda de ataques**:
         - __Preparación ataque__ (gruñidos de tigre)
         - __Ataque__ (gruñidos de tigre)
