@@ -107,6 +107,7 @@ Fuera de combate utilizarás este mismo ataque para desplazarte a lo largo del n
     + Fase **Escondido**: hasta que le golpees cunado es visible --> cuando ¥ detecte algún movimiento te avisará (!) entonces deberás atacar para contrarrestar el ataque del enemigo. Si contrarrestas el ataque del enemigo pasarás al otro lado (sin hacerle daño), si no recibirás daño. El aviso será 0.7 segundos antes del ataque del enemigo. Si consigues contrarrestar el ataque 3 veces el enemigo se mostrará ante ti, estará inmóvil en el centro hasta que le golpees (no le hará daño ya que estará transparente), entonces pasará a modo Furia.
     + Fase **Furia**: hasta que le vuelvas "sólido" --> el enemigo se ha enfurezido (seguirá siendo invisible a no ser que se diga lo contrario), ahora cada vez que ataque serán dos golpes seguidos. Cada vez que te vaya a atacar ¥ te alertará igual que antes pero con solo 0.5 segundos de diferencia. De vez en cuando entre ataques el enemigo se mostrará en el centro (durante 0.4 segundos) y desaparecerá. Si le golpeas 3 veces seguidas cuando se muestra este se volverá completamente opaco (cada vez que golpees se volverá menos transparente), es decir "sólido". Si no golpeas cada vez que se muestra el ciclo de veces que tengas que golpearle se reiniciará (volverá a estar completamente transparente). Al volverle "sólido" pasará al modo Fin.
     + Fase **Fin**: en esta fase será visible. Realizará ataques igual que en la fase anterior (dos cada vez) pero si le contrarrestas, al estar "sólido", le quitarás vida (y al tener solo una le eliminarás).  
+    
     **NOTAS**: el tiempo entre ataque y ataque es de 2-2.5 segundos, el tiempo entre ataque y aparición en el centro es de 0.3 segundos. En la fase Furia seguirá un patrón de: 2 ataques (cada uno de dos golpes) 1 aparición 2 ataques 1 aparición 1 ataque 1 aparición (se repite en bucle)
   
 3. **Paraiso (difícil)**  
@@ -121,8 +122,20 @@ Fuera de combate utilizarás este mismo ataque para desplazarte a lo largo del n
     + Fase **Ataque a Distancia**: 4-7 ataques --> en esta fase no podrás atacar al enemigo (lanzará ataques hacia el cielo primero y desaparecerá), los ataques a distancia caerán del cielo (desde el cielo hasta tu posición: **0.8-1(?)** segundos de manera aleatoria), deberás esquivarlos para que no te dañen, es decir, caerán uno detrás de otro en un lado u otro de manera aleatoria (50-50 de posibildades en cada lado). Estos ataques te quitarán medio corazón.   
     + Fase **Aparición**: 5 ataques --> en esta fase deberás esperar a que aparezca el enemigo por uno de los lados (de manera aleatoria (50-50 de posibilidades en cada lado), este mostrará parte de su cuerpo primero (su cabeza) para avisarte de que va a salir por ese lado (0.3 segundos), entonces cargará contra ti (de lado a lado: **0.7(?)** segundos). Si estás de espaldas a él cuando carga recibirás daño, si estás de frente sin atacar también, pero si le atacas mientras carga contra ti (es decir le contraatacas) él será quien reciba daño. Si le golpeas desaparecerá immediatamente y pasará a hacer otro ataque. Una vez acabada esta fase pasará de nuevo a la fase de Ataque a Distancia.  
       
-+ **Dragón**: CONTINUAR ESCRIBIENDO
-
++ **Dragón**: Vidas: /4 corazones/ Daño: /medio corazón/
+    + Fase **Presentación**: el enemigo se percatará de tu presencia (no podrás golpearle) y volará por encima de ti (yendo hacia la izquierda dutrante 3 segundos). Pasará al modo Vuelo.
+   + Fase **Vuelo**: hasta que le elimines --> el enemigo irá pasando por el cielo todo el rato (estará en todo momento encima de ¥ y tardará 1.5 segundos en recorrer la pantalla), irá ejecutando dos clases de ataques diferentes y mostrará el orbe según una serie.  
+   
+   **ATAQUE NORMAL**: con su pata (con garras) levantada esperará a que esté justo encima de ti para atacarte (0.3 segundos en bajar), tendrás quer esquivarlo o te hará daño. 
+     
+   **ATAQUE LARGO**: recorrerá toda la pantalla con sus garras extendidas para hacerte un corte, deberás atacar en la dirección en la que venga para que no te haga daño (osea deberás atacar hacia la derecha), es decir, si estás de espaldas (o quieto) cuando te toque recibirás daño, tardará 1 segundo en reocrrer toda la pantalla. Para avisar al jugador de que esto va a ocurrir el enemigo aumentará su velocidad a 1 segundo 0.3 segundos antes de que aparezca su pata. nada más acabar el ataque la velocidad volverá a 1.5.
+     
+   **ORBE**: de vez en cuando aparecerá una de sus patas sosteniendo un orbe, este bajará la pata una vez esté su pata en el centro (tardará 0.2 segundos en bajarla), si estás en la izquierda cuando vaya por el centro no bajará la pata. Deberás atacar al orbe para quitarle una vida.
+     
+   **NADA**: El enemigo no muestra ninguna de sus patas durante 1.5 segundos (lo que tarda en recorrer la pantalla).
+   
+   **NOTAS**: la serie que seguirá en bucle será (teniendo en cuenta que < = At. normal, / = At. largo, 0 = Orbe y N = Nada): <<N<0N/<N0/N<<0NN/NN<<0N
+   
 ### Flujo de juego
 Desde el menú principal puedes acceder a la pantalla de selección de nivel. Aquí podrás empezar una partida en el nivel que elijas. Avanzarás por el escenario hasta encontrar a un enemigo al que enfrentarte. Durante el combate no podrás continuar hasta derrotarlo. Al terminar el combate seguirás avanzando por el nivel hasta que encuentres a otro enemigo. 
 Cuando logres la victoria, seas derrotado o abandones, saldrá la pantalla de fin del juego desde la que podrás volver a rejugar el nivel, volver al selector de niveles o volver al menú principal.
@@ -256,7 +269,7 @@ Siguiendo la estética visual establecida:
         - Cargando contra ti (2 sprites mínimo para que se entienda bien)
         - Desaparición (para cuando le golpeas, después de estar herido)
         - Herido  
-    - **Dragón**: CONTINUAR
+    - **Dragón**: HABLARLO
 - Fondos 2d en diferentes capas:  
     - Infierno
     - Purgatorio
@@ -309,4 +322,4 @@ Siguiendo la estética visual establecida:
         - __Preparación ataque__ (gruñidos de tigre)
         - __Ataque__ (gruñidos de tigre)
         - __Herido__ (gruñidos de tigre)
-    - **Dragón**: CONTINUAR
+    - **Dragón**: HABLARLO
