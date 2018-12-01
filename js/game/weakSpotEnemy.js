@@ -1,18 +1,29 @@
-class BasicEnemy extends Enemy{
+class WeakSpotEnemy extends Enemy{
     constructor(){
-        super(3, 0.5);
+        super(3, 1);
+        this.width = 600;
+        this.height = 400;
+        this.sprite = new Sprite("weakSpotEnemy", this.width, this.height, 4, 1);
     }
     setTimes(){
-        this.initialAttackTime = Math.random() * 2 + 1; //In seconds
+        this.initialAttackTime = Math.random() * 2 + 2; //In seconds
         this.attackTime = this.initialAttackTime;
-        this.initialAnticipationTime = 0.7; //In seconds
+        this.initialAnticipationTime = 0.4; //In seconds
         this.anticipationTime = this.initialAnticipationTime;
-        this.initialRecoverTime = 0.5; //In seconds
+        this.initialRecoverTime = 0.7; //In seconds
         this.recoverTime = this.initialRecoverTime;
-        this.initialProtectTime = 0.3; //In seconds
+        this.initialProtectTime = 0.2; //In seconds
         this.protectTime = this.initialProtectTime;
         this.initialHurtTime = 0.1; //In seconds
         this.hurtTime = this.initialHurtTime;
+        this.initialWeakTime = 0.3; //In seconds
+        this.weakTime = this.initialWeakTime;
+    }
+    update(deltaTime){
+        super.update(deltaTime);
+        if(this.state == "weak"){
+            this.weakBehaviour(deltaTime);
+        }
     }
     idleBehaviour(deltaTime){
         this.attackTime -= deltaTime / 1000;
@@ -39,14 +50,31 @@ class BasicEnemy extends Enemy{
             if(this.health <= 0)
                 game.toWalk();      
             else{
-                this.facing *= -1;
-                this.toIdle();
+                this.toIdle();    
+                this.facing = game.player.side;
             }
         }
     }
-    damaged(){
-        this.health--;
-        this.chofSound.play();
-        this.toHurt();
+    weakBehaviour(deltaTime){
+        this.weakTime -= deltaTime / 1000;
+        if (this.weakTime <= 0){
+            this.toIdle();
+            this.facing *= -1;
+        }
     }
+    toWeak(){
+        this.state = "weak";
+        this.spriteH = 4;
+        this.setTimes();
+    }
+    damaged(){
+        if(this.state == "weak" || this.state == "idle"){
+            this.health--;
+            this.chofSound.play();
+            this.toHurt();
+        }else{
+            this.toWeak();
+        }
+    }
+
 }

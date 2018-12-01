@@ -7,6 +7,7 @@ var canvas,
     canvasHeight, 
     aspectRatio;
 //Resources
+var animationStep;
 var imageResources,
     audioResources;
 
@@ -62,7 +63,8 @@ window.addEventListener("load", function () {
     window.addEventListener("resize", resize, false);
     window.addEventListener("orientationchange", resize, false);
     resize();
-    
+
+    animationStep = 0;
     drawProgressIndicator();
 
     //Start loading resources
@@ -74,16 +76,20 @@ window.addEventListener("load", function () {
         //Load resources
         resourcesLoader(
             //Image list
-            [{name: "player", path: "placeholderPlayer.png"}, {name: "enemy", path: "placeholderEnemy.png"},
+            [   
+                {name: "player", path: "placeholderPlayer.png"}, {name: "enemy", path: "placeholderEnemy.png"},
                 {name: "background", path: "background.jpg"}, {name: "columns", path: "columns.png"}, 
                 {name: "floor", path: "floor.png"}, {name: "dodgeEnemy", path: "placeHolderDodgeEnemy.png"},
                 {name: "textParticles", path: "textParticles.png"}, {name: "illusionistEnemy", path: "placeHolderIllusionistEnemy.png"},
                 {name: "halo", path: "placeHolderHalo.png"}, {name: "fireball", path: "placeHolderFireBall.png"},
-                {name: "smoke", path: "placeHolderHumo.png"}
+                {name: "smoke", path: "placeHolderHumo.png"}, {name: "weakSpotEnemy", path: "placeHolderWeakEnemy.png"},
+                {name: "counterattackEnemy", path: "placeHolderCounterattackEnemy.png"}, {name: "invisibleEnemy", path: "placeHolderInvisibleEnemy.png"}
             ],
             //Audio list
-            [{name: "background", path: "MusicaPurgatorio_v2.ogg", loop: true}, {name: "dash", path: "dash.mp3", loop: false},
-                {name: "hit", path: "hit.mp3", loop: false}]
+            [   
+                {name: "background", path: "MusicaPurgatorio_v2.ogg", loop: true}, {name: "dash", path: "dash.mp3", loop: false},
+                {name: "hit", path: "hit.mp3", loop: false}
+            ]
         );
     }
 });
@@ -95,9 +101,7 @@ function initialize(){
 
     //Remove the loading screen
     //document.getElementById("loading").remove();
-
-    
-    
+    context.clearRect(0, 0, canvasWidth, canvasHeight);
     //Initialize all the variables and listeners
     //Input
     inputDisponibility = true;
@@ -197,6 +201,10 @@ function loadSounds(audios, callback) {
                 load.style.color = "#ffffff";
                 load.style.backgroundColor = "#ff00bf";
                 load.style.animation = "none";*/
+                context.textBaseline = 'middle';
+                context.textAlign = "center";
+                context.font="10vh Arial";
+                context.fillText("Loaded", canvasWidth/2, canvasWidth/2);
                 window.addEventListener("keydown", callback, false);
                 window.addEventListener("click", callback, false);
                 window.addEventListener("touchstart", callback, false);
@@ -235,7 +243,7 @@ function drawProgressIndicator(){
     context.fillStyle = "white";
     context.lineWidth = 8;
     context.lineCap = "round";
-    var step = this.animationStep;
+    var step = animationStep;
     context.fillStyle = "black";
     context.save();
     context.rotate(step * Math.PI / 30);
@@ -254,5 +262,5 @@ function drawProgressIndicator(){
     context.arc(0, 0, 80, 0, Math.PI * 2, true);
     context.stroke();
     context.restore();
-    this.animationStep += 1;
+    animationStep += 10;
 }

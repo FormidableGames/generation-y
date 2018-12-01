@@ -29,9 +29,9 @@ class GUI{
         context.font="30px Arial";
         context.fillText("Player: " + game.player.health, canvasWidth/4, 50);
         if(game.map.enemy) context.fillText("Enemy: " + game.map.enemy.health, 3*canvasWidth/4, 50);
-        
-        context.font="400px Arial";
-        context.fillText(this.text, canvasWidth / 2 - 200, canvasHeight / 2 + 200);
+               
+        context.font="50vh Arial";
+        context.fillText(this.text, canvasWidth / 2, canvasHeight / 2);
     }
     toEmpty(){
         this.state = "empty";

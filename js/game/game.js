@@ -6,11 +6,7 @@ class Game {
         
         this.player = new Player();
 
-
-        this.structure = "SSDSSDS";
-        /*this.getJSONFromFile(function(list, that){
-            that.structure = list;
-        }, this);*/
+        this.structure = levels["easy"][0];
 
         this.room = 0;
         this.map = new Map();
@@ -22,12 +18,6 @@ class Game {
 
         this.gameState = "walk";
     }
-
-    /*getJSONFromFile(callback, that){
-        $.getJSON('js/game/levels.json', function(data) {
-            callback(data.easy, that);
-        });
-    }*/
 
     update(deltaTime) {
         this.inputHandler();

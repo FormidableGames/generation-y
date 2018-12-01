@@ -32,6 +32,8 @@ class Enemy {
         this.recoverTime = this.initialRecoverTime;
         this.initialProtectTime = 0.2; //In seconds
         this.protectTime = this.initialProtectTime;
+        this.initialHurtTime = 0.1; //In seconds
+        this.hurtTime = this.initialHurtTime;
     }
     update(deltaTime) {
         switch (this.state) {
@@ -83,25 +85,25 @@ class Enemy {
     }
     toProtect(){
         this.state = "protect";
-        this.spriteH = 3;
+        this.spriteH = 0;
         game.particleController.create("stun", game.particleController.getRandomRange(this.x+this.width/3, this.x+2*this.width/3), 
                                                     game.particleController.getRandomRange(this.y+this.height/3, this.y+2*this.height/3));
         this.setTimes();
     }
     toAnticipate() {
         this.state = "anticipate";
-        this.spriteH = 1;
+        this.spriteH = 2;
         this.attackable = true;
         this.setTimes();
     }
     toAttack() {
         this.state = "attack";
-        this.spriteH = 2;
+        this.spriteH = 3;
         this.setTimes();
     }
     toHurt(){
         this.state = "hurt";
-        this.spriteH = 4;
+        this.spriteH = 1;
         game.particleController.create("hit", game.particleController.getRandomRange(this.x+this.width/3, this.x+2*this.width/3), 
                                                     game.particleController.getRandomRange(this.y+this.height/3, this.y+2*this.height/3));
         this.setTimes();

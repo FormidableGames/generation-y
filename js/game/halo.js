@@ -1,6 +1,6 @@
 class Halo{
     constructor(pos){
-        this.damage = 0.5;
+        this.damage = 1;
         this.width = 300;
         this.height = 100;
         this.spriteV = 0;
@@ -21,10 +21,10 @@ class Halo{
         if(this.hurt){
             this.destroyTime -= deltaTime/1000;
             if(this.destroyTime <= 0){
-                game.map.enemy.toIdle();
-            if(game.player.side == this.side && game.player.state == "idle") 
-                game.player.toHurt(this.damage);        
+                game.map.enemy.toIdle();        
             }
+            if(game.player.side == this.side && game.player.state == "idle") 
+                game.player.toHurt(this.damage);
         }else{
             this.changeTime -= deltaTime/1000;
             if(this.changeTime <= 0) this.change();

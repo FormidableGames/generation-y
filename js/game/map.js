@@ -66,15 +66,37 @@ class Map {
     }
     add(char){
         switch(char){
-            case 'B':
+            case '1':
                 this.enemy = new BasicEnemy();
                 break;
-            case 'D':
+            case '2':
+                this.enemy = new DodgeEnemy();
+                break;
+            case '3':
                 this.enemy = new BasicEnemyIllusion();
                 break;
             case 'I':
                 this.enemy = new IllusionistEnemy();
                 break;
+            case '4':
+                this.enemy = new WeakSpotEnemy();
+                break;
+            case '5':
+                this.enemy = new CounterattackEnemy();
+                break;
+            case '6':
+                this.enemy = new InvisibleEnemy();
+                break;
+            case '7':
+                this.enemy = new BasicEnemy();
+                break;
+            case '8':
+                this.enemy = new BasicEnemy();
+                break;
+            case '9':
+                this.enemy = new BasicEnemy();
+                break;
+
         }
     }
     

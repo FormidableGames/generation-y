@@ -14,7 +14,18 @@ class IllusionistEnemy extends Enemy{
         this.spriteH = 1;
         this.facing = game.player.side;
         this.fireBallCounter = Math.floor(Math.random()*3)+3;
+        this.sameSideFireBalls = 0;
+        this.previousSide = -1;
         this.haloCounter = 5;
+    }
+    setTimes(){
+        this.initialAttackTime = Math.random() * 1 + 1; //In seconds
+        this.attackTime = this.initialAttackTime;
+        this.initialThrowTime = 0.3; //In seconds
+        this.throwTime = this.initialThrowTime;
+        this.fireBallTime = 0.5;
+        this.initialHurtTime = 0.1; //In seconds
+        this.hurtTime = this.initialHurtTime;
     }
     update(deltaTime) {
         switch (this.state) {
@@ -47,15 +58,6 @@ class IllusionistEnemy extends Enemy{
         }
         if(this.halo) this.halo.draw();
     }
-    setTimes(){
-        this.initialAttackTime = Math.random() * 1 + 1; //In seconds
-        this.attackTime = this.initialAttackTime;
-        this.initialThrowTime = 0.3; //In seconds
-        this.throwTime = this.initialThrowTime;
-        this.fireBallTime = 0.5;
-        this.initialHurtTime = 0.1; //In seconds
-        this.hurtTime = this.initialHurtTime;
-    }
     idleBehaviour(deltaTime){
         this.attackTime -= deltaTime / 1000;
         if (this.attackTime <= 0){
@@ -70,7 +72,16 @@ class IllusionistEnemy extends Enemy{
 
         this.fireBallTime -= deltaTime / 1000;
         if (this.fireBallTime <= 0 && this.fireBallCounter > 0){
-            this.fireBalls.push(new FireBall(Math.floor(Math.random()*2)));
+            let side = Math.floor(Math.random()*2);
+            if(side == this.previousSide){
+                this.sameSideFireBalls++;
+                if(this.sameSideFireBalls == 2){
+                    side = 1 - side;
+                }
+            }else
+                this.sameSideFireBalls = 0;
+            this.previousSide = side;
+            this.fireBalls.push(new FireBall(side));
             this.fireBallTime = Math.random()*1+0.6; 
             this.fireBallCounter--;       
         };
@@ -82,7 +93,7 @@ class IllusionistEnemy extends Enemy{
     hurtBehaviour(deltaTime){
         this.hurtTime -= deltaTime / 1000;
         if (this.hurtTime <= 0){   
-            if(this.health == 0){
+            if(this.health <= 0){
                 game.toWalk();
                 this.createSmoke();   
             }else if(this.haloCounter == 0){    

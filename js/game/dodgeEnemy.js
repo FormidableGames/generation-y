@@ -4,6 +4,22 @@ class DodgeEnemy extends Enemy{
         this.sprite = new Sprite("dodgeEnemy", this.width, this.height, 6, 1);
         this.dodge = 0;
     }
+    setTimes(){
+        this.initialAttackTime = Math.random() * 1 + 1; //In seconds
+        this.attackTime = this.initialAttackTime;
+        this.initialAnticipationTime = Math.random() * 0.1 + 0.5; //In seconds
+        this.anticipationTime = this.initialAnticipationTime;
+        this.initialRecoverTime = 0.5; //In seconds
+        this.recoverTime = this.initialRecoverTime;
+        this.initialProtectTime = 0.3; //In seconds
+        this.protectTime = this.initialProtectTime;
+        this.initialHurtTime = 0.1; //In seconds
+        this.hurtTime = this.initialHurtTime;
+        this.initialCelebrateTime = 0.5; // In seconds
+        this.celebrateTime = this.initialCelebrateTime;
+        this.initialSickTime = Math.random() * 0.5 + 1; // In seconds
+        this.sickTime = this.initialSickTime;
+    }
     update(deltaTime) {
         switch (this.state) {
             case "walk":
@@ -32,22 +48,6 @@ class DodgeEnemy extends Enemy{
                 break;
         }
     }
-    setTimes(){
-        this.initialAttackTime = Math.random() * 1 + 1; //In seconds
-        this.attackTime = this.initialAttackTime;
-        this.initialAnticipationTime = Math.random() * 0.1 + 0.5; //In seconds
-        this.anticipationTime = this.initialAnticipationTime;
-        this.initialRecoverTime = 0.5; //In seconds
-        this.recoverTime = this.initialRecoverTime;
-        this.initialProtectTime = 0.3; //In seconds
-        this.protectTime = this.initialProtectTime;
-        this.initialHurtTime = 0.1; //In seconds
-        this.hurtTime = this.initialHurtTime;
-        this.initialCelebrateTime = 0.5; // In seconds
-        this.celebrateTime = this.initialCelebrateTime;
-        this.initialSickTime = Math.random() * 0.5 + 1; // In seconds
-        this.sickTime = this.initialSickTime;
-    }
     idleBehaviour(deltaTime){
         this.attackTime -= deltaTime / 1000;
         if (this.attackTime <= 0) this.toAnticipate();
@@ -70,7 +70,7 @@ class DodgeEnemy extends Enemy{
     hurtBehaviour(deltaTime){
         this.hurtTime -= deltaTime / 1000;
         if (this.hurtTime <= 0){    
-            if(this.health == 0)    
+            if(this.health <= 0)    
                 game.toWalk();
             else{
                 this.facing *= -1;
