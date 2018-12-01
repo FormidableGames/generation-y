@@ -1,6 +1,8 @@
 var levels = {
-    "easy":["SS3SS2SS",
-            "SS1S3SS2",
-            "123456"
+    "easy":["SS1SS3S1SSS2S1SS2SSS3SSS",
+            "SS1SS2S1SSS3S2SSS2SSS1SS",
+            "SSS1S2SS2SS1SSS3S2SS1SSS",
+            "SSS1S1SS2S3SSS1S2SSS3SSS",
+            "SSS1SS3SSS2S1S1SSS3SS2SS",
             ]
 }

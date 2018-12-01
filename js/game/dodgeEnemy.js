@@ -15,7 +15,7 @@ class DodgeEnemy extends Enemy{
         this.protectTime = this.initialProtectTime;
         this.initialHurtTime = 0.1; //In seconds
         this.hurtTime = this.initialHurtTime;
-        this.initialCelebrateTime = 0.5; // In seconds
+        this.initialCelebrateTime = 0.6; // In seconds
         this.celebrateTime = this.initialCelebrateTime;
         this.initialSickTime = Math.random() * 0.5 + 1; // In seconds
         this.sickTime = this.initialSickTime;
