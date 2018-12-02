@@ -1,8 +1,8 @@
 class Map {
     constructor() {
-        this.enemy = undefined;
-        this.item = undefined;
         this.tiles = [];
+        this.depth = 0;
+
         this.addBasicTiles(0);
         this.addBasicTiles(canvasWidth);
 
@@ -30,24 +30,23 @@ class Map {
                         break;
                 }
             }
-            if(this.enemy) this.enemy.x -= this.spd * (deltaTime / 1000);
+            if(game.enemy) game.enemy.x -= this.spd * (deltaTime / 1000);
             if(this.walkTime <= 0){
                 this.moving = false;
                 this.walkTime = this.initialWalkTime;
                 game.player.toIdle();
-                if(this.enemy) game.toFightTransition();
+                if(game.enemy) game.toFightTransition();
             }
         } 
         for (let i = 0; i < this.tiles.length; i++) {
             this.tiles[i].update(deltaTime);
-        }
-        if(this.enemy) this.enemy.update(deltaTime);       
+        }    
     }
     draw() {
         for (let i = 0; i < this.tiles.length; i++) {
             this.tiles[i].draw();
         }
-        if(this.enemy) this.enemy.draw();
+        if(game.enemy) game.enemy.draw();
     }
     toMove(){
         this.moving = true;            
@@ -60,6 +59,7 @@ class Map {
         let bg = new Tile("background", xPos, 0, 960, 640, 0);
 
         this.tiles.push(columns, floor, bg);
+
         this.tiles.sort(function(a, b) {
             return a.depth - b.depth;
         });
@@ -67,37 +67,38 @@ class Map {
     add(char){
         switch(char){
             case '1':
-                this.enemy = new BasicEnemy();
+                game.enemy = new BasicEnemy();
                 break;
             case '2':
-                this.enemy = new DodgeEnemy();
+                game.enemy = new DodgeEnemy();
                 break;
             case '3':
-                this.enemy = new BasicEnemyIllusion();
+                game.enemy = new BasicEnemyIllusion();
                 break;
             case 'I':
-                this.enemy = new IllusionistEnemy();
+                game.enemy = new IllusionistEnemy();
                 break;
             case '4':
-                this.enemy = new WeakSpotEnemy();
+                game.enemy = new WeakSpotEnemy();
                 break;
             case '5':
-                this.enemy = new CounterattackEnemy();
+                game.enemy = new CounterattackEnemy();
                 break;
             case '6':
-                this.enemy = new InvisibleEnemy();
+                game.enemy = new InvisibleEnemy();
                 break;
             case '7':
-                this.enemy = new BasicEnemy();
+                game.enemy = new BasicEnemy();
                 break;
             case '8':
-                this.enemy = new BasicEnemy();
+                game.enemy = new BasicEnemy();
                 break;
             case '9':
-                this.enemy = new BasicEnemy();
+                game.enemy = new BasicEnemy();
                 break;
 
         }
+        game.entities.push(game.enemy);
     }
     
 }

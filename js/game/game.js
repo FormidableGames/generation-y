@@ -5,16 +5,19 @@ class Game {
         this.pause =  false;
         
         this.player = new Player();
+        this.enemy = undefined;
 
         this.structure = levels["easy"][0];
-
         this.room = 0;
         this.map = new Map();
         this.particleController = new ParticleController();
         this.GUI = new GUI();
         this.entities = [this.map, this.player, this.particleController, this.GUI];
 
-        audioResources["background"].play();
+        audioResources["musicIntro"].play();
+        audioResources["musicIntro"].addEventListener("ended", function(){
+            audioResources["musicLoop"].play();
+        })
 
         this.gameState = "walk";
     }
@@ -51,6 +54,10 @@ class Game {
                             this.map.toMove();
                             
                             if(this.player.state == "idle") this.player.toWalk();
+
+                            this.entities.sort(function(a, b) {
+                                return a.depth - b.depth;
+                            });
                         }
 
                         inputDisponibility = false;
@@ -73,7 +80,7 @@ class Game {
     }
     toWalk(){
         this.gameState = "walk";
-        this.map.enemy = undefined;
+        this.removeEnemy();
         this.player.relocate();
         this.player.toIdle();
     }
@@ -84,7 +91,15 @@ class Game {
     }
     toFight(){
         this.gameState = "fight";
-        this.map.enemy.toIdle();
+        this.enemy.toIdle();
         this.player.relocate();
+    }
+    removeEnemy(){        
+        for(let i = 0; i < this.entities.length; i++){
+            if(this.entities[i] == this.enemy) {
+                let hola = this.entities.splice(i, 1);
+            }
+        }
+        this.enemy = undefined;
     }
 }

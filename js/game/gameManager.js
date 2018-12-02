@@ -77,18 +77,18 @@ window.addEventListener("load", function () {
         resourcesLoader(
             //Image list
             [   
-                {name: "player", path: "placeholderPlayer.png"}, {name: "enemy", path: "placeholderEnemy.png"},
-                {name: "background", path: "bk_hell0.png"}, {name: "columns", path: "bk_hell1.png"}, 
-                {name: "floor", path: "bk_hell2.png"}, {name: "dodgeEnemy", path: "placeHolderDodgeEnemy.png"},
-                {name: "textParticles", path: "textParticles.png"}, {name: "illusionistEnemy", path: "placeHolderIllusionistEnemy.png"},
-                {name: "halo", path: "placeHolderHalo.png"}, {name: "fireball", path: "placeHolderFireBall.png"},
-                {name: "smoke", path: "placeHolderHumo.png"}, {name: "weakSpotEnemy", path: "placeHolderWeakEnemy.png"},
-                {name: "counterattackEnemy", path: "placeHolderCounterattackEnemy.png"}, {name: "invisibleEnemy", path: "placeHolderInvisibleEnemy.png"}
+                {name: "player", path: "spr_player.png"}, {name: "background", path: "bk_hell0.png"}, {name: "columns", path: "bk_hell1.png"}, 
+                {name: "floor", path: "bk_hell2.png"}, {name: "basicEnemy", path: "spr_demon.png"},
+                {name: "dodgeEnemy", path: "spr_tengu.png"}, {name: "textParticles", path: "textParticles.png"}, 
+                {name: "illusionistEnemy", path: "spr_hellFox.png"}, {name: "halo", path: "placeHolderHalo.png"}, 
+                {name: "fireball", path: "placeHolderFireBall.png"}, {name: "smoke", path: "placeHolderHumo.png"}, 
+                {name: "weakSpotEnemy", path: "placeHolderWeakEnemy.png"}, {name: "counterattackEnemy", path: "placeHolderCounterattackEnemy.png"}, 
+                {name: "invisibleEnemy", path: "placeHolderInvisibleEnemy.png"}
             ],
             //Audio list
             [   
-                {name: "background", path: "MusicaPurgatorio_v2.ogg", loop: true}, {name: "dash", path: "dash.mp3", loop: false},
-                {name: "hit", path: "hit.mp3", loop: false}
+                {name: "musicIntro", path: "aud_hellIntro.ogg", loop: false}, {name: "musicLoop", path: "aud_hellLoop.ogg", loop: true},
+                {name: "dash", path: "dash.mp3", loop: false}, {name: "hit", path: "hit.mp3", loop: false}
             ]
         );
     }

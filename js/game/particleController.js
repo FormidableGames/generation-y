@@ -1,6 +1,7 @@
 class ParticleController{
     constructor(){
         this.particles = [];
+        this.depth = 5;
     }
     update(deltaTime){
         for(let i = 0; i < this.particles.length; i++){

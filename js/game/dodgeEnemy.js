@@ -1,6 +1,7 @@
 class DodgeEnemy extends Enemy{
     constructor(){
         super(2, 1);
+        this.width = this.height = 420;
         this.sprite = new Sprite("dodgeEnemy", this.width, this.height, 6, 1);
         this.dodge = 0;
     }
@@ -13,8 +14,10 @@ class DodgeEnemy extends Enemy{
         this.recoverTime = this.initialRecoverTime;
         this.initialProtectTime = 0.3; //In seconds
         this.protectTime = this.initialProtectTime;
-        this.initialHurtTime = 0.1; //In seconds
+        this.initialHurtTime = 0.2; //In seconds
         this.hurtTime = this.initialHurtTime;
+        this.initialDodgeTime = 0.2; //In seconds
+        this.dodgeTime = this.initialDodgeTime;
         this.initialCelebrateTime = 0.6; // In seconds
         this.celebrateTime = this.initialCelebrateTime;
         this.initialSickTime = Math.random() * 0.5 + 1; // In seconds
@@ -40,12 +43,16 @@ class DodgeEnemy extends Enemy{
             case "hurt":
                 this.hurtBehaviour(deltaTime);
                 break;
-            case "celebrate":
-                this.celebrateBehaviour(deltaTime);
+            case "dodge":
+                this.dodgeBehaviour(deltaTime);
                 break;
             case "sick":
                 this.sickBehaviour(deltaTime);
                 break;
+            case "celebrate":
+                this.celebrateBehaviour(deltaTime);
+                break;
+
         }
     }
     idleBehaviour(deltaTime){
@@ -78,28 +85,42 @@ class DodgeEnemy extends Enemy{
             }
         }
     }
-    celebrateBehaviour(deltaTime){
-        this.celebrateTime -= deltaTime / 1000;
-        if (this.celebrateTime <= 0) this.toIdle();
+    dodgeBehaviour(deltaTime){
+        this.dodgeTime -= deltaTime / 1000;
+        if (this.dodgeTime <= 0) this.toIdle();
     }
     sickBehaviour(deltaTime){
         this.sickTime -= deltaTime / 1000;
         if (this.sickTime <= 0) this.toIdle();
     }
-    toCelebrate(){
-        this.state = "celebrate";
-        this.attackable = true;
-        this.dodge = 0;
-        this.spriteH = 5;
+    celebrateBehaviour(deltaTime){
+        this.celebrateTime -= deltaTime / 1000;
+        if (this.celebrateTime <= 0) this.toIdle();
+    }
+    toDodge(){
+        this.state = "dodge";
+        this.dodge++;
+        this.spriteV = 2;
+        this.spriteH = 0;
         this.setTimes();
     }
     toSick(){
         this.state = "sick";
         this.attackable = true;
         this.dodge = 0;
-        this.spriteH = 6;
+        this.spriteV = 2;
+        this.spriteH = 1;
         this.setTimes();
     }
+    toCelebrate(){
+        this.state = "celebrate";
+        this.attackable = true;
+        this.dodge = 0;
+        this.spriteV = 2;
+        this.spriteH = 2;
+        this.setTimes();
+    }
+    
     damaged(){
         let damaged = false;
         if(this.state == "celebrate" || this.state == "idle"){
@@ -115,11 +136,10 @@ class DodgeEnemy extends Enemy{
                                                     game.particleController.getRandomRange(this.y+this.height/3, this.y+2*this.height/3));
             this.facing *= -1;
         }else{
-            this.dodge++;
             game.particleController.create("miss", game.particleController.getRandomRange(this.x+this.width/3, this.x+2*this.width/3), 
                                                     game.particleController.getRandomRange(this.y+this.height/3, this.y+2*this.height/3));
             this.facing *= -1;
-            this.toIdle();
+            this.toDodge();
         }
         if(damaged){
             this.chofSound.play();

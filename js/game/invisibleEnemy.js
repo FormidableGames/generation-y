@@ -23,7 +23,7 @@ class InvisibleEnemy extends BasicEnemy{
         this.recoverTime = this.initialRecoverTime;
         this.initialProtectTime = 0.3; //In seconds
         this.protectTime = this.initialProtectTime;
-        this.initialHurtTime = 0.1; //In seconds
+        this.initialHurtTime = 0.2; //In seconds
         this.hurtTime = this.initialHurtTime;
         this.initialQuietTime = 1.5; //In seconds
         this.quietTime = this.initialQuietTime;

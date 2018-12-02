@@ -29,14 +29,14 @@ class Particle{
                 break; 
             case "attack1":
                 this.spriteH = 2;
-                this.spriteV = (-game.map.enemy.facing+1)/2;
+                this.spriteV = (-game.enemy.facing+1)/2;
                 this.width = 600;
                 this.height = 400;
                 this.sprite = new Sprite("invisibleEnemy", this.width, this.height, 6, 1);
                 break;
             case "attack2":
                 this.spriteH = 3;
-                this.spriteV = (-game.map.enemy.facing+1)/2;
+                this.spriteV = (-game.enemy.facing+1)/2;
                 this.width = 600;
                 this.height = 400;
                 this.sprite = new Sprite("invisibleEnemy", this.width, this.height, 6, 1);

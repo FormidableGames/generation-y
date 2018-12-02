@@ -2,14 +2,14 @@ class Enemy {
     constructor(health, damage) {        
         this.state = "walk";
 
-        this.width = 610;
-        this.height = 411;
-        this.sprite = new Sprite("enemy", this.width, this.height, 3, 1);
+        this.width = 520;
+        this.height = 450;
+        this.sprite = new Sprite("basicEnemy", this.width, this.height, 3, 1);
         this.spriteH = 0;
         this.spriteV = 0;
 
         this.x = 3 * canvasWidth / 2 - this.width / 2;
-        this.y = canvasHeight - this.height - 25;
+        this.y = canvasHeight - this.height;
 
         this.attackable = false;
         this.facing = -1;
@@ -17,7 +17,7 @@ class Enemy {
         this.health = health;
         this.damage = damage;
 
-        this.depth = 2;
+        this.depth = 4;
 
         this.chofSound = audioResources["hit"];
 
@@ -79,30 +79,36 @@ class Enemy {
     }
     toIdle() {
         this.state = "idle";
+        this.spriteV = 0;
         this.spriteH = 0;
         this.attackable = false;
         this.setTimes();
     }
     toProtect(){
         this.state = "protect";
-        this.spriteH = 0;
+        this.spriteV = 0;
+        this.spriteH = 4;
         game.particleController.create("stun", game.particleController.getRandomRange(this.x+this.width/3, this.x+2*this.width/3), 
                                                     game.particleController.getRandomRange(this.y+this.height/3, this.y+2*this.height/3));
         this.setTimes();
     }
     toAnticipate() {
         this.state = "anticipate";
+        this.spriteV = 0;
         this.spriteH = 2;
         this.attackable = true;
         this.setTimes();
     }
     toAttack() {
         this.state = "attack";
+        this.spriteV = 0;
         this.spriteH = 3;
         this.setTimes();
     }
     toHurt(){
         this.state = "hurt";
+        this.attackable = false;
+        this.spriteV = 0;
         this.spriteH = 1;
         game.particleController.create("hit", game.particleController.getRandomRange(this.x+this.width/3, this.x+2*this.width/3), 
                                                     game.particleController.getRandomRange(this.y+this.height/3, this.y+2*this.height/3));

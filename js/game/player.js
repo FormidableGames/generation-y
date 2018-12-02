@@ -1,17 +1,17 @@
 class Player {
     constructor() {
-        this.width = 327;
-        this.height = 254;
+        this.width = 306;
+        this.height = 307;
         this.sprite = new Sprite("player", this.width, this.height, 3, 2);
         this.spriteH = 0;
         this.spriteV = 0;
-
         this.state = "idle";
         this.facing = 1;
         this.spd = 2;
         this.health = 3;
         this.attackable = true;
         this.hit = false;
+        this.depth = 3;
 
         this.initialWalkTime = 0.5; //In seconds
         this.walkTime = this.initialWalkTime;
@@ -31,7 +31,7 @@ class Player {
         this.dashSound = audioResources["dash"];
  
         this.x = this.positions["walk"];
-        this.y = canvasHeight - this.height - 25;
+        this.y = canvasHeight - this.height - 15;
     }
     update(deltaTime) {
         switch (this.state) {
@@ -44,12 +44,12 @@ class Player {
                 //Detects when the player cross the middle of the canvas
                 if(Math.sign(canvasWidth / 2 - this.x - this.width / 2) !=
                     Math.sign(canvasWidth / 2 - nextFramePos - this.width / 2)){
-                        if(this.hit || game.map.enemy.attackable){                        
+                        if(this.hit || game.enemy.attackable){                        
                             this.side *= -1;
-                            game.map.enemy.damaged();
+                            game.enemy.damaged();
                             this.hit = false;
                         }else{
-                            game.map.enemy.toProtect();
+                            game.enemy.toProtect();
                             this.toStun();
                             break;
                         }
@@ -120,7 +120,7 @@ class Player {
     }
     toWalk(){
         this.state = "walk";
-        this.spriteH = 1;
+        this.spriteH = 3;
         this.facing = 1;
         this.side = -1;
         this.x = this.positions["walk"];
@@ -128,10 +128,10 @@ class Player {
     }
     toAttack() {
         this.state = "attack";
-        this.spriteH = 1;
+        this.spriteH = 3;
         this.attackable = false;    
         this.dashSound.play();
-        if(game.map.enemy.attackable) this.hit = true;
+        if(game.enemy.attackable) this.hit = true;
     }
     toStun(){
         this.state = "stun";
@@ -143,7 +143,7 @@ class Player {
     toHurt(damage){      
         this.state = "hurt";
         this.health -= damage;
-        this.spriteH = 2;
+        this.spriteH = 1;
         this.attackable = false;
         this.dashSound.stop();
     }

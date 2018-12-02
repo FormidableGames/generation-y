@@ -9,6 +9,7 @@ class GUI{
         this.text = "";
         this.initialStartFightTime = 0.5;
         this.startFightTime = this.initialStartFightTime;
+        this.depth = 6;
     }
     update(deltaTime){
         switch(this.state){
@@ -28,7 +29,7 @@ class GUI{
     draw(){       
         context.font="30px Arial";
         context.fillText("Player: " + game.player.health, canvasWidth/4, 50);
-        if(game.map.enemy) context.fillText("Enemy: " + game.map.enemy.health, 3*canvasWidth/4, 50);
+        if(game.enemy) context.fillText("Enemy: " + game.enemy.health, 3*canvasWidth/4, 50);
                
         context.font="50vh Arial";
         context.fillText(this.text, canvasWidth / 2, canvasHeight / 2);
