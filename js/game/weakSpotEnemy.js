@@ -1,6 +1,6 @@
 class WeakSpotEnemy extends Enemy{
     constructor(){
-        super(3, 1);
+        super(2, 1);
         this.width = 600;
         this.height = 400;
         this.sprite = new Sprite("weakSpotEnemy", this.width, this.height, 4, 1);
@@ -10,11 +10,11 @@ class WeakSpotEnemy extends Enemy{
         this.attackTime = this.initialAttackTime;
         this.initialAnticipationTime = 0.4; //In seconds
         this.anticipationTime = this.initialAnticipationTime;
-        this.initialRecoverTime = 0.7; //In seconds
+        this.initialRecoverTime = 0.5; //In seconds
         this.recoverTime = this.initialRecoverTime;
         this.initialProtectTime = 0.2; //In seconds
         this.protectTime = this.initialProtectTime;
-        this.initialHurtTime = 0.1; //In seconds
+        this.initialHurtTime = 0.2; //In seconds
         this.hurtTime = this.initialHurtTime;
         this.initialWeakTime = 0.3; //In seconds
         this.weakTime = this.initialWeakTime;

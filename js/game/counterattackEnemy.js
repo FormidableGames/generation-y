@@ -10,7 +10,7 @@ class CounterattackEnemy extends BasicEnemy{
     setTimes(){
         this.initialAttackTime = Math.random() * 3 + 2; //In seconds
         this.attackTime = this.initialAttackTime;
-        this.initialAnticipationTime = 0.4; //In seconds
+        this.initialAnticipationTime = 0.35; //In seconds
         this.anticipationTime = this.initialAnticipationTime;
         this.initialRecoverTime = 0.3; //In seconds
         this.recoverTime = this.initialRecoverTime;
