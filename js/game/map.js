@@ -55,7 +55,7 @@ class Map {
     }
     //Add the basic tiles
     addBasicTiles(xPos){
-        let floor = new Tile("floor", xPos, canvasHeight - 50, 960, 50, 2);
+        let floor = new Tile("floor", xPos, 0, 960, 640, 2);
         let columns = new Tile("columns", xPos, 0, 960, 640, 1);
         let bg = new Tile("background", xPos, 0, 960, 640, 0);
 

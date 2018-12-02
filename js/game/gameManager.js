@@ -78,8 +78,8 @@ window.addEventListener("load", function () {
             //Image list
             [   
                 {name: "player", path: "placeholderPlayer.png"}, {name: "enemy", path: "placeholderEnemy.png"},
-                {name: "background", path: "background.jpg"}, {name: "columns", path: "columns.png"}, 
-                {name: "floor", path: "floor.png"}, {name: "dodgeEnemy", path: "placeHolderDodgeEnemy.png"},
+                {name: "background", path: "bk_hell0.png"}, {name: "columns", path: "bk_hell1.png"}, 
+                {name: "floor", path: "bk_hell2.png"}, {name: "dodgeEnemy", path: "placeHolderDodgeEnemy.png"},
                 {name: "textParticles", path: "textParticles.png"}, {name: "illusionistEnemy", path: "placeHolderIllusionistEnemy.png"},
                 {name: "halo", path: "placeHolderHalo.png"}, {name: "fireball", path: "placeHolderFireBall.png"},
                 {name: "smoke", path: "placeHolderHumo.png"}, {name: "weakSpotEnemy", path: "placeHolderWeakEnemy.png"},
