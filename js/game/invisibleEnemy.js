@@ -1,7 +1,7 @@
 class InvisibleEnemy extends BasicEnemy{
     constructor(){
         super();
-        this.health = 2;
+        this.health = 1;
         this.damage = 0.5;
         this.width = 600;
         this.height = 400;
@@ -9,6 +9,7 @@ class InvisibleEnemy extends BasicEnemy{
         this.sprite.alpha = 0;
         this.attackable = true;
         this.fury = false;
+        this.final = false;
         this.playerAttacksCounter = 0;     
         this.consecutiveAttacks = 0;   
         this.serie = "AAQAAQAQAQ";
@@ -29,7 +30,6 @@ class InvisibleEnemy extends BasicEnemy{
         this.quietTime = this.initialQuietTime;
     }
     update(deltaTime){
-        if(this.fury) this.sprite.alpha = this.playerAttacksCounter / 3;
         super.update(deltaTime);
         if(this.state == "quiet"){
             this.quietBehaviour(deltaTime);
@@ -38,7 +38,6 @@ class InvisibleEnemy extends BasicEnemy{
     attackBehaviour(deltaTime){  
         if(this.facing == game.player.side &&
             game.player.attackable){
-                this.playerAttacksCounter = 0;
                 game.player.toHurt(this.damage);
             }
 
@@ -71,17 +70,18 @@ class InvisibleEnemy extends BasicEnemy{
             }
         }
     }
-    quietBehaviour(deltaTime){  
-        this.sprite.alpha = 1;
+    quietBehaviour(deltaTime){ 
         if(this.fury) this.quietTime -= deltaTime / 1000;
         if (this.quietTime <= 0){
+            this.playerAttacksCounter = 0;
+            this.index++;
             this.toIdle();
         }
     }
     toIdle() {
         this.state = "idle";
         this.spriteH = 0;
-        if(!this.fury) this.sprite.alpha = 0;
+        if(!this.final) this.sprite.alpha = 0;
         this.attackable = false;
         this.setTimes();
     }
@@ -90,7 +90,6 @@ class InvisibleEnemy extends BasicEnemy{
         this.spriteH = 4;
         game.particleController.create("stun", game.particleController.getRandomRange(this.x+this.width/3, this.x+2*this.width/3), 
                                                     game.particleController.getRandomRange(this.y+this.height/3, this.y+2*this.height/3));
-        this.playerAttacksCounter = 0;
         this.setTimes();
     }
     toAnticipate() {
@@ -121,13 +120,13 @@ class InvisibleEnemy extends BasicEnemy{
         this.state = "hurt";
         this.health--;
         this.spriteH = 1;
-        this.fury = true;
         game.particleController.create("hit", game.particleController.getRandomRange(this.x+this.width/3, this.x+2*this.width/3), 
                                                     game.particleController.getRandomRange(this.y+this.height/3, this.y+2*this.height/3));
         this.setTimes();
     }
     toQuiet(){
         this.state = "quiet";
+        if(!this.final) this.sprite.alpha = (this.playerAttacksCounter + 1) / 4;
         this.attackable = true;
         this.spriteH = 0;     
         this.consecutiveAttacks = 0;
@@ -136,11 +135,18 @@ class InvisibleEnemy extends BasicEnemy{
     damaged(){
         if(!this.fury) this.playerAttacksCounter++;
         if(this.state == "quiet" && !this.fury){
-            this.playerAttacksCounter = 0;
-            this.toHurt();
-        }else if(this.state == "quiet"){
             this.facing *= -1;
+            this.fury = true;
+            this.playerAttacksCounter = 0;
+            this.toIdle();
+        }else if(this.state == "quiet"){
             this.playerAttacksCounter++;
+            this.index++;
+            this.facing *= -1;
+            if(this.playerAttacksCounter == 3){
+                this.sprite.alpha = 1;
+                this.final = true;
+            }
             this.toIdle();
         }else if(this.playerAttacksCounter == 3){
             this.facing *= -1;

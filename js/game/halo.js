@@ -21,7 +21,7 @@ class Halo{
         if(this.hurt){
             this.destroyTime -= deltaTime/1000;
             if(this.destroyTime <= 0){
-                game.map.enemy.toIdle();        
+                game.enemy.toIdle();        
             }
             if(game.player.side == this.side && game.player.state == "idle") 
                 game.player.toHurt(this.damage);

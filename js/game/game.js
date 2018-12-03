@@ -7,7 +7,7 @@ class Game {
         this.player = new Player();
         this.enemy = undefined;
 
-        this.structure = levels["easy"][0];
+        this.structure = levels["hell"]["easy"][0];
         this.room = 0;
         this.map = new Map();
         this.particleController = new ParticleController();
