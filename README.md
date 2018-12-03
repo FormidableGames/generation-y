@@ -50,7 +50,7 @@ Videojuego de combate dinámico y simple que se basa en el contraataque, poniend
 
 ### Estilo visual
 - Paleta reducida con colores vivos que atraigan la atención del jugador a tiempo para que pueda reaccionar a los ataques.
-- Estética ligeramente *cyberpunk* y llamativa, mezclada con elementos de la mitología asiática.
+- Estética ligeramente *cyberpunk* y llamativa, mezclada con elementos de la mitología y cultura asiática.
 - Interfaz inspirada en las redes sociales.
 
 ## Mecánicas
@@ -80,13 +80,13 @@ Fuera de combate utilizarás este mismo ataque para desplazarte a lo largo del n
     + Fase **Defensa**: 1-2 segundos --> si le atacas quedarás aturdida.
     + Fase **Preparación de Ataque**: 0.5-0.6 segundos --> si le atacas te esquivará y pasará a fase de defensa hacia el lado al que has ido. Si no, pasará a fase de ataque.  
     + Fase **Ataque**: 0.5 segundos --> después de hacerte daño pasará a fase de celebración.  
-    + Fase **Celebración**: 0.5 segundos --> al haberte hecho daño lo celebrará, por lo que estará distraido y podrás atacarle (harás solo media vida de daño, a diferencia de la fase de mareo). Una vez golpeado pasará a la fase de defensa hacia el lado en el que estés.
+    + Fase **Celebración**: 0.6 segundos --> al haberte hecho daño lo celebrará, por lo que estará distraido y podrás atacarle (harás solo media vida de daño, a diferencia de la fase de mareo). Una vez golpeado pasará a la fase de defensa hacia el lado en el que estés.
     + Fase **Mareo**: 1-1.5 segundos --> si le atacas 3 veces seguidas en la fase de preparación el enemigo se "mareará" al haber esquivado tantas veces. Entonces podrás dañarle de manera normal (un corazón). Una vez golpeado pasará a la fase de defensa hacia el lado en el que estés.  
       
 + **El ilusionista (fase Infierno)**: Vidas (modo *NO ILUSIÓN*): /2 corazones/ Daño: /medio corazón/  
     + Fase **Ilusión**: hasta que le venzas --> se hará pasar por un *Guardia Enigma* pero de solo un corazón, en todo lo demás funcionará igual que este, cuando le derrotes pasará a modo *NO ILUSIÓN*.  
-    + Fase **Ataque a Distancia**: 3-5 ataques --> en esta fase no podrás atacar al enemigo (lanzará ataques hacia el cielo primero y desaparecerá), los ataques a distancia caerán del cielo lentamente (desde el cielo hasta tu posición: 2-3 segundos de manera aleatoria), deberás esquivarlos para que no te dañen, es decir, caerán uno detrás de otro en un lado u otro de manera aleatoria (50-50 de posibildades en cada lado).   
-    + Fase **Aparición**: 6 ataques --> en esta fase deberás esperar a que aparezca el enemigo mientras esquivas sus ataques de *halo*. Cada vez que vaya a hacer un ataque el lado en el que vaya a atacar (se escogerá aleatoriamente igual que en la anterior fase) se "encenderá" en forma de *halo* para indicar que va a atacar ahí (durante 0.7-1 segundos), entonces deberás cambiar de lado para evitar ser dañado (el ataque durará 0.3 segundos). Cada vez que acaba de hacer un ataque el enemigo aparecerá y podrás atacarle en ese momento (0.5 segundos). Si le golpeas desaparecerá immediatamente y pasará a hacer otro ataque. Una vez acabada esta fase pasará de nuevo a la fase de Ataque a Distancia.  
+    + Fase **Ataque a Distancia**: 3-5 ataques --> en esta fase no podrás atacar al enemigo (lanzará ataques hacia el cielo primero y desaparecerá), los ataques a distancia caerán del cielo lentamente, deberás esquivarlos para que no te dañen, es decir, caerán uno detrás de otro en un lado u otro de manera aleatoria (50-50 de posibildades en cada lado).   
+    + Fase **Aparición**: 5 ataques --> en esta fase deberás esperar a que aparezca el enemigo mientras esquivas sus ataques de *halo*. Cada vez que vaya a hacer un ataque el lado en el que vaya a atacar (se escogerá aleatoriamente igual que en la anterior fase) se "encenderá" en forma de *halo* para indicar que va a atacar ahí (durante 0.7-1 segundos), entonces deberás cambiar de lado para evitar ser dañado (el ataque durará 0.3 segundos). Cada vez que acaba de hacer un ataque el enemigo aparecerá y podrás atacarle en ese momento (0.5 segundos). Si le golpeas desaparecerá immediatamente y pasará a hacer otro ataque. Una vez acabada esta fase pasará de nuevo a la fase de Ataque a Distancia.  
       
 2. **Purgatorio (normal)**  
   
