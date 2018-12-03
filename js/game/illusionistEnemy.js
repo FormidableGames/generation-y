@@ -1,17 +1,17 @@
 class IllusionistEnemy extends Enemy{
     constructor(){
         super(2, 0.5);
-        this.width = 190;
-        this.height = 227;
+        this.width = 200;
+        this.height = 200;
         this.x = canvasWidth / 2 - this.width / 2;
-        this.y = canvasHeight/2 - this.height;
+        this.y = canvasHeight - this.height - 25;
         this.sprite = new Sprite("illusionistEnemy", this.width, this.height, 6, 1);
         this.fireBalls = [];
         this.halo;
         this.state = "throw";
         this.createSmoke();
         this.attackable = true;
-        this.spriteH = 2;
+        this.spriteH = 1;
         this.facing = game.player.side;
         this.fireBallCounter = Math.floor(Math.random()*3)+3;
         this.sameSideFireBalls = 0;
@@ -19,12 +19,12 @@ class IllusionistEnemy extends Enemy{
         this.haloCounter = 5;
     }
     setTimes(){
-        this.initialAttackTime = Math.random() * 1 + 1; //In seconds
+        this.initialAttackTime = 0.5; //In seconds
         this.attackTime = this.initialAttackTime;
         this.initialThrowTime = 0.3; //In seconds
         this.throwTime = this.initialThrowTime;
         this.fireBallTime = 0.5;
-        this.initialHurtTime = 0.2; //In seconds
+        this.initialHurtTime = 0.1; //In seconds
         this.hurtTime = this.initialHurtTime;
     }
     update(deltaTime) {
@@ -68,6 +68,7 @@ class IllusionistEnemy extends Enemy{
     }
     throwBehaviour(deltaTime){
         this.throwTime -= deltaTime / 1000;
+        //if (this.throwTime <= 0) this.spriteH = 2;
 
         this.fireBallTime -= deltaTime / 1000;
         if (this.fireBallTime <= 0 && this.fireBallCounter > 0){
@@ -107,20 +108,22 @@ class IllusionistEnemy extends Enemy{
         this.halo = undefined;
         this.createSmoke();   
     }
-    toThrow(){       
-        this.y = canvasHeight/2 - this.height;
+    toHurt(){
+        super.toHurt();
+        this.spriteH = 3;
+    }
+    toThrow(){
         this.state = "throw";
         this.attackable = true;
-        this.spriteH = 2;
+        this.spriteH = 1;
         this.haloCounter = 5;
         this.createSmoke();   
         this.setTimes();
     }
     toAttack(){
-        this.y = canvasHeight - this.height - 25;
         this.state = "attack";
         this.attackable = true;
-        this.spriteH = 3;       
+        this.spriteH = 2;       
         this.fireBallCounter = Math.floor(Math.random()*3+3);
         this.halo = new Halo(Math.floor(Math.random()*2));
         this.haloCounter--;

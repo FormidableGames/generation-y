@@ -14,14 +14,14 @@ class Halo{
         } 
         this.y = canvasHeight - this.height - 25;
         this.hurt = false;
-        this.changeTime = 1; //In seconds
+        this.changeTime = Math.random() * 0.3 + 0.7; //In seconds
         this.destroyTime = 0.5; //In seconds
     }
     update(deltaTime){
         if(this.hurt){
             this.destroyTime -= deltaTime/1000;
             if(this.destroyTime <= 0){
-                game.enemy.toIdle();        
+                game.map.enemy.toIdle();        
             }
             if(game.player.side == this.side && game.player.state == "idle") 
                 game.player.toHurt(this.damage);
