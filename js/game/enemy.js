@@ -9,7 +9,7 @@ class Enemy {
         this.spriteV = 0;
 
         this.x = 3 * canvasWidth / 2 - this.width / 2;
-        this.y = canvasHeight - this.height - 50;
+        this.y = canvasHeight - this.height;
 
         this.attackable = false;
         this.facing = -1;
