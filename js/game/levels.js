@@ -10,7 +10,7 @@ var levels = {
         },
     "purgatory":
         {"easy":[
-                "SS4SS5SS6"
+                "SS4SS5SS6SS"
                 ]
         },
     "heaven":

@@ -75,8 +75,8 @@ class Map {
             case '3':
                 game.enemy = new BasicEnemyIllusion();
                 break;
-            case 'I':
-                game.enemy = new IllusionistEnemy();
+            case 'Q':
+                game.enemy = new HellIllusionistEnemy();
                 break;
             case '4':
                 game.enemy = new WeakSpotEnemy();
@@ -88,10 +88,13 @@ class Map {
                 game.enemy = new InvisibleEnemy();
                 break;
             case '7':
-                game.enemy = new BasicEnemy();
+                game.enemy = new RoundOfAttacksEnemy();
                 break;
             case '8':
-                game.enemy = new BasicEnemy();
+                game.enemy = new roundOfAttacksEnemyIllusion();
+                break;
+            case 'W':
+                game.enemy = new roundOfAttacksEnemyIllusion();
                 break;
             case '9':
                 game.enemy = new BasicEnemy();

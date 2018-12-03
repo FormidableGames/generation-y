@@ -4,7 +4,7 @@ class Enemy {
 
         this.width = 520;
         this.height = 450;
-        this.sprite = new Sprite("basicEnemy", this.width, this.height, 3, 1);
+        this.sprite = new Sprite(undefined, this.width, this.height, 3, 1);
         this.spriteH = 0;
         this.spriteV = 0;
 
@@ -88,8 +88,6 @@ class Enemy {
         this.state = "protect";
         this.spriteV = 0;
         this.spriteH = 4;
-        game.particleController.create("stun", game.particleController.getRandomRange(this.x+this.width/3, this.x+2*this.width/3), 
-                                                    game.particleController.getRandomRange(this.y+this.height/3, this.y+2*this.height/3));
         this.setTimes();
     }
     toAnticipate() {

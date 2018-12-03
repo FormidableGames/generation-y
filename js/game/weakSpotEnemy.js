@@ -16,7 +16,7 @@ class WeakSpotEnemy extends Enemy{
         this.protectTime = this.initialProtectTime;
         this.initialHurtTime = 0.2; //In seconds
         this.hurtTime = this.initialHurtTime;
-        this.initialWeakTime = 0.3; //In seconds
+        this.initialWeakTime = 0.4; //In seconds
         this.weakTime = this.initialWeakTime;
     }
     update(deltaTime){

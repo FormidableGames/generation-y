@@ -50,7 +50,7 @@ var level;
 
 //Onload
 window.addEventListener("load", function () {
-    level = 0;
+    level = "purgatory";
     //Create the canvas and get the context
     canvas = document.getElementById("canvas");
     context = canvas.getContext("2d");
@@ -72,7 +72,7 @@ window.addEventListener("load", function () {
     audioResources = {};
 
     //Load hell resources
-    if(level == 0){
+    if(level === "hell"){
         //Load resources
         resourcesLoader(
             //Image list
@@ -82,12 +82,25 @@ window.addEventListener("load", function () {
                 {name: "dodgeEnemy", path: "spr_tengu.png"}, {name: "textParticles", path: "textParticles.png"}, 
                 {name: "illusionistEnemy", path: "spr_hellFox.png"}, {name: "halo", path: "placeHolderHalo.png"}, 
                 {name: "fireball", path: "placeHolderFireBall.png"}, {name: "smoke", path: "placeHolderHumo.png"}, 
+            ],
+            //Audio list
+            [   
+                {name: "musicIntro", path: "aud_hellIntro.ogg", loop: false}, {name: "musicLoop", path: "aud_hellLoop.ogg", loop: true},
+                {name: "dash", path: "dash.mp3", loop: false}, {name: "hit", path: "hit.mp3", loop: false}
+            ]
+        );
+    }else if(level === "purgatory"){
+        resourcesLoader(
+            //Image list
+            [   
+                {name: "player", path: "spr_player.png"}, {name: "background", path: "bk_purgatory0.png"}, {name: "columns", path: "bk_purgatory1.png"}, 
+                {name: "floor", path: "bk_purgatory2.png"}, {name: "textParticles", path: "textParticles.png"}, 
                 {name: "weakSpotEnemy", path: "placeHolderWeakEnemy.png"}, {name: "counterattackEnemy", path: "placeHolderCounterattackEnemy.png"}, 
                 {name: "invisibleEnemy", path: "placeHolderInvisibleEnemy.png"}
             ],
             //Audio list
             [   
-                {name: "musicIntro", path: "aud_hellIntro.ogg", loop: false}, {name: "musicLoop", path: "aud_hellLoop.ogg", loop: true},
+                {name: "musicIntro", path: "aud_purgatoryIntro.ogg", loop: false}, {name: "musicLoop", path: "aud_purgatoryLoop.ogg", loop: true},
                 {name: "dash", path: "dash.mp3", loop: false}, {name: "hit", path: "hit.mp3", loop: false}
             ]
         );

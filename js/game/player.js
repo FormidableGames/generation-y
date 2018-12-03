@@ -134,6 +134,8 @@ class Player {
         if(game.enemy.attackable) this.hit = true;
     }
     toStun(){
+        game.particleController.create("stun", this.x, 
+                                                game.particleController.getRandomRange(this.y+this.height/3, this.y+2*this.height/3));
         this.state = "stun";
         this.spriteH = 2;
         this.x = canvasWidth / 2 - this.width / 2;
