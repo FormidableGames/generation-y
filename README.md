@@ -90,22 +90,22 @@ Fuera de combate utilizarás este mismo ataque para desplazarte a lo largo del n
       
 2. **Purgatorio (normal)**  
   
-+ **Punto débil**: Vidas: /3 corazones/ Daño: /1 corazón/  
++ **Punto débil**: Vidas: /2 corazones/ Daño: /1 corazón/  
     + Fase **Defensa**: 2-4 segundos --> si le atacas quedarás aturdida.  
-    + Fase **Preparación de Ataque**: 0.5 segundos --> si le atacas no le causarás daño (por culpa de su escudo/barrera especial) pero pasarás al otro lado, entonces entrarás en la fase Zona Débil ya que el enemigo no se dará la vuelta al instante; si no, pasará a la fase de Ataque.  
-    + Fase **Zona Débil**: 0.3 segundos --> si le atacas recibirá daño, si no, se dará la vuelta y se pondrá en modo Defensa.  
-    + Fase **Ataque**: 0.7 segundos --> después de hacerte daño pasará al modo Defensa.    
+    + Fase **Preparación de Ataque**: 0.4 segundos --> si le atacas no le causarás daño (por culpa de su escudo/barrera especial) pero pasarás al otro lado, entonces entrarás en la fase Zona Débil ya que el enemigo no se dará la vuelta al instante; si no, pasará a la fase de Ataque.  
+    + Fase **Zona Débil**: 0.4 segundos --> si le atacas recibirá daño, si no, se dará la vuelta y se pondrá en modo Defensa.  
+    + Fase **Ataque**: 0.5 segundos --> después de hacerte daño pasará al modo Defensa.    
     
 + **Contraataque**: Vidas: /3 corazones/ Daño (en fase Ataque): /medio corazón/  
-    + Fase **En Guardia**: 2-5 segundos --> si le golpeas pasará a la fase de Contraataque.  
-    + Fase **Preparación de Ataque**: 0.5 segundos --> si le atacas en este momento le quitarás una vida, entonces el enemigo se dará la vuelta inmediatamente y cambiará a modo de defensa. Si no, pasará a modo de ataque.  
+    + Fase **En Guardia**: 2-2.8 segundos --> si le golpeas pasará a la fase de Contraataque.  
+    + Fase **Preparación de Ataque**: 0.35 segundos --> si le atacas en este momento le quitarás una vida, entonces el enemigo se dará la vuelta inmediatamente y cambiará a modo de defensa. Si no, pasará a modo de ataque.  
     + Fase **Ataque**: 0.3 segundos --> después de hacerte daño pasará al modo En Guardia.  
     + Fase **Contraataque**: 0.3 segundos --> es lo mismo que en ataque pero te quitará 1 corazón en vez de medio.  
       
 + **Invisible**: Vidas: /1 corazón/ Daño: /medio corazón/  
     + Fase **Inicio**: no se ve ningún enemigo, ¥ detecta algo extraño (?).
-    + Fase **Escondido**: hasta que le golpees cuando es visible --> cuando ¥ detecte algún movimiento te avisará (!) entonces deberás atacar para contrarrestar el ataque del enemigo. Si contrarrestas el ataque del enemigo pasarás al otro lado (sin hacerle daño), si no recibirás daño. El aviso será 0.7 segundos antes del ataque del enemigo. Si consigues contrarrestar el ataque 3 veces el enemigo se mostrará ante ti, estará inmóvil en el centro hasta que le golpees (no le hará daño ya que estará transparente), entonces pasará a modo Furia.
-    + Fase **Furia**: hasta que le vuelvas "sólido" --> el enemigo se ha enfurecido (seguirá siendo invisible a no ser que se diga lo contrario), ahora cada vez que ataque serán dos golpes seguidos. Cada vez que te vaya a atacar ¥ te alertará igual que antes pero con solo 0.5 segundos de diferencia. De vez en cuando entre ataques el enemigo se mostrará en el centro (durante 0.4 segundos) y desaparecerá. Si le golpeas 3 veces seguidas cuando se muestra este se volverá completamente opaco (cada vez que golpees se volverá menos transparente), es decir "sólido". Si no golpeas cada vez que se muestra el ciclo de veces que tengas que golpearle se reiniciará (volverá a estar completamente transparente). Al volverle "sólido" pasará al modo Fin.
+    + Fase **Escondido**: hasta que le golpees cuando es visible --> cuando ¥ detecte algún movimiento te avisará (!) entonces deberás atacar para contrarrestar el ataque del enemigo. Si contrarrestas el ataque del enemigo pasarás al otro lado (sin hacerle daño), si no recibirás daño. El aviso será 0.6 segundos antes del ataque del enemigo. Si consigues contrarrestar el ataque 3 veces el enemigo se mostrará ante ti, estará inmóvil en el centro hasta que le golpees (no le hará daño ya que estará transparente), entonces pasará a modo Furia.
+    + Fase **Furia**: hasta que le vuelvas "sólido" --> el enemigo se ha enfurecido (seguirá siendo invisible a no ser que se diga lo contrario), ahora cada vez que ataque serán dos golpes seguidos. Cada vez que te vaya a atacar ¥ te alertará igual que antes pero con solo 0.5 segundos de diferencia. De vez en cuando entre ataques el enemigo se mostrará en el centro (durante 0.5 segundos) y desaparecerá. Si le golpeas 3 veces seguidas cuando se muestra este se volverá completamente opaco (cada vez que golpees se volverá menos transparente), es decir "sólido". Si no golpeas cada vez que se muestra el ciclo de veces que tengas que golpearle se reiniciará (volverá a estar completamente transparente). Al volverle "sólido" pasará al modo Fin.
     + Fase **Fin**: en esta fase será visible. Realizará ataques igual que en la fase anterior (dos cada vez) pero si le contrarrestas, al estar "sólido", le quitarás vida (y al tener solo una le eliminarás).  
     
     **NOTAS**: el tiempo entre ataque y ataque es de 2-2.5 segundos, el tiempo entre ataque y aparición en el centro es de 0.3 segundos. En la fase Furia seguirá un patrón de: 2 ataques (cada uno de dos golpes) 1 aparición 2 ataques 1 aparición 1 ataque 1 aparición (se repite en bucle)
@@ -206,7 +206,7 @@ Paradiso, uno de los 3 niveles del juego:
 ### Sprites
 Siguiendo la estética visual establecida:
 - Sprites en 2d de la **protagonista**:
-    - Tranquila
+    - Idle
     - Ataque
     - Aturdida
     - Herida
@@ -231,18 +231,19 @@ Siguiendo la estética visual establecida:
         - Celebración
         - Herido
     - **El ilusionista (modo infierno)** (Kitsune-yako):
-        - Presentación (antes de que lance las llamas, estará en posición neutral)
-        - Lanzando llamas al cielo
-        - Llamas (como bolitas de fuego (?))
+        - Idle
+        - En la lejanía
+        - Llamas (como bolitas de fuego)
         - Halo del suelo (para indicar en la fase de aparición donde va a hacer el ataque)
         - Llamas del suelo
-        - Aparición (con nubes grises(?))/Desaparición
+        - Aparición (con nubes grises)/Desaparición
         - Herido  
     - **Punto débil** (un ser con un escudo especial o una barrera mágica):
         - Idle
         - En guardia (se usará para modo Defensa y modo Zona Débil)
         - Preparación ataque (pero sigue defendiendose mientras)
         - Ataque
+        - Dandose la vuelta
         - Herido  
     - **Contraataque**:
         - Idle
@@ -252,9 +253,12 @@ Siguiendo la estética visual establecida:
         - Herido  
     - **Invisible** (Honjo Masamune, la katana legendaria): 
         - Idle (se muestra)
+        - En guardia
+        - Preparación ataque
         - Ataque (2 frames para ataques seguidos)
         - Efecto ataque (2 frames igual que el anterior)
-        - Aura de furia (?)
+        - Aura
+        - Herido
     - **Ronda de ataques** (Byakko el tigre blanco):
         - Idle
         - En guardia
@@ -262,13 +266,15 @@ Siguiendo la estética visual establecida:
         - Ataque (2 sprites para que se ve que ataca varias veces, podría ser una tempestad que invoca(?))
         - Herido
     - **El ilusionista (modo paraiso)** (Kitsune-zenko):
-        - Presentación (antes de que lance los haces de luz(?), estará en posición neutral, además para cuando vaya a cargar contra ti)
-        - Lanzando haces de luz(?)
-        - Haces de luz(?)
-        - Cargando contra ti (2 sprites mínimo para que se entienda bien)
-        - Desaparición (para cuando le golpeas, después de estar herido)
+        - Idle
+        - En la lejanía
+        - Llamas (como bolitas de fuego)
+        - Halo del suelo (para indicar en la fase de aparición donde va a hacer el ataque)
+        - Llamas del suelo
+        - Aparición (con nubes grises)/Desaparición
+        - Cargando contra ti
         - Herido  
-    - **Dragón**: HABLARLO
+    - **Dragón**: 
 - Fondos 2d en diferentes capas:  
     - Infierno
     - Purgatorio
@@ -321,4 +327,4 @@ Siguiendo la estética visual establecida:
         - __Preparación ataque__ (gruñidos de tigre)
         - __Ataque__ (gruñidos de tigre)
         - __Herido__ (gruñidos de tigre)
-    - **Dragón**: HABLARLO
+    - **Dragón**: 
