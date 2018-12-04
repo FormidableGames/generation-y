@@ -1,9 +1,28 @@
-html{
+html {
     touch-action: none;
 }
+
 body {
     overflow: hidden;
+    background-color: #000000;
 }
+
+#loadingDiv {
+    color: #ffffff;
+    font-family: 'Rock Salt';
+    font-weight: bold;
+    font-size: 5em;
+    animation: loadingText 0.75s linear 0s infinite normal;
+    text-align: center;
+    vertical-align: middle;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    /* align horizontal */
+    align-items: center;
+    /* align vertical */
+}
+
 canvas {
     position: relative;
     padding-left: 0;
@@ -16,26 +35,40 @@ canvas {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: optimize-contrast;
 }
-#columnDiv{
+
+#columnDiv {
     height: 100vh;
     padding: 0px;
 }
-@media (max-width: 800px){
-    #columnDiv{
+
+@media (max-width: 800px) {
+    #columnDiv {
         height: 80vh;
         padding: 0px;
     }
 }
+
 #loading {
     font-size: 10vw;
     text-align: center;
     animation: loadingText 0.75s linear 0s infinite normal;
     color: #303030;
 }
+
 @keyframes loadingText {
-    0% { text-shadow: -6px -6px 0 #ffffff, 6px -3px 0 #ff00bf; }
-    25% { text-shadow: -3px 6px 0 #ffffff, 0px 0px 0 #ff00bf; }
-    50% { text-shadow: 6px -3px 0 #ffffff, -6px -6px 0 #ff00bf; }
-    75% { text-shadow: 0px 0px 0 #ffffff, -3px 6px 0 #ff00bf; }
-    100% { text-shadow: -6px -6px 0 #ffffff, 6px -3px 0 #ff00bf; }
+    0% {
+        text-shadow: -6px -6px 0 #ffffff, 6px -3px 0 #ff00bf;
+    }
+    25% {
+        text-shadow: -3px 6px 0 #ffffff, 0px 0px 0 #ff00bf;
+    }
+    50% {
+        text-shadow: 6px -3px 0 #ffffff, -6px -6px 0 #ff00bf;
+    }
+    75% {
+        text-shadow: 0px 0px 0 #ffffff, -3px 6px 0 #ff00bf;
+    }
+    100% {
+        text-shadow: -6px -6px 0 #ffffff, 6px -3px 0 #ff00bf;
+    }
 }

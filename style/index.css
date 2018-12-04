@@ -25,11 +25,13 @@
 }
 
 .glyphicon {
-    font-size: 90%; /* Los iconos quedan feos si son del mismo tamaño que la letra asi que los reducimos un poco */
+    font-size: 90%;
+    /* Los iconos quedan feos si son del mismo tamaño que la letra asi que los reducimos un poco */
 }
 
 .glyphicon-tags {
-    font-size: 80%; /* Este icono es mas grande por alguna razon y queda mal solo al 90% */
+    font-size: 80%;
+    /* Este icono es mas grande por alguna razon y queda mal solo al 90% */
 }
 
 .jumbotron {
@@ -41,7 +43,8 @@
 }
 
 .btn-main {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Rock Salt';
+    font-weight: bolder;
     color: #ffffff;
     background-color: #ff00bf;
     font-size: 40px;
@@ -50,17 +53,27 @@
 }
 
 .btn-main:hover {
+    color: #ffffff;
     background-color: #303030;
-    color: #303030;
     animation: btn-text 0.75s linear 0s infinite normal;
 }
 
 @keyframes btn-text {
-    0% { text-shadow: -6px -6px 0 #ffffff, 6px -3px 0 #ff00bf; }
-    25% { text-shadow: -3px 6px 0 #ffffff, 0px 0px 0 #ff00bf; }
-    50% { text-shadow: 6px -3px 0 #ffffff, -6px -6px 0 #ff00bf; }
-    75% { text-shadow: 0px 0px 0 #ffffff, -3px 6px 0 #ff00bf; }
-    100% { text-shadow: -6px -6px 0 #ffffff, 6px -3px 0 #ff00bf; }
+    0% {
+        text-shadow: -3px -3px 0 #ffffff, 6px -3px 0 #ff00bf;
+    }
+    25% {
+        text-shadow: -3px 3px 0 #ffffff, 0px 0px 0 #ff00bf;
+    }
+    50% {
+        text-shadow: 3px -1px 0 #ffffff, -6px -6px 0 #ff00bf;
+    }
+    75% {
+        text-shadow: 0px 0px 0 #ffffff, -3px 6px 0 #ff00bf;
+    }
+    100% {
+        text-shadow: -3px -3px 0 #ffffff, 6px -3px 0 #ff00bf;
+    }
 }
 
 .main-container {
@@ -117,7 +130,6 @@
 
 .tweet-multimedia {
     margin: 10px;
-    
 }
 
 .tweet-multimedia img {
