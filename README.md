@@ -294,14 +294,13 @@ Siguiendo la estética visual establecida:
 - Efectos de sonido de la protagonista:  
     - __*Dash*__
     - __Sonido de espada__ (cuando ataca)
-    - __Golpe__ (cuando la hieren)
+    - __Aturde__ 
+    - __Herida__
 - Enemigos:  
 
     Base (cada uno una versión aguda y una grave): 
     - __Preparación ataque__
-    - __Ataque__
-    - __Herido__
-    - __Aturde__  
+    - __Herido__ 
     
     Específico:
     - **Guardia enigma**: Base grave.
