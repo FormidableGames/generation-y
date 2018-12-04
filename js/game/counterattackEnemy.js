@@ -9,7 +9,7 @@ class CounterattackEnemy extends BasicEnemy{
         this.sprite = new Sprite("counterattackEnemy", this.width, this.height, 4, 1);
     }
     setTimes(){
-        this.initialAttackTime = Math.random() * 3 + 2; //In seconds
+        this.initialAttackTime = Math.random() * 0.8 + 2; //In seconds
         this.attackTime = this.initialAttackTime;
         this.initialAnticipationTime = 0.35; //In seconds
         this.anticipationTime = this.initialAnticipationTime;

@@ -19,7 +19,7 @@ class InvisibleEnemy extends BasicEnemy{
     setTimes(){
         this.initialAttackTime = Math.random() * 0.5 + 2; //In seconds
         this.attackTime = this.initialAttackTime;
-        this.initialAnticipationTime = 0.7; //In seconds
+        this.initialAnticipationTime = 0.6; //In seconds
         this.anticipationTime = this.initialAnticipationTime;
         this.initialRecoverTime = 0.5; //In seconds
         this.recoverTime = this.initialRecoverTime;
@@ -27,7 +27,7 @@ class InvisibleEnemy extends BasicEnemy{
         this.protectTime = this.initialProtectTime;
         this.initialHurtTime = 0.2; //In seconds
         this.hurtTime = this.initialHurtTime;
-        this.initialQuietTime = 1.5; //In seconds
+        this.initialQuietTime = 0.7; //In seconds
         this.quietTime = this.initialQuietTime;
     }
     update(deltaTime){
