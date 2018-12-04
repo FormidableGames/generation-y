@@ -62,7 +62,7 @@ class InvisibleEnemy extends BasicEnemy{
         this.hurtTime -= deltaTime / 1000;
         if (this.hurtTime <= 0){   
             if(this.health <= 0)
-                game.toWalk();      
+                game.toWalkTransition();      
             else{
                 this.facing *= -1;
                 this.fury = true;

@@ -8,7 +8,8 @@ class Player {
         this.state = "idle";
         this.facing = 1;
         this.spd = 2;
-        this.health = 3;
+        this.maxHealth = 3;
+        this.health = this.maxHealth;
         this.attackable = true;
         this.hit = false;
         this.depth = 3;
@@ -38,6 +39,12 @@ class Player {
             case "idle":
                 break;
             case "walk":
+                break;
+            case "endFight":
+                let nextVariation = this.spd/6 * deltaTime;
+                if(this.x + nextVariation < this.positions["walk"]) this.x += nextVariation;
+                else if(this.x - nextVariation > this.positions["walk"]) this.x -= nextVariation;
+                if(Math.abs(this.x-this.positions["walk"]) <= nextVariation) game.toWalk();
                 break;
             case "attack":
                 let nextFramePos = this.x + this.facing * this.spd * deltaTime;

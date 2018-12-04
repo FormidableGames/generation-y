@@ -49,7 +49,7 @@ class RoundOfAttacksEnemy extends Enemy{
         this.hurtTime -= deltaTime / 1000;
         if (this.hurtTime <= 0){   
             if(this.health <= 0)
-                game.toWalk();      
+                game.toWalkTransition();      
             else{
                 this.toAnticipate();    
                 this.facing = game.player.side;
@@ -68,13 +68,9 @@ class RoundOfAttacksEnemy extends Enemy{
     }
     damaged(){
         this.health--;
-        if(this.health > 0){
-            this.facing *= -1;
-            this.chofSound.play();
-            this.toAnticipate();
-        }else{
-            game.toWalk();
-        }
+        this.chofSound.play();
+        this.toHurt();
+
     }
     generateAttacks(){
         let prob = Math.random()*100;

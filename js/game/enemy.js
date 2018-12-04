@@ -63,19 +63,19 @@ class Enemy {
         this.sprite.draw(this.x, this.y);
     }
     idleBehaviour(deltaTime){
-        console.log("papu idle");
+        return false;
     }
     protectBehaviour(deltaTime){
-        console.log("papu protect");
+        return false;
     }
     anticipateBehaviour(deltaTime){
-        console.log("papu anticipate");
+        return false;
     }
     attackBehaviour(deltaTime){
-        console.log("papu attack");
+        return false;
     }
     hurtBehaviour(deltaTime){
-        console.log("papu hurt");
+        return false;
     }
     toIdle() {
         this.state = "idle";
@@ -113,6 +113,6 @@ class Enemy {
         this.setTimes();
     }
     damaged(){
-        console.log("papu damaged");
+        return false;
     }
 }

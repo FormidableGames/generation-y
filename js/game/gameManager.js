@@ -50,7 +50,6 @@ var level;
 
 //Onload
 window.addEventListener("load", function () {
-    level = "purgatory";
     //Create the canvas and get the context
     canvas = document.getElementById("canvas");
     context = canvas.getContext("2d");
@@ -71,12 +70,15 @@ window.addEventListener("load", function () {
     imageResources = {};
     audioResources = {};
 
+    level = "heaven";
     //Load hell resources
     if(level === "hell"){
         //Load resources
         resourcesLoader(
             //Image list
             [   
+                {name: "fullHearth", path: "GUI_fullHearth.png"}, {name: "halfHearth", path: "GUI_halfHearth.png"},
+                {name: "emptyHearth", path: "GUI_emptyHearth.png"}, {name: "healthContainer", path: "GUI_healthContainer.png"},
                 {name: "player", path: "spr_player.png"}, {name: "background", path: "bk_hell0.png"}, {name: "columns", path: "bk_hell1.png"}, 
                 {name: "floor", path: "bk_hell2.png"}, {name: "basicEnemy", path: "spr_demon.png"},
                 {name: "dodgeEnemy", path: "spr_tengu.png"}, {name: "textParticles", path: "textParticles.png"}, 
@@ -93,6 +95,8 @@ window.addEventListener("load", function () {
         resourcesLoader(
             //Image list
             [   
+                {name: "fullHearth", path: "GUI_fullHearth.png"}, {name: "halfHearth", path: "GUI_halfHearth.png"},
+                {name: "emptyHearth", path: "GUI_emptyHearth.png"}, {name: "healthContainer", path: "GUI_healthContainer.png"},
                 {name: "player", path: "spr_player.png"}, {name: "background", path: "bk_purgatory0.png"}, {name: "columns", path: "bk_purgatory1.png"}, 
                 {name: "floor", path: "bk_purgatory2.png"}, {name: "textParticles", path: "textParticles.png"}, 
                 {name: "weakSpotEnemy", path: "placeHolderWeakEnemy.png"}, {name: "counterattackEnemy", path: "placeHolderCounterattackEnemy.png"}, 
@@ -101,6 +105,25 @@ window.addEventListener("load", function () {
             //Audio list
             [   
                 {name: "musicIntro", path: "aud_purgatoryIntro.ogg", loop: false}, {name: "musicLoop", path: "aud_purgatoryLoop.ogg", loop: true},
+                {name: "dash", path: "dash.mp3", loop: false}, {name: "hit", path: "hit.mp3", loop: false}
+            ]
+        );
+    }else if(level === "heaven"){
+        //Load resources
+        resourcesLoader(
+            //Image list
+            [   
+                {name: "fullHearth", path: "GUI_fullHearth.png"}, {name: "halfHearth", path: "GUI_halfHearth.png"},
+                {name: "emptyHearth", path: "GUI_emptyHearth.png"}, {name: "healthContainer", path: "GUI_healthContainer.png"},
+                {name: "player", path: "spr_player.png"}, {name: "background", path: "bk_hell0.png"}, {name: "columns", path: "bk_hell1.png"}, 
+                {name: "floor", path: "bk_hell2.png"}, {name: "basicEnemy", path: "spr_demon.png"},
+                {name: "weakSpotEnemy", path: "placeHolderWeakEnemy.png"}, {name: "textParticles", path: "textParticles.png"}, 
+                {name: "illusionistEnemy", path: "spr_hellFox.png"}, {name: "fireball", path: "placeHolderFireBall.png"}, 
+                {name: "smoke", path: "placeHolderHumo.png"}, 
+            ],
+            //Audio list
+            [   
+                {name: "musicIntro", path: "aud_hellIntro.ogg", loop: false}, {name: "musicLoop", path: "aud_hellLoop.ogg", loop: true},
                 {name: "dash", path: "dash.mp3", loop: false}, {name: "hit", path: "hit.mp3", loop: false}
             ]
         );

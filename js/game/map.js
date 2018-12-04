@@ -14,30 +14,70 @@ class Map {
         this.moving = false;
     }
     update(deltaTime){
-        if(this.moving){
-            this.walkTime -= deltaTime / 1000;  
-            for (let i = 0; i < this.tiles.length; i++) {
-                //Parallax
-                switch(this.tiles[i].depth){
-                    case 0:
-                        this.tiles[i].x -= this.spd * (deltaTime / 1000) * 0.25;
-                        break;
-                    case 1:
-                        this.tiles[i].x -= this.spd * (deltaTime / 1000) * 0.5;
-                        break;
-                    case 2:
-                        this.tiles[i].x -= this.spd * (deltaTime / 1000);
-                        break;
+        switch(game.gameState){
+            case "walk":
+                if(this.moving){
+                    this.walkTime -= deltaTime / 1000;  
+                    for (let i = 0; i < this.tiles.length; i++) {
+                        //Parallax
+                        switch(this.tiles[i].depth){
+                            case 0:
+                                this.tiles[i].x -= this.spd * (deltaTime / 1000) * 0.25;
+                                break;
+                            case 1:
+                                this.tiles[i].x -= this.spd * (deltaTime / 1000) * 0.5;
+                                break;
+                            case 2:
+                                this.tiles[i].x -= this.spd * (deltaTime / 1000);
+                                break;
+                        }
+                    }
+                    if(game.enemy) game.enemy.x -= this.spd * (deltaTime / 1000);
+                    if(this.walkTime <= 0){
+                        this.moving = false;
+                        this.walkTime = this.initialWalkTime;
+                        game.player.toIdle();
+                        if(game.enemy) game.toFightTransition();
+                    }
+                } 
+                break;
+            case "walkTransition":
+                let nextVariation = game.player.spd/6 * deltaTime;
+                if(game.player.x + nextVariation < game.player.positions["walk"]){
+                    for (let i = 0; i < this.tiles.length; i++) {
+                        //Parallax
+                        switch(this.tiles[i].depth){
+                            case 0:
+                                this.tiles[i].x += nextVariation * 0.25;
+                                break;
+                            case 1:
+                                this.tiles[i].x += nextVariation * 0.5;
+                                break;
+                            case 2:
+                                this.tiles[i].x += nextVariation;
+                                break;
+                        }
+                    }
                 }
-            }
-            if(game.enemy) game.enemy.x -= this.spd * (deltaTime / 1000);
-            if(this.walkTime <= 0){
-                this.moving = false;
-                this.walkTime = this.initialWalkTime;
-                game.player.toIdle();
-                if(game.enemy) game.toFightTransition();
-            }
-        } 
+                else if(game.player.x - nextVariation > game.player.positions["walk"]){
+                    for (let i = 0; i < this.tiles.length; i++) {
+                        //Parallax
+                        switch(this.tiles[i].depth){
+                            case 0:
+                                this.tiles[i].x -= nextVariation * 0.25;
+                                break;
+                            case 1:
+                                this.tiles[i].x -= nextVariation * 0.5;
+                                break;
+                            case 2:
+                                this.tiles[i].x -= nextVariation;
+                                break;
+                        }
+                    }
+                }
+                break;
+        }
+        
         for (let i = 0; i < this.tiles.length; i++) {
             this.tiles[i].update(deltaTime);
         }    
@@ -91,10 +131,10 @@ class Map {
                 game.enemy = new RoundOfAttacksEnemy();
                 break;
             case '8':
-                game.enemy = new roundOfAttacksEnemyIllusion();
+                game.enemy = new RoundOfAttacksEnemyIllusion();
                 break;
             case 'W':
-                game.enemy = new roundOfAttacksEnemyIllusion();
+                game.enemy = new HeavenIllusionistEnemy();
                 break;
             case '9':
                 game.enemy = new BasicEnemy();

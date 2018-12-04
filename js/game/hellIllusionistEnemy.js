@@ -93,7 +93,7 @@ class HellIllusionistEnemy extends Enemy{
         this.hurtTime -= deltaTime / 1000;
         if (this.hurtTime <= 0){   
             if(this.health <= 0){
-                game.toWalk();
+                game.toWalkTransition();
                 this.createSmoke();   
             }else if(this.haloCounter == 0){    
                 this.toThrow();      
@@ -102,7 +102,6 @@ class HellIllusionistEnemy extends Enemy{
     }
     toIdle(){
         super.toIdle();
-        this.attackable = true;
         this.facing = game.player.side;
         this.halo = undefined;
         this.createSmoke();   
@@ -110,16 +109,14 @@ class HellIllusionistEnemy extends Enemy{
     toThrow(){       
         this.y = canvasHeight/2 - this.height;
         this.state = "throw";
-        this.attackable = true;
         this.spriteH = 2;
         this.haloCounter = 5;
         this.createSmoke();   
         this.setTimes();
     }
     toAttack(){
-        this.y = canvasHeight - this.height - 25;
+        this.y = canvasHeight - this.height;
         this.state = "attack";
-        this.attackable = true;
         this.spriteH = 3;       
         this.fireBallCounter = Math.floor(Math.random()*3+3);
         this.halo = new Halo(Math.floor(Math.random()*2));

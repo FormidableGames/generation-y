@@ -63,24 +63,17 @@ class Game {
                         inputDisponibility = false;
                     }
                     break;
-                case "fightTransition":
-                    
-                    break;
                 case "fight":
                     if(inputDisponibility){
                         if(this.player.state == "idle") this.player.toAttack();
                         inputDisponibility = false;
                     }
                     break;
-                case "walkTransition":
-
-                    break;
             }
         }
     }
     toWalk(){
         this.gameState = "walk";
-        this.removeEnemy();
         this.player.relocate();
         this.player.toIdle();
     }
@@ -93,6 +86,11 @@ class Game {
         this.gameState = "fight";
         this.enemy.toIdle();
         this.player.relocate();
+    }
+    toWalkTransition(){
+        this.removeEnemy();
+        this.gameState = "walkTransition";
+        this.player.state = "endFight"
     }
     removeEnemy(){        
         for(let i = 0; i < this.entities.length; i++){
