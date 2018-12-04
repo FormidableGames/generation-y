@@ -66,6 +66,7 @@ Si lo consigues le dañarás (le quitarás una vida) y pasarás al otro lado de 
 ![Combate4](https://github.com/FormidableGames/generation-y/blob/master/concept/combate4.png "Dash")
 
 Fuera de combate utilizarás este mismo ataque para desplazarte a lo largo del nivel y llegar hasta el siguiente enemigo.
+Tendrás 3 vidas en todos los niveles, cada enemigo quitará más o menos vidas.
 
 
 ### Lista de enemigos  
