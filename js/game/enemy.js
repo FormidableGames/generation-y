@@ -1,10 +1,10 @@
 class Enemy {
     constructor(health, damage) {        
         this.state = "walk";
-
+        this.identifier = 0;
         this.width = 520;
         this.height = 450;
-        this.sprite = new Sprite(undefined, this.width, this.height, 3, 1);
+        this.sprite = new Sprite("basicEnemy", this.width, this.height, 3, 1);
         this.spriteH = 0;
         this.spriteV = 0;
 

@@ -1,6 +1,7 @@
 class RoundOfAttacksEnemyIllusion extends RoundOfAttacksEnemy{
     constructor(){
         super();
+        this.identifier = -1;
         this.health = 1;
     }
     attackBehaviour(deltaTime){

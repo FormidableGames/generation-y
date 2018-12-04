@@ -1,6 +1,7 @@
 class DodgeEnemy extends Enemy{
     constructor(){
         super(2, 1);
+        this.identifier = 2;
         this.width = this.height = 420;
         this.sprite = new Sprite("dodgeEnemy", this.width, this.height, 6, 1);
         this.dodge = 0;

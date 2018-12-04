@@ -1,6 +1,7 @@
 class BasicEnemy extends Enemy{
     constructor(){
         super(3, 0.5);
+        this.identifier = 1;
     }
     setTimes(){
         this.initialAttackTime = Math.random() * 2 + 1; //In seconds

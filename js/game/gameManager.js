@@ -70,7 +70,7 @@ window.addEventListener("load", function () {
     imageResources = {};
     audioResources = {};
 
-    level = "heaven";
+    level = localStorage.getItem("level");
     //Load hell resources
     if(level === "hell"){
         //Load resources
@@ -84,6 +84,7 @@ window.addEventListener("load", function () {
                 {name: "dodgeEnemy", path: "spr_tengu.png"}, {name: "textParticles", path: "textParticles.png"}, 
                 {name: "illusionistEnemy", path: "spr_hellFox.png"}, {name: "halo", path: "placeHolderHalo.png"}, 
                 {name: "fireball", path: "placeHolderFireBall.png"}, {name: "smoke", path: "placeHolderHumo.png"}, 
+                {name: "emojis", path: "spr_emojis.png"}
             ],
             //Audio list
             [   
@@ -100,7 +101,7 @@ window.addEventListener("load", function () {
                 {name: "player", path: "spr_player.png"}, {name: "background", path: "bk_purgatory0.png"}, {name: "columns", path: "bk_purgatory1.png"}, 
                 {name: "floor", path: "bk_purgatory2.png"}, {name: "textParticles", path: "textParticles.png"}, 
                 {name: "weakSpotEnemy", path: "placeHolderWeakEnemy.png"}, {name: "counterattackEnemy", path: "placeHolderCounterattackEnemy.png"}, 
-                {name: "invisibleEnemy", path: "placeHolderInvisibleEnemy.png"}
+                {name: "invisibleEnemy", path: "placeHolderInvisibleEnemy.png"}, {name: "emojis", path: "spr_emojis.png"}
             ],
             //Audio list
             [   
@@ -119,7 +120,7 @@ window.addEventListener("load", function () {
                 {name: "floor", path: "bk_hell2.png"}, {name: "basicEnemy", path: "spr_demon.png"},
                 {name: "weakSpotEnemy", path: "placeHolderWeakEnemy.png"}, {name: "textParticles", path: "textParticles.png"}, 
                 {name: "illusionistEnemy", path: "spr_hellFox.png"}, {name: "fireball", path: "placeHolderFireBall.png"}, 
-                {name: "smoke", path: "placeHolderHumo.png"}, 
+                {name: "smoke", path: "placeHolderHumo.png"}, {name: "emojis", path: "spr_emojis.png"}
             ],
             //Audio list
             [   

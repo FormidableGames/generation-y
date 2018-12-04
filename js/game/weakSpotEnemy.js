@@ -1,6 +1,7 @@
 class WeakSpotEnemy extends Enemy{
     constructor(){
         super(2, 1);
+        this.identifier = 4;
         this.width = 600;
         this.height = 400;
         this.sprite = new Sprite("weakSpotEnemy", this.width, this.height, 4, 1);

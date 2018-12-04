@@ -1,6 +1,7 @@
 class RoundOfAttacksEnemy extends Enemy{
     constructor(){
         super(5, 1);
+        this.identifier = 7;
         this.consecutiveAttacks = 0;
         this.maxConsecutiveAttacks = this.generateAttacks();
         this.width = 600;

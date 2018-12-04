@@ -1,6 +1,7 @@
 class HeavenIllusionistEnemy extends Enemy{
     constructor(){
         super(2, 0.5);
+        this.identifier = 8;
         this.width = 190;
         this.height = 227;
         this.x = canvasWidth / 2 - this.width / 2;

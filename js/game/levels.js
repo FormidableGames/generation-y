@@ -1,6 +1,7 @@
 var levels = {
     "hell":
         {"easy":[
+                "S1S2S3S",
                 "SS1SS3S1SSS2S1SS2SSS3SSS",
                 "SS1SS2S1SSS3S2SSS2SSS1SS",
                 "SSS1S2SS2SS1SSS3S2SS1SSS",
@@ -10,12 +11,12 @@ var levels = {
         },
     "purgatory":
         {"easy":[
-                "SS4SS5SS6SS"
+                "S4S5S6S"
                 ]
         },
     "heaven":
         {"easy":[
-                "S8SS8SSS",
+                "S7S8S",
                 ]
         }
 }

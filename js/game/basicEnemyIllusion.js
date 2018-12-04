@@ -1,7 +1,8 @@
 class BasicEnemyIllusion extends BasicEnemy{
     constructor(){
         super();
-        this.health = 1;
+        this.identifier = -1;
+        this.health = 1;    
     }
     hurtBehaviour(deltaTime){
         this.hurtTime -= deltaTime / 1000;

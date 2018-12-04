@@ -6,7 +6,7 @@ class Game {
         
         this.player = new Player();
         this.enemy = undefined;
-
+        this.killedEnemyList = [];
         this.structure = levels[level]["easy"][0];
         this.room = 0;
         this.map = new Map();
@@ -42,15 +42,18 @@ class Game {
                 inputDisponibility = false;
             }
         }else if (pressedKeys["attack"]) {
-            switch (this.gameState) {
+            switch (this.gameState) {  
                 case "walk":
                     if(inputDisponibility){                                      
                         if(!this.map.moving){
-                            if(this.structure.charAt(this.room) != 'S'){
+                            if(this.room < this.structure.length && this.structure.charAt(this.room) != 'S')
                                 this.map.add(this.structure.charAt(this.room));
-                            }
+                            else if(this.room == this.structure.length)
+                                this.toGameOver();
+
                             //Move the map 1 room  
                             this.room++;  
+                            
                             this.map.toMove();
                             
                             if(this.player.state == "idle") this.player.toWalk();
@@ -59,7 +62,6 @@ class Game {
                                 return a.depth - b.depth;
                             });
                         }
-
                         inputDisponibility = false;
                     }
                     break;
@@ -88,14 +90,37 @@ class Game {
         this.player.relocate();
     }
     toWalkTransition(){
+        this.killedEnemyList.push(this.enemy.identifier);
+        localStorage.setItem("killedEnemyList", this.killedEnemyList);
         this.removeEnemy();
         this.gameState = "walkTransition";
         this.player.state = "endFight"
     }
+    toGameOver(){
+        var fade = {     
+            fadeAlpha: 0,
+            depth: 7,
+            update:function(){
+                let step = 0.01;
+                this.fadeAlpha += step;
+                if(this.fadeAlpha < 1) {
+                    audioResources["musicIntro"].volume = Math.floor((1 - this.fadeAlpha)*100)/100;
+                    audioResources["musicLoop"].volume = Math.floor((1 - this.fadeAlpha)*100)/100;
+                }
+                if(this.fadeAlpha >= 5) window.location = "gameOver.html";
+            },
+            draw:function(){
+                context.globalAlpha = this.fadeAlpha;
+                context.fillRect(0,0,canvasWidth,canvasHeight);
+                context.globalAlpha = 1.0;
+            }
+        }
+        this.entities.push(fade);
+    }
     removeEnemy(){        
         for(let i = 0; i < this.entities.length; i++){
             if(this.entities[i] == this.enemy) {
-                let hola = this.entities.splice(i, 1);
+                this.entities.splice(i, 1);
             }
         }
         this.enemy = undefined;

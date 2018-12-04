@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- IMPORTS -->
+    <!-- Libraries/Frameworks: Bootstrap, JQuery -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- Latest compiled and minified CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!-- jQuery library -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- Latest compiled JavaScript -->
+
+    <!-- Our scripts & css -->
+    <script src="js/web/sillynumbers.js"></script> <!-- Silly script to set random numbers for tweet feedback (rts/likes) & followers-->
+    <link rel="stylesheet" href="style/index.css"> <!-- Extra css on top of Bootstrap framework -->
+
+    <!-- METADATA -->
+    <title>Práctica W3C</title>
+    <meta name="description" content="Práctica de W3C para la asignatura Juegos para Web">
+    <meta name="keywords" content="URJC, Juegos para Web, práctica, universidad">
+    <meta name="author" content="el nico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body>
+    <p id = "debugEnemies"></p> 
+
+    <script>
+        var enemyList = localStorage.getItem('killedEnemyList');      
+        var p = document.getElementById("debugEnemies");
+        var str = "";
+        for(let i = 0; i < enemyList.length; i++){
+            str += enemyList[i];
+        }
+        p.innerHTML = str;
+    </script>
+</body>

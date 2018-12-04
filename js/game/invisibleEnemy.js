@@ -1,6 +1,7 @@
 class InvisibleEnemy extends BasicEnemy{
     constructor(){
         super();
+        this.identifier = 6;
         this.health = 1;
         this.damage = 0.5;
         this.width = 600;

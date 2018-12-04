@@ -1,6 +1,7 @@
 class CounterattackEnemy extends BasicEnemy{
     constructor(){
         super();
+        this.identifier = 5;
         this.health = 3;
         this.damage = 0.5;
         this.width = 330;

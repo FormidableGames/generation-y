@@ -15,6 +15,8 @@ class GUI{
         this.halfHearth = new Sprite("halfHearth", 46, 41, 0, 0);
         this.emptyHearth = new Sprite("emptyHearth", 46, 41, 0, 0);
         this.healthContainer = new Sprite("healthContainer", 277, 165, 0, 0);
+
+        this.emojis = new Sprite("emojis", 72, 71, 2, 2);
     }
     update(deltaTime){
         switch(this.state){
@@ -37,17 +39,28 @@ class GUI{
     draw(){       
         context.font="30px Arial";
         
-        let pos = 0;
-        this.healthContainer.draw(pos, pos);
-        pos += 50;
+        //#region Draw hp
+        let posX = 0, posY = 0;
+        this.healthContainer.draw(posX, posY);
+        posX += 50;
+        posY += 50;
         for(let i = 0; i < game.player.maxHealth; i++){
             if(i <= game.player.health - 1) 
-                this.fullHearth.draw(pos + i*(this.healthContainer.width-100)/game.player.maxHealth, pos);
+                this.fullHearth.draw(posX + i*(this.healthContainer.width-100)/game.player.maxHealth, posY);
             else if(i == Math.round(game.player.health) - 1)
-                this.halfHearth.draw(pos + i*(this.healthContainer.width-100)/game.player.maxHealth, pos);
+                this.halfHearth.draw(posX + i*(this.healthContainer.width-100)/game.player.maxHealth, posY);
             else 
-                this.emptyHearth.draw(pos + i*(this.healthContainer.width-100)/game.player.maxHealth, pos);
+                this.emptyHearth.draw(posX + i*(this.healthContainer.width-100)/game.player.maxHealth, posY);
         }
+        //#endregion
+        //#region Draw emojis (enemies)
+        posX = canvasWidth - this.emojis.width;
+        for(let i = game.killedEnemyList.length - 1; i >= 0; i--){
+            this.emojis.actualFrameH = (game.killedEnemyList[i] - 1) % 3;
+            this.emojis.actualFrameV = Math.floor((game.killedEnemyList[i] - 1) / 3);
+            this.emojis.draw(posX - i*this.emojis.width, posY);
+        }
+        //#endregion
         if(game.enemy) context.fillText("Enemy: " + game.enemy.health, 3*canvasWidth/4, 50);
                
         context.font="50vh Arial";
