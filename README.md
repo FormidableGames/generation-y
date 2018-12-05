@@ -73,6 +73,7 @@ Si lo consigues le dañarás (le quitarás una vida) y pasarás al otro lado de 
 Fuera de combate utilizarás este mismo ataque para desplazarte a lo largo del nivel y llegar hasta el siguiente enemigo.
 Tendrás 3 vidas en todos los niveles, cada enemigo quitará más o menos vidas.
 
+Dentro de la dificultad de cada nivel (Infierno, Purgatorio, Paradiso) habrá tres dificultades que dependiendo cómo jugueges hará que se ajusten a ti los niveles. Cada nivel tendrá modo fácil, normal y difícil; cuando se empieza a jugar las tres primeras partidas serán en fácil, a partir de esto si tu ratio victorias-derrotas es de menos sel 70% seguirá en fácil, si es desde el 70% al 90% se pondrá en dificultad media y si es superior a 90% difícil. Estos modos tienen varios mapas de niveles que saldrán aleatorios.
 
 ### Lista de enemigos  
 1. **Infierno (fácil)**   
