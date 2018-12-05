@@ -124,7 +124,8 @@
 
 
         function Send() {
-            if (!localStorage.getItem("already_sent")) {
+            console.log(localStorage.getItem("already_sent"));
+            if (localStorage.getItem("already_sent")=="false") {
 
                 chirp_txt = document.getElementById("chirp");
 
@@ -133,19 +134,16 @@
                     "score": score,
                     "killedEnemies": killedEnemies,
                     "chirp_info": chirp_info,
-                    "chirp_txt": chirp_txt,
+                    "chirp_txt": chirp_txt.innerHTML,
                     "date": d,
                     "enemyList": enemyList
                 }
 
                 if (chirps != undefined) {
                     chirps.push(JSON.stringify(chirp));
-                    console.log("not undefined");
                 } else {
                     var c = JSON.stringify(chirp)
                     chirps = [c];
-
-                    console.log("i create "+chirps);
                 }
                 localStorage.setItem("chirps", JSON.stringify(chirps));
                 localStorage.setItem("already_sent", true);
@@ -168,8 +166,6 @@
             var list = localStorage.getItem('killedEnemyList');
             enemyList = list.split(',');
             chirps = JSON.parse(localStorage.getItem("chirps"));
-            console.log(chirps);
-            console.log(localStorage.getItem("chirps"));
 
             // Debug
             killedEnemies = enemyList.length;
