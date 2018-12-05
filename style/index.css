@@ -9,11 +9,19 @@
 
 
 
+/* PANTALLA GAMEOVER */
+
+.game-over-content{
+    padding: 20px;
+    margin: 20px;
+}
+
+
 
 /* PANTALLA LEVEL SELECTOR */
 .level-hell-container{
     background-color: #000000;
-    background-image: url("../assets/sprites/fondo-infierno.png");
+    background-image: url("../img/web/fondo-infierno.png");
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -23,7 +31,7 @@
 }
 .level-purgatory-container{
     background-color: #000000;
-    background-image: url("../assets/sprites/fondo-purgatorio.png");
+    background-image: url("../img/web/fondo-purgatorio.png");
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -33,7 +41,7 @@
 }
 .level-paradiso-container{
     background-color: #000000;
-    background-image: url("../assets/sprites/fondo-paradiso.png");
+    background-image: url("../img/web/fondo-paradiso.png");
     background-size: cover;
     background-position: center;
     text-align: center;
