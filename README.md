@@ -305,10 +305,10 @@ Siguiendo la estética visual establecida:
     - __Bloqueada__
     - __Herida__
 - Enemigos:  
-    - **El ilusionista (modo infierno (I)/modo paraiso (P))**:
+    - **El ilusionista**:
         - __Fuegos__
         - __Aparición/Desaparición__ (nubes grises como ninja) *las dos versiones son iguales*
-    - **Invisible(?)**: 
+    - **Invisible**: 
         - __Sonido aura__
         - __Sonido espada golpeando__
         - __Sonido espadas chocandose__
