@@ -144,6 +144,8 @@ class Game {
         else this.losses++;
         localStorage.setItem("wins", this.wins);
         localStorage.setItem("losses", this.losses);
+
+        localStorage.setItem("alreadySent", false);
     }
     removeEnemy(){        
         for(let i = 0; i < this.entities.length; i++){
