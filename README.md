@@ -1,7 +1,9 @@
 # Gen¥
 
-[Link al repositorio](https://formidablegames.github.io/generation-y)  
-[Link al portfolio](https://formidablegames.github.io/portfolio/)
+[Gen¥](https://formidablegames.github.io/generation-y)   
+
+[Portfolio](https://formidablegames.github.io/portfolio/)  
+[GitHub del código](https://github.com/FormidableGames/generation-y) 
 
 
 ## Índice
@@ -34,7 +36,6 @@
     - Efectos de sonido
 7. **Planes de futuro**
 8. **Concept Art**
-9. **Enlaces**
 ---
 
 ## Introducción
@@ -336,7 +337,3 @@ Kitsune-yako y Tengu, dos de los enemigos:
 ![Concept6](https://github.com/FormidableGames/generation-y/blob/master/concept/kitsune-concept.png "Kitsune-yako")
 ![Concept7](https://github.com/FormidableGames/generation-y/blob/master/concept/tengu-concept.png "Tengu")
 
-## Enlaces
-[GitHub del código](https://github.com/FormidableGames/generation-y)  
-
-[Portfolio](https://formidablegames.github.io/portfolio/)

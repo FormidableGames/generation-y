@@ -40,7 +40,7 @@ $(document).ready(function() {
 
     // Por cada elemento añadimos un div "twit"
     for (i = 0; i < chirps.length; i++) {
-        var veryLongString = '<div class="content-block tweet"> <div class="tweet-author"><img src="img/web/avatar.png"><span>@protagonistaEdgy</span><span class="points-num">#'+ (i+1) + ' - ' +chirps[i].score+'pts</span></div><div class="tweet-content">'+chirps[i].chirp_info+"<br/>"+chirps[i].chirp_txt+'</div><div class="tweet-feedback"><span class="glyphicon glyphicon-retweet rts"></span><span class="feedback-num rts">69</span> people have rechirped this<br><span class="glyphicon glyphicon-fire likes"></span><span class="feedback-num likes">420</span> people have found this<i>lit af</i></div></div>';
+        var veryLongString = '<div class="content-block tweet"> <div class="tweet-author"><img src="img/web/avatar.png"><span>@yenyen</span><span class="points-num">#'+ (i+1) + ' - ' +chirps[i].score+'pts</span></div><div class="tweet-content">'+chirps[i].chirp_info+"<br/>"+chirps[i].chirp_txt+'</div><div class="tweet-feedback"><span class="glyphicon glyphicon-retweet rts"></span><span class="feedback-num rts">69</span> people have rechirped this<br><span class="glyphicon glyphicon-fire likes"></span><span class="feedback-num likes">420</span> people have found this<i>lit af</i></div></div>';
         rankingDiv.append(veryLongString);
     }
 
