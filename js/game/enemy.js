@@ -89,6 +89,7 @@ class Enemy {
         this.facing = game.player.side;
         this.spriteV = 0;
         this.spriteH = 4;
+        audioResources["protect"].play();
         this.setTimes();
     }
     toAnticipate() {

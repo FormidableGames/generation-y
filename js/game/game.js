@@ -23,8 +23,12 @@ class Game {
             this.difficulty = "medium";
         else
             this.difficulty = "easy";
+        let repeating = localStorage.getItem("repeat");
+        if(!repeating) this.structure = levels[level][this.difficulty][Math.floor(Math.random()*levels[level][this.difficulty].length)];
+        else this.structure = localStorage.getItem("levelStructure", this.structure);
         
-        this.structure = levels[level][this.difficulty][0];
+        
+        localStorage.setItem("levelStructure", this.structure);
         this.room = 0;
         this.map = new Map();
         this.particleController = new ParticleController();
@@ -136,6 +140,10 @@ class Game {
             }
         }
         this.entities.push(fade);
+        if(this.player.health > 0) this.wins++;
+        else this.losses++;
+        localStorage.setItem("wins", this.wins);
+        localStorage.setItem("losses", this.losses);
     }
     removeEnemy(){        
         for(let i = 0; i < this.entities.length; i++){

@@ -39,7 +39,7 @@ var levels = {
                         "S4S5SS6SS5SS6SS5S5SS4S5S4SS6SS5SS",
                         ]
                 },
-        "heaven":
+        "paradiso":
                 {
                 "easy":[
                         "SS7S7SS8SS8SSS",
@@ -58,5 +58,5 @@ var levels = {
                         "SSS8S8SS7S8SS7SS8SSS7SSS8SS7S8S78S8",
                         "SSS7S7SS8S7SS8SS7SSS8SSS7SS7S8SS7S8",
                         ]
-                }
+                }       
 };
