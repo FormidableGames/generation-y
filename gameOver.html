@@ -165,7 +165,8 @@
 
             level = localStorage.getItem("level");
             score = 0;
-            enemyList = localStorage.getItem('killedEnemyList');
+            var list = localStorage.getItem('killedEnemyList');
+            var enemyList = str.split(',');
             chirps = JSON.parse(localStorage.getItem("chirps"));
 
             // Debug
@@ -194,8 +195,8 @@
             }
 
             var info_element = document.getElementById("info");
-            chirp_txt = "Today I've been to " + level + " and killed " + killedEnemies + " enemies. I got " + score + " points!!";
-            info_element.innerHTML = chirp_txt;
+            chirp_info = "Today I've been to " + level + " and killed " + killedEnemies + " enemies. I got " + score + " points!!";
+            info_element.innerHTML = chirp_info;
 
             d = new Date();
             hours = d.getHours();
