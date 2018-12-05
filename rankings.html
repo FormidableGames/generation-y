@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- IMPORTS -->
+    <!-- Libraries/Frameworks: Bootstrap, JQuery -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+    <!-- Google font -->
+
+    <!-- Our scripts & css -->
+    <script src="js/web/sillynumbers.js"></script> <!-- Silly script to set random numbers for tweet feedback (rts/likes) & followers-->
+    <script src="js/web/fakefollow.js"></script> <!-- Silly script that checks if you "follow" yen or not (it doesnt do anything else) -->
+    <link rel="stylesheet" href="style/index.css"> <!-- Extra css on top of Bootstrap framework -->
+
+    <!-- METADATA -->
+    <title>Práctica W3C</title>
+    <meta name="description" content="Práctica de W3C para la asignatura Juegos para Web">
+    <meta name="keywords" content="URJC, Juegos para Web, práctica, universidad">
+    <meta name="author" content="el nico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">Chirper
+                        <span class="glyphicon glyphicon-bullhorn"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="levelSelect.html">Game</a>
+                    </li>
+                    <li>
+                        <a href="credits.html">About</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">Rankings</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="jumbotron">
+        <a href="index.html" class="btn btn-main">BACK</a>
+    </div>
+
+    <div class="main-container">
+        <div class="row">
+
+            <div class="col-lg-3">
+                <!-- Profile Sidebar 
+                <div class="content-block">
+                    <img class="profile-avatar" src="img/web/avatar.png">
+                    <br>
+                    <p class="profile-username">@protagonistaEdgy</p>
+                    <p class="profile-bio">can't hear you these shades are gucci</p>
+                    <button type="button" onclick="followBtn();" class="btn btn-lg btn-default" id="followBtn">Follow</button>
+                    <span style="color:#91a1b6; margin-left: 10px;"><b>Followers:</b> <span class="followers-num"></span>K</span>
+                </div> -->
+            </div>
+
+            <div class="col-lg-6">
+                <div id="rankings">
+                    Nothing to see here :(
+                    <!-- Dashboard/Timeline -->
+
+                <!-- TWEET 
+                <div class="content-block tweet">
+                    <div class="tweet-author">
+                        <img src="img/web/avatar.png">
+                        <span>@protagonistaEdgy</span>
+                        <span class="points-num">902834 pts</span>
+                    </div>
+                    <div class="tweet-content">
+                        aqui va el supercontenido
+                    </div>
+                    <div class="tweet-feedback">
+                        <span class="glyphicon glyphicon-retweet rts"></span>
+                        <span class="feedback-num rts">69</span> people have rechirped this
+                        <br>
+                        <span class="glyphicon glyphicon-fire likes"></span>
+                        <span class="feedback-num likes">420</span> people have found this
+                        <i>lit af</i>
+                    </div>
+                </div>-->
+
+                <!-- HOW TO WRITE A NEW TWETO a step by step guide by el nico
+                - Copy one of the tweets above
+                - Change text & images
+                - Add or delete tweet multimedia section if needed
+                - Do NOT change any class names or it'll break horrendously
+                - Voilà!
+                -->
+
+                <!-- End of Dashboard/Timeline -->
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <!-- "Followers" (dev team) sidebar 
+                <div class="content-block">
+                    <h2>Followers</h2>
+
+                    <div class="follower">
+                        <img src="img/web/avatar.png">
+                        <div class="follower-bio">
+                            <span>@username</span>
+                            <p>bio aqui blablablabla</p>
+                        </div>
+                    </div>
+
+                    <div class="follower">
+                        <img src="img/web/avatar.png">
+                        <div class="follower-bio">
+                            <span>@username</span>
+                            <p>bio aqui blablablabla</p>
+                        </div>
+                    </div>
+
+                    <div class="follower">
+                        <img src="img/web/avatar.png">
+                        <div class="follower-bio">
+                            <span>@username</span>
+                            <p>bio aqui blablablabla</p>
+                        </div>
+                    </div>
+
+                </div>-->
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid bg-footer text-center">
+        <p>Repositorio
+            <a href="https://github.com/FormidableGames/generation-y">generation y</a>
+        </p>
+    </footer>
+
+</body>
+
+</html>

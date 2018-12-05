@@ -111,6 +111,25 @@
 
 
 
+  
+/* PAGINA PRINCIPAL */
+
+
+.points-num {
+    font-size: 40px;
+    font-weight: bolder;
+    float: right;
+    padding: 0px 20px;
+    color: #ff00bf;
+    text-shadow:2px 2px 0 #303030;
+}
+
+
+
+
+
+
+
 
 
 
@@ -163,6 +182,13 @@
     padding-top: 200px;
     margin-bottom: 10px;
 }
+
+@media screen and (max-width: 490px) {
+    .jumbotron {
+        padding-top:50px;
+    }
+  }
+
 
 .btn-main {
     font-family: 'Rock Salt';
@@ -220,6 +246,13 @@
     border: solid 10px #ffffff;
     border-radius: 15px;
 }
+
+@media screen and (max-width: 1200px) {
+    .profile-avatar {
+    margin-top: -80px;
+    }
+  }
+
 
 .profile-username {
     font-size: 26px;
