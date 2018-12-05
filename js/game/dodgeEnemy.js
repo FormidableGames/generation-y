@@ -133,11 +133,11 @@ class DodgeEnemy extends Enemy{
             damaged = true;
         }else if(this.dodge == 2){
             this.toSick();      
-            game.particleController.create("miss", game.particleController.getRandomRange(this.x+this.width/3, this.x+2*this.width/3), 
+            game.particleController.create("dodge", game.particleController.getRandomRange(this.x+this.width/3, this.x+2*this.width/3), 
                                                     game.particleController.getRandomRange(this.y+this.height/3, this.y+2*this.height/3));
             this.facing *= -1;
         }else{
-            game.particleController.create("miss", game.particleController.getRandomRange(this.x+this.width/3, this.x+2*this.width/3), 
+            game.particleController.create("dodge", game.particleController.getRandomRange(this.x+this.width/3, this.x+2*this.width/3), 
                                                     game.particleController.getRandomRange(this.y+this.height/3, this.y+2*this.height/3));
             this.facing *= -1;
             this.toDodge();

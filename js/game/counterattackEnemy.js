@@ -25,8 +25,6 @@ class CounterattackEnemy extends BasicEnemy{
         this.state = "protect";
         this.spriteH = 3;
         game.player.toHurt(this.damage*2);
-        //game.particleController.create("", game.particleController.getRandomRange(this.x+this.width/3, this.x+2*this.width/3), 
-                                                    //game.particleController.getRandomRange(this.y+this.height/3, this.y+2*this.height/3));
         this.setTimes();
     }
 }
