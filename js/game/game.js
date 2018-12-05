@@ -9,7 +9,6 @@ class Game {
         this.killedEnemyList = [];
 
         //Difficulty
-        console.log(localStorage.getItem('wins'));
         this.wins = localStorage.getItem("wins");
         this.losses = localStorage.getItem("losses");
         if(this.wins == undefined || isNaN(this.wins)) this.wins = 0;
@@ -26,9 +25,10 @@ class Game {
         else
             this.difficulty = "easy";
         let repeating = localStorage.getItem("repeat");
-        if(!repeating) this.structure = levels[level][this.difficulty][Math.floor(Math.random()*levels[level][this.difficulty].length)];
-        else this.structure = localStorage.getItem("levelStructure", this.structure);
+        if(repeating == "true") this.structure = localStorage.getItem("levelStructure", this.structure);
+        else this.structure = levels[level][this.difficulty][Math.floor(Math.random()*levels[level][this.difficulty].length)];
         
+        console.log(this.structure);
         
         localStorage.setItem("levelStructure", this.structure);
         this.room = 0;
