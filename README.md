@@ -348,6 +348,6 @@ Kitsune-yako y Tengu, dos de los enemigos:
 ![Concept7](https://github.com/FormidableGames/generation-y/blob/master/concept/tengu-concept.png "Tengu")
 
 ## Enlaces
-[url al GitHub del código](https://github.com/FormidableGames/generation-y)  
+[GitHub del código](https://github.com/FormidableGames/generation-y)  
 
-[url al portfolio](https://formidablegames.github.io/portfolio/)
+[Portfolio](https://formidablegames.github.io/portfolio/)
