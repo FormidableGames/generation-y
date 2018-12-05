@@ -318,17 +318,14 @@ Siguiendo la estética visual establecida:
         - Mareado
         - Celebración
     - **El ilusionista (modo infierno (I)/modo paraiso (P))**:
-        - Lanzando llamas al cielo (I) (--)
-        - Fuegos fatuos (I) (--)
-        - Halo del suelo (sonido mágico?) (I)
-        - Llamas del suelo (más fuertes que los fuegos fatuos) (I)
-        - Aparición/Desaparición (nubes grises como ninja(?)) *las dos versiones son iguales*
+        - Fuegos
+        - Aparición/Desaparición (nubes grises como ninja) *las dos versiones son iguales*
         - __Herido__ (I) (P)
         - __Cargando contra ti__ (sonido trotando, ten en cuenta que es un zorro no un caballo) (P)  
     - **Punto débil**: Base grave.
     - **Contraataque**: Base aguda.
     - **Invisible(?)**: 
-        - Sonido aura (?)
+        - Sonido aura
         - Sonido espada golpeando
         - __Sonido espadas chocandose__
     - **Ronda de ataques**:
