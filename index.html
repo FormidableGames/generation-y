@@ -11,6 +11,7 @@
 
     <!-- Our scripts & css -->
     <script src="js/web/sillynumbers.js"></script> <!-- Silly script to set random numbers for tweet feedback (rts/likes) & followers-->
+    <script src="js/web/fakefollow.js"></script> <!-- Silly script that checks if you "follow" yen or not (it doesnt do anything else) -->
     <link rel="stylesheet" href="style/index.css"> <!-- Extra css on top of Bootstrap framework -->
 
     <!-- METADATA -->
@@ -54,7 +55,7 @@
                     <img class="profile-avatar" src="img/web/avatar.png"><br>
                     <p class="profile-username">@protagonistaEdgy</p>
                     <p class="profile-bio">can't hear you these shades are gucci</p>
-                    <button type="button" class="btn btn-lg btn-default">Follow</button>
+                    <button type="button" onclick="followBtn();" class="btn btn-lg btn-default" id="followBtn">Follow</button>
                     <span style="color:#91a1b6; margin-left: 10px;"><b>Followers:</b> <span class="followers-num"></span>K</span>
                 </div>
             </div>
