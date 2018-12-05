@@ -128,7 +128,7 @@ class Game {
                     audioResources["musicLoop"].volume = Math.floor((1 - this.fadeAlpha)*100)/100;
                 }
                 if(this.fadeAlpha >= 1.1) {
-                    window.location = "gameOver.html";
+                    window.location.assign("gameOver.html");
                 }
             },
             draw:function(){

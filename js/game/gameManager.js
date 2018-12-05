@@ -71,7 +71,7 @@ window.addEventListener("load", function () {
 
     level = localStorage.getItem("level");
     //Load hell resources
-    if(level === "hell"){
+    if(level == "hell"){
         //Load resources
         resourcesLoader(
             //Image list
@@ -96,7 +96,7 @@ window.addEventListener("load", function () {
                 {name: "protect", path: "aud_protect.mp3", loop: false}
             ]
         );
-    }else if(level === "purgatory"){
+    }else if(level == "purgatory"){
         resourcesLoader(
             //Image list
             [   
@@ -105,11 +105,11 @@ window.addEventListener("load", function () {
                 {name: "3", path: "GUI_count3.png"}, {name: "fight", path: "GUI_fight.png"},
                 {name: "fullHearth", path: "GUI_fullHearth.png"}, {name: "halfHearth", path: "GUI_halfHearth.png"},
                 {name: "emptyHearth", path: "GUI_emptyHearth.png"}, {name: "healthContainer", path: "GUI_healthContainer.png"},
-                {name: "player", path: "spr_player.png"}, {name: "background", path: "bk_purgatory0.png"}, {name: "columns", path: "bk_purgatory1.png"}, 
-                {name: "floor", path: "bk_purgatory2.png"}, {name: "dodge", path: "spr_dodge.png"}, 
+                {name: "player", path: "spr_player.png"}, {name: "background", path: "bk_purgatory0.png"},
+                {name: "columns", path: "bk_purgatory1.png"}, {name: "floor", path: "bk_purgatory2.png"},
+                {name: "hit", path: "spr_hit.png"}, {name: "attack", path: "spr_katanaAttack.png"},
                 {name: "weakSpotEnemy", path: "spr_kappa.png"}, {name: "counterattackEnemy", path: "spr_counter.png"}, 
-                {name: "invisibleEnemy", path: "spr_katana.png"}, {name: "aura", path: "spr_aura.png"},
-                {name: "attack", path: "spr_katanaAttack.png"}, {name: "hit", path: "spr_hit.png"}
+                {name: "invisibleEnemy", path: "spr_katana.png"}, {name: "aura", path: "spr_aura.png"}
             ],
             //Audio list
             [   
@@ -120,7 +120,7 @@ window.addEventListener("load", function () {
                 {name: "protect", path: "aud_protect.mp3", loop: false}
             ]
         );
-    }else if(level === "paradiso"){
+    }else if(level == "paradiso"){
         //Load resources
         resourcesLoader(
             //Image list
@@ -132,10 +132,9 @@ window.addEventListener("load", function () {
                 {name: "emptyHearth", path: "GUI_emptyHearth.png"}, {name: "healthContainer", path: "GUI_healthContainer.png"},
                 {name: "player", path: "spr_player.png"}, {name: "background", path: "bk_paradiso0.png"}, 
                 {name: "columns", path: "bk_paradiso1.png"}, {name: "floor", path: "bk_paradiso2.png"}, 
-                {name: "basicEnemy", path: "spr_demon.png"}, {name: "roundOfAttacksEnemy", path: "spr_tiger.png"}, 
-                {name: "dodge", path: "spr_dodge.png"}, {name: "attack", path: "spr_tigerAttack.png"},
-                {name: "illusionistEnemy", path: "spr_heavenFox.png"}, {name: "fireball", path: "spr_fireball.png"}, 
-                {name: "smoke", path: "spr_smoke.png"}, {name: "hit", path: "spr_hit.png"}
+                {name: "roundOfAttacksEnemy", path: "spr_tiger.png"}, {name: "hit", path: "spr_hit.png"},
+                {name: "smoke", path: "spr_smoke.png"}, {name: "attack", path: "spr_tigerAttack.png"},
+                {name: "illusionistEnemy", path: "spr_heavenFox.png"}, {name: "fireball", path: "spr_fireball.png"}
             ],
             //Audio list
             [   

@@ -4,7 +4,6 @@ class Enemy {
         this.identifier = 0;
         this.width = 520;
         this.height = 450;
-        this.sprite = new Sprite("basicEnemy", this.width, this.height, 3, 1);
         this.spriteH = 0;
         this.spriteV = 0;
 

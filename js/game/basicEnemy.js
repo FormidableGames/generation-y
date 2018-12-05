@@ -2,6 +2,7 @@ class BasicEnemy extends Enemy{
     constructor(){
         super(3, 0.5);
         this.identifier = 1;
+        this.sprite = new Sprite("basicEnemy", this.width, this.height, 3, 1);
     }
     setTimes(){
         this.initialAttackTime = Math.random() * 2 + 1; //In seconds
