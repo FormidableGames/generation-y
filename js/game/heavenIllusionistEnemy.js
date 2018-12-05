@@ -1,9 +1,9 @@
 class HeavenIllusionistEnemy extends Enemy{
     constructor(){
-        super(2, 0.5);
+        super(4, 0.5);
         this.identifier = 8;
-        this.width = 190;
-        this.height = 227;
+        this.width = 311;
+        this.height = 234;
         this.x = canvasWidth / 2 - this.width / 2;
         this.y = canvasHeight/2 - this.height;
         this.sprite = new Sprite("illusionistEnemy", this.width, this.height, 6, 1);
@@ -13,20 +13,18 @@ class HeavenIllusionistEnemy extends Enemy{
         this.attackable = true;
         this.spriteH = 2;
         this.facing = game.player.side;
-        this.fireBallCounter = Math.floor(Math.random()*4)+4;
+        this.fireBallCounter = Math.floor(Math.random()*4)+7;
         this.sameSideFireBalls = 0;
         this.previousSide = -1;
         this.dashCounter = 0;
         this.maxDashNumber = 5;
-        this.spd = 2;
+        this.spd = 2.5;
         this.showingSpd = 0.2;
         this.direction;
     }
     setTimes(){
         this.initialAttackTime = 0.5; //In seconds
         this.attackTime = this.initialAttackTime;
-        this.initialThrowTime = 0.3; //In seconds
-        this.throwTime = this.initialThrowTime;
         this.fireBallTime = 0.5;
         this.initialHurtTime = 0.2; //In seconds
         this.hurtTime = this.initialHurtTime;
@@ -61,8 +59,6 @@ class HeavenIllusionistEnemy extends Enemy{
         }
     }
     throwBehaviour(deltaTime){
-        this.throwTime -= deltaTime / 1000;
-
         this.fireBallTime -= deltaTime / 1000;
         if (this.fireBallTime <= 0 && this.fireBallCounter > 0){
             let side = Math.floor(Math.random()*2);
@@ -74,7 +70,7 @@ class HeavenIllusionistEnemy extends Enemy{
             }else
                 this.sameSideFireBalls = 0;
             this.previousSide = side;
-            this.fireBalls.push(new FireBall(side));
+            this.fireBalls.push(new FireBall(side, 0.9));
             this.fireBallTime = Math.random()*1+0.6; 
             this.fireBallCounter--;       
         };
@@ -154,7 +150,7 @@ class HeavenIllusionistEnemy extends Enemy{
     toAttack(){
         this.state = "attack";
         this.direction *= -1;
-        this.spriteH = 1;   
+        this.spriteH = 3;   
         this.dashCounter++;    
         this.createSmoke();   
         this.setTimes();

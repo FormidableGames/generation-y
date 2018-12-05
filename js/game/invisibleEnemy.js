@@ -4,9 +4,10 @@ class InvisibleEnemy extends BasicEnemy{
         this.identifier = 6;
         this.health = 1;
         this.damage = 0.5;
-        this.width = 600;
-        this.height = 400;
-        this.sprite = new Sprite("invisibleEnemy", this.width, this.height, 6, 1);
+        this.width = 533;
+        this.height = 554;
+        this.y = canvasHeight-this.height;
+        this.sprite = new Sprite("invisibleEnemy", this.width, this.height, 5, 1);
         this.sprite.alpha = 0;
         this.attackable = true;
         this.fury = false;
@@ -19,7 +20,7 @@ class InvisibleEnemy extends BasicEnemy{
     setTimes(){
         this.initialAttackTime = Math.random() * 0.5 + 2; //In seconds
         this.attackTime = this.initialAttackTime;
-        this.initialAnticipationTime = 0.6; //In seconds
+        this.initialAnticipationTime = 0.7; //In seconds
         this.anticipationTime = this.initialAnticipationTime;
         this.initialRecoverTime = 0.5; //In seconds
         this.recoverTime = this.initialRecoverTime;
@@ -27,7 +28,7 @@ class InvisibleEnemy extends BasicEnemy{
         this.protectTime = this.initialProtectTime;
         this.initialHurtTime = 0.2; //In seconds
         this.hurtTime = this.initialHurtTime;
-        this.initialQuietTime = 0.7; //In seconds
+        this.initialQuietTime = 1.5; //In seconds
         this.quietTime = this.initialQuietTime;
     }
     update(deltaTime){
@@ -65,8 +66,9 @@ class InvisibleEnemy extends BasicEnemy{
             if(this.health <= 0)
                 game.toWalkTransition();      
             else{
-                this.facing *= -1;
+                //this.facing *= -1;
                 this.fury = true;
+                game.particleController.create("aura", this.x+this.width/2, this.y+this.height/2);
                 this.toIdle();
             }
         }
@@ -76,6 +78,8 @@ class InvisibleEnemy extends BasicEnemy{
         if (this.quietTime <= 0){
             this.playerAttacksCounter = 0;
             this.index++;
+            game.particleController.create("aura", this.x+this.width/2, this.y+this.height/2);
+            this.health = 4;
             this.toIdle();
         }
     }
@@ -88,6 +92,7 @@ class InvisibleEnemy extends BasicEnemy{
     }
     toProtect(){
         this.state = "protect";
+        audioResources["swordCollision"].play();
         this.spriteH = 4;
         game.particleController.create("stun", game.particleController.getRandomRange(this.x+this.width/3, this.x+2*this.width/3), 
                                                     game.particleController.getRandomRange(this.y+this.height/3, this.y+2*this.height/3));
@@ -95,24 +100,27 @@ class InvisibleEnemy extends BasicEnemy{
     }
     toAnticipate() {
         this.state = "anticipate";
-        this.spriteH = 4;
+        this.spriteH = 2;
         this.attackable = true;
-        game.particleController.create("stun", game.player.x + game.player.width/2, 
+        game.particleController.create("alert", game.player.x + game.player.width/2, 
                                                 game.player.y);
         this.setTimes();
     }
     toAttack() {
         this.consecutiveAttacks++;
-        this.state = "attack";
+        this.state = "attack";       
+        audioResources["swordSwing"].play();
         if(this.consecutiveAttacks == 1){
-            this.spriteH = 5;
-            game.particleController.create("attack1", this.x+this.width/2, this.y + this.height/2);
+            this.spriteH = 3;
+            if(this.facing == -1) game.particleController.create("attack1", this.x, this.y + this.height/2);
+            else game.particleController.create("attack1", this.x + this.width, this.y + this.height/2);
         }else{
             this.consecutiveAttacks = 0;
-            this.spriteH = 6;
-            game.particleController.create("attack2", this.x+this.width/2, this.y + this.height/2);
+            this.spriteH = 5;
+            if(this.facing == -1) game.particleController.create("attack2", this.x, this.y + this.height/2);
+            else game.particleController.create("attack2", this.x + this.width, this.y + this.height/2);
             this.index++;
-            if(this.index >= this.serie.length) this.index = 0;
+            if(this.index >= this.serie.length) this.index = 1;
         }
         if(!this.fury) this.consecutiveAttacks = 0;
         this.setTimes();
@@ -127,10 +135,12 @@ class InvisibleEnemy extends BasicEnemy{
     }
     toQuiet(){
         this.state = "quiet";
+        audioResources["appear"].play();
         if(!this.final) this.sprite.alpha = (this.playerAttacksCounter + 1) / 4;
         this.attackable = true;
         this.spriteH = 0;     
         this.consecutiveAttacks = 0;
+        game.particleController.create("aura", this.x+this.width/2, this.y+this.height/2);
         this.setTimes();
     }
     damaged(){
@@ -139,16 +149,18 @@ class InvisibleEnemy extends BasicEnemy{
             this.facing *= -1;
             this.fury = true;
             this.playerAttacksCounter = 0;
-            this.toIdle();
+            this.health = 5;
+            this.toHurt();
         }else if(this.state == "quiet"){
             this.playerAttacksCounter++;
             this.index++;
-            this.facing *= -1;
+            this.facing *= -1;    
+            game.particleController.create("aura", this.x+this.width/2, this.y+this.height/2);
             if(this.playerAttacksCounter == 3){
                 this.sprite.alpha = 1;
-                this.final = true;
+                this.final = true; 
             }
-            this.toIdle();
+            this.toHurt();
         }else if(this.playerAttacksCounter == 3){
             this.facing *= -1;
             if(!this.fury) this.toQuiet();

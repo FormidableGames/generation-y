@@ -81,7 +81,8 @@ class HellIllusionistEnemy extends Enemy{
             }else
                 this.sameSideFireBalls = 0;
             this.previousSide = side;
-            this.fireBalls.push(new FireBall(side));
+            this.fireBalls.push(new FireBall(side, 0.5));
+            audioResources["fire"].play();
             this.fireBallTime = Math.random()*1+0.6; 
             this.fireBallCounter--;       
         };
@@ -123,7 +124,8 @@ class HellIllusionistEnemy extends Enemy{
         this.state = "attack";
         this.spriteH = 3;       
         this.fireBallCounter = Math.floor(Math.random()*3+3);
-        this.halo = new Halo(Math.floor(Math.random()*2));
+        this.halo = new Halo(Math.floor(Math.random()*2));     
+        audioResources["fire"].play();
         this.haloCounter--;
         this.createSmoke();   
         this.setTimes();

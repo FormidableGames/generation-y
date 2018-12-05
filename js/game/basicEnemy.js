@@ -12,7 +12,7 @@ class BasicEnemy extends Enemy{
         this.recoverTime = this.initialRecoverTime;
         this.initialProtectTime = 0.3; //In seconds
         this.protectTime = this.initialProtectTime;
-        this.initialHurtTime = 0.2; //In seconds
+        this.initialHurtTime = 0.4; //In seconds
         this.hurtTime = this.initialHurtTime;
     }
     idleBehaviour(deltaTime){

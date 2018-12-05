@@ -6,7 +6,11 @@ class Tile{
         this.depth = depth;
     }
     update(deltaTime){
-        if(this.x <= -canvasWidth) this.x += 2 * canvasWidth;
+        if(this.x <= -canvasWidth)
+            this.x += 2 * canvasWidth;
+        else if(this.x >= canvasWidth)
+            this.x -= 2 * canvasWidth;
+
     }
     draw(){
         this.sprite.draw(this.x, this.y);

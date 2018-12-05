@@ -7,7 +7,7 @@ class GUI{
 
         this.state = "empty";
         this.text = "";
-        this.initialStartFightTime = 3.9;
+        this.initialStartFightTime = 4;
         this.startFightTime = this.initialStartFightTime;
         this.depth = 6;
         
@@ -24,7 +24,25 @@ class GUI{
 
                 break;
             case "fightTransition":
-                this.startFightTime -= 2*deltaTime / 1000; 
+                let prev = Math.floor(this.startFightTime);
+                this.startFightTime -= 2*deltaTime / 1000;              
+                let act = Math.floor(this.startFightTime);
+                if(prev != act){
+                    switch(act){
+                        case 0:
+                            game.particleController.create("fight", canvasWidth/2, canvasHeight/2);
+                            break;
+                        case 1:
+                            game.particleController.create("1", canvasWidth/2, canvasHeight/2);
+                            break;
+                        case 2:
+                            game.particleController.create("2", canvasWidth/2, canvasHeight/2);
+                            break;
+                        case 3:
+                            game.particleController.create("3", canvasWidth/2, canvasHeight/2);
+                            break;
+                    }
+                }
                 if(this.startFightTime > 1){     
                     this.text = Math.floor(this.startFightTime);
                 }else if(this.startFightTime > 0){ 
@@ -37,8 +55,6 @@ class GUI{
         }
     }
     draw(){       
-        context.font="30px Arial";
-        
         //#region Draw hp
         let posX = 0, posY = 0;
         this.healthContainer.draw(posX, posY);
@@ -54,17 +70,13 @@ class GUI{
         }
         //#endregion
         //#region Draw emojis (enemies)
-        posX = canvasWidth - this.emojis.width;
+        /*posX = canvasWidth - this.emojis.width;
         for(let i = game.killedEnemyList.length - 1; i >= 0; i--){
             this.emojis.actualFrameH = (game.killedEnemyList[i] - 1) % 3;
             this.emojis.actualFrameV = Math.floor((game.killedEnemyList[i] - 1) / 3);
             this.emojis.draw(posX - i*this.emojis.width, posY);
-        }
+        }*/
         //#endregion
-        if(game.enemy) context.fillText("Enemy: " + game.enemy.health, 3*canvasWidth/4, 50);
-               
-        context.font="50vh Arial";
-        context.fillText(this.text, canvasWidth / 2, canvasHeight / 2);
     }
     toEmpty(){
         this.state = "empty";

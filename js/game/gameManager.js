@@ -64,7 +64,6 @@ window.addEventListener("load", function () {
     resize();
 
     animationStep = 0;
-    drawProgressIndicator();
 
     //Start loading resources
     imageResources = {};
@@ -77,55 +76,73 @@ window.addEventListener("load", function () {
         resourcesLoader(
             //Image list
             [   
+                {name: "question", path: "spr_question.png"}, {name: "alert", path: "spr_alert.png"},
+                {name: "1", path: "GUI_count1.png"}, {name: "2", path: "GUI_count2.png"},
+                {name: "3", path: "GUI_count3.png"}, {name: "fight", path: "GUI_fight.png"},
                 {name: "fullHearth", path: "GUI_fullHearth.png"}, {name: "halfHearth", path: "GUI_halfHearth.png"},
                 {name: "emptyHearth", path: "GUI_emptyHearth.png"}, {name: "healthContainer", path: "GUI_healthContainer.png"},
                 {name: "player", path: "spr_player.png"}, {name: "background", path: "bk_hell0.png"}, {name: "columns", path: "bk_hell1.png"}, 
                 {name: "floor", path: "bk_hell2.png"}, {name: "basicEnemy", path: "spr_demon.png"},
-                {name: "dodgeEnemy", path: "spr_tengu.png"}, {name: "textParticles", path: "textParticles.png"}, 
-                {name: "illusionistEnemy", path: "spr_hellFox.png"}, {name: "halo", path: "placeHolderHalo.png"}, 
-                {name: "fireball", path: "placeHolderFireBall.png"}, {name: "smoke", path: "placeHolderHumo.png"}, 
-                {name: "emojis", path: "spr_emojis.png"}
+                {name: "dodgeEnemy", path: "spr_tengu.png"}, {name: "dodge", path: "spr_dodge.png"}, 
+                {name: "illusionistEnemy", path: "spr_hellFox.png"}, {name: "halo", path: "spr_halo.png"}, 
+                {name: "fireball", path: "spr_fireball.png"}, {name: "smoke", path: "spr_smoke.png"},
+                {name: "hit", path: "spr_hit.png"}
             ],
             //Audio list
             [   
                 {name: "musicIntro", path: "aud_hellIntro.ogg", loop: false}, {name: "musicLoop", path: "aud_hellLoop.ogg", loop: true},
-                {name: "dash", path: "dash.mp3", loop: false}, {name: "hit", path: "hit.mp3", loop: false}
+                {name: "dash", path: "aud_dash.mp3", loop: false}, {name: "hit", path: "aud_hit.mp3", loop: false},
+                {name: "playerHurt", path: "aud_playerHurt.mp3", loop: false}, {name: "fire", path: "aud_fire.mp3", loop: false},
+                {name: "protect", path: "aud_protect.mp3", loop: false}
             ]
         );
     }else if(level === "purgatory"){
         resourcesLoader(
             //Image list
             [   
+                {name: "question", path: "spr_question.png"}, {name: "alert", path: "spr_alert.png"},
+                {name: "1", path: "GUI_count1.png"}, {name: "2", path: "GUI_count2.png"},
+                {name: "3", path: "GUI_count3.png"}, {name: "fight", path: "GUI_fight.png"},
                 {name: "fullHearth", path: "GUI_fullHearth.png"}, {name: "halfHearth", path: "GUI_halfHearth.png"},
                 {name: "emptyHearth", path: "GUI_emptyHearth.png"}, {name: "healthContainer", path: "GUI_healthContainer.png"},
                 {name: "player", path: "spr_player.png"}, {name: "background", path: "bk_purgatory0.png"}, {name: "columns", path: "bk_purgatory1.png"}, 
-                {name: "floor", path: "bk_purgatory2.png"}, {name: "textParticles", path: "textParticles.png"}, 
-                {name: "weakSpotEnemy", path: "placeHolderWeakEnemy.png"}, {name: "counterattackEnemy", path: "placeHolderCounterattackEnemy.png"}, 
-                {name: "invisibleEnemy", path: "placeHolderInvisibleEnemy.png"}, {name: "emojis", path: "spr_emojis.png"}
+                {name: "floor", path: "bk_purgatory2.png"}, {name: "dodge", path: "spr_dodge.png"}, 
+                {name: "weakSpotEnemy", path: "spr_kappa.png"}, {name: "counterattackEnemy", path: "spr_counter.png"}, 
+                {name: "invisibleEnemy", path: "spr_katana.png"}, {name: "aura", path: "spr_aura.png"},
+                {name: "attack", path: "spr_katanaAttack.png"}, {name: "hit", path: "spr_hit.png"}
             ],
             //Audio list
             [   
                 {name: "musicIntro", path: "aud_purgatoryIntro.ogg", loop: false}, {name: "musicLoop", path: "aud_purgatoryLoop.ogg", loop: true},
-                {name: "dash", path: "dash.mp3", loop: false}, {name: "hit", path: "hit.mp3", loop: false}
+                {name: "dash", path: "aud_dash.mp3", loop: false}, {name: "hit", path: "aud_hit.mp3", loop: false},
+                {name: "playerHurt", path: "aud_playerHurt.mp3", loop: false}, {name: "appear", path: "aud_appear.mp3", loop: false},
+                {name: "swordCollision", path: "aud_swordCollision.mp3", loop: false}, {name: "swordSwing", path: "aud_swordSwing.wav", loop: false},
+                {name: "protect", path: "aud_protect.mp3", loop: false}
             ]
         );
-    }else if(level === "heaven"){
+    }else if(level === "paradiso"){
         //Load resources
         resourcesLoader(
             //Image list
             [   
+                {name: "question", path: "spr_question.png"}, {name: "alert", path: "spr_alert.png"},
+                {name: "1", path: "GUI_count1.png"}, {name: "2", path: "GUI_count2.png"},
+                {name: "3", path: "GUI_count3.png"}, {name: "fight", path: "GUI_fight.png"},
                 {name: "fullHearth", path: "GUI_fullHearth.png"}, {name: "halfHearth", path: "GUI_halfHearth.png"},
                 {name: "emptyHearth", path: "GUI_emptyHearth.png"}, {name: "healthContainer", path: "GUI_healthContainer.png"},
-                {name: "player", path: "spr_player.png"}, {name: "background", path: "bk_hell0.png"}, {name: "columns", path: "bk_hell1.png"}, 
-                {name: "floor", path: "bk_hell2.png"}, {name: "basicEnemy", path: "spr_demon.png"},
-                {name: "weakSpotEnemy", path: "placeHolderWeakEnemy.png"}, {name: "textParticles", path: "textParticles.png"}, 
-                {name: "illusionistEnemy", path: "spr_hellFox.png"}, {name: "fireball", path: "placeHolderFireBall.png"}, 
-                {name: "smoke", path: "placeHolderHumo.png"}, {name: "emojis", path: "spr_emojis.png"}
+                {name: "player", path: "spr_player.png"}, {name: "background", path: "bk_paradiso0.png"}, 
+                {name: "columns", path: "bk_paradiso1.png"}, {name: "floor", path: "bk_paradiso2.png"}, 
+                {name: "basicEnemy", path: "spr_demon.png"}, {name: "roundOfAttacksEnemy", path: "spr_tiger.png"}, 
+                {name: "dodge", path: "spr_dodge.png"}, {name: "attack", path: "spr_tigerAttack.png"},
+                {name: "illusionistEnemy", path: "spr_heavenFox.png"}, {name: "fireball", path: "spr_fireball.png"}, 
+                {name: "smoke", path: "spr_smoke.png"}, {name: "hit", path: "spr_hit.png"}
             ],
             //Audio list
             [   
-                {name: "musicIntro", path: "aud_hellIntro.ogg", loop: false}, {name: "musicLoop", path: "aud_hellLoop.ogg", loop: true},
-                {name: "dash", path: "dash.mp3", loop: false}, {name: "hit", path: "hit.mp3", loop: false}
+                {name: "musicIntro", path: "aud_paradisoIntro.ogg", loop: false}, {name: "musicLoop", path: "aud_paradisoLoop.ogg", loop: true},
+                {name: "dash", path: "aud_dash.mp3", loop: false}, {name: "hit", path: "aud_hit.mp3", loop: false},
+                {name: "playerHurt", path: "aud_playerHurt.mp3", loop: false}, {name: "fire", path: "aud_fire.mp3", loop: false},
+                {name: "protect", path: "aud_protect.mp3", loop: false}
             ]
         );
     }
@@ -137,7 +154,7 @@ function initialize(){
     window.removeEventListener("touchstart", initialize);
 
     //Remove the loading screen
-    //document.getElementById("loading").remove();
+    document.getElementById("loadingDiv").remove();
     context.clearRect(0, 0, canvasWidth, canvasHeight);
     //Initialize all the variables and listeners
     //Input
@@ -233,15 +250,12 @@ function loadSounds(audios, callback) {
     let name,
         count  = audios.length,
         canplay = function() { if (--count == 0) {
-                /*load = document.getElementById("loading");
+                load = document.getElementById("loadingDiv");
                 load.textContent = "Loaded";
                 load.style.color = "#ffffff";
                 load.style.backgroundColor = "#ff00bf";
-                load.style.animation = "none";*/
-                context.textBaseline = 'middle';
-                context.textAlign = "center";
-                context.font="10vh Arial";
-                context.fillText("Loaded", canvasWidth/2, canvasWidth/2);
+                load.style.animation = "none";
+                
                 window.addEventListener("keydown", callback, false);
                 window.addEventListener("click", callback, false);
                 window.addEventListener("touchstart", callback, false);
@@ -268,36 +282,4 @@ function resize() {
     height = Math.min(width/aspectRatio, maxHeight, 640);
     canvas.style.width = height * aspectRatio + 'px';
     canvas.style.height = height + 'px';
-    
-}
-function drawProgressIndicator(){
-    context.save();
-    context.clearRect(0, 0, canvasWidth, canvasHeight);
-    context.translate(canvasWidth / 2, canvasHeight/ 2);
-    context.scale(0.4, 0.4);
-    context.rotate(-Math.PI / 2);
-    context.strokeStyle = "black";
-    context.fillStyle = "white";
-    context.lineWidth = 8;
-    context.lineCap = "round";
-    var step = animationStep;
-    context.fillStyle = "black";
-    context.save();
-    context.rotate(step * Math.PI / 30);
-    context.strokeStyle = "#33ccff";
-    context.fillStyle = "#33ccff";
-    context.lineWidth = 10;
-    context.beginPath();
-    context.moveTo(0, 0);
-    context.lineTo(68, 0);
-    context.stroke();
-    context.fill();
-    context.restore();
-    context.beginPath();
-    context.lineWidth = 14;
-    context.strokeStyle = 'gray';
-    context.arc(0, 0, 80, 0, Math.PI * 2, true);
-    context.stroke();
-    context.restore();
-    animationStep += 10;
 }
