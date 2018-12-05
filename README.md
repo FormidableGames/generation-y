@@ -75,16 +75,18 @@ Tendrás 3 vidas en todos los niveles, cada enemigo quitará más o menos vidas.
 
 Dentro de la dificultad de cada nivel (Infierno, Purgatorio, Paradiso) habrá tres dificultades que dependiendo cómo jugueges hará que se ajusten a ti los niveles. Cada nivel tendrá modo fácil, normal y difícil; cuando se empieza a jugar las tres primeras partidas serán en fácil, a partir de esto si tu ratio victorias-derrotas es de menos sel 70% seguirá en fácil, si es desde el 70% al 90% se pondrá en dificultad media y si es superior a 90% difícil. Estos modos tienen varios mapas de niveles que saldrán aleatorios.
 
+En la pantalla de final de partida se mostrará la puntuación obtendia, esta dependerá del número de enemigos que hayas derrotado, cada enemigo te dará ciertos puntos.
+
 ### Lista de enemigos  
 1. **Infierno (fácil)**   
 
-+ **Guardia enigma**: Vidas: /3 corazones/  Daño: /medio corazón/ 
++ **Guardia enigma**: Vidas: /3 corazones/  Daño: /medio corazón/  Puntos: 100
     + Fase **Defensa**: 1-3 segundos (variará aleatoriamente el tiempo que tengas que esperar) --> si le atacas quedarás aturdida.  
     + Fase **Preparación de Ataque**: 0.7 segundos --> si le atacas en este momento le quitarás una vida, entonces el enemigo se dará la vuelta inmediatamente y cambiará a modo de defensa. Si no, pasará a modo de ataque.  
     + Fase **Ataque**: 0.5 segundos --> al acabar pasará a modo defensa.  
   ![Guardia Enigma](https://github.com/FormidableGames/generation-y/blob/master/assets/sprites/spr_demon.png "Demonio")
   
-+ **Esquiva**: Vidas: /2 corazones/ Daño: /1 corazón/  
++ **Esquiva**: Vidas: /2 corazones/ Daño: /1 corazón/  Puntos: 200
     + Fase **Defensa**: 1-2 segundos --> si le atacas quedarás aturdida.
     + Fase **Preparación de Ataque**: 0.5-0.6 segundos --> si le atacas te esquivará y pasará a fase de defensa hacia el lado al que has ido. Si no, pasará a fase de ataque.  
     + Fase **Ataque**: 0.5 segundos --> después de hacerte daño pasará a fase de celebración.  
@@ -92,7 +94,7 @@ Dentro de la dificultad de cada nivel (Infierno, Purgatorio, Paradiso) habrá tr
     + Fase **Mareo**: 1-1.5 segundos --> si le atacas 3 veces seguidas en la fase de preparación el enemigo se "mareará" al haber esquivado tantas veces. Entonces podrás dañarle de manera normal (un corazón). Una vez golpeado pasará a la fase de defensa hacia el lado en el que estés.  
     ![Esquiva](https://github.com/FormidableGames/generation-y/blob/master/assets/sprites/spr_tengu.png "Tengu")
       
-+ **El ilusionista (fase Infierno)**: Vidas (modo *NO ILUSIÓN*): /2 corazones/ Daño: /medio corazón/  
++ **El ilusionista (fase Infierno)**: Vidas (modo *NO ILUSIÓN*): /2 corazones/ Daño: /medio corazón/  Puntos: 250
     + Fase **Ilusión**: hasta que le venzas --> se hará pasar por un *Guardia Enigma* pero de solo un corazón, en todo lo demás funcionará igual que este, cuando le derrotes pasará a modo *NO ILUSIÓN*.  
     + Fase **Ataque a Distancia**: 3-5 ataques --> en esta fase no podrás atacar al enemigo (lanzará ataques hacia el cielo primero y desaparecerá), los ataques a distancia caerán del cielo lentamente, deberás esquivarlos para que no te dañen, es decir, caerán uno detrás de otro en un lado u otro de manera aleatoria (50-50 de posibildades en cada lado).   
     + Fase **Aparición**: 5 ataques --> en esta fase deberás esperar a que aparezca el enemigo mientras esquivas sus ataques de *halo*. Cada vez que vaya a hacer un ataque el lado en el que vaya a atacar (se escogerá aleatoriamente igual que en la anterior fase) se "encenderá" en forma de *halo* para indicar que va a atacar ahí (durante 0.7-1 segundos), entonces deberás cambiar de lado para evitar ser dañado (el ataque durará 0.3 segundos). Cada vez que acaba de hacer un ataque el enemigo aparecerá y podrás atacarle en ese momento (0.5 segundos). Si le golpeas desaparecerá immediatamente y pasará a hacer otro ataque. Una vez acabada esta fase pasará de nuevo a la fase de Ataque a Distancia.  
@@ -100,21 +102,21 @@ Dentro de la dificultad de cada nivel (Infierno, Purgatorio, Paradiso) habrá tr
       
 2. **Purgatorio (normal)**  
   
-+ **Punto débil**: Vidas: /2 corazones/ Daño: /1 corazón/  
++ **Punto débil**: Vidas: /2 corazones/ Daño: /1 corazón/  Puntos: 400
     + Fase **Defensa**: 2-4 segundos --> si le atacas quedarás aturdida.  
     + Fase **Preparación de Ataque**: 0.4 segundos --> si le atacas no le causarás daño (por culpa de su escudo/barrera especial) pero pasarás al otro lado, entonces entrarás en la fase Zona Débil ya que el enemigo no se dará la vuelta al instante; si no, pasará a la fase de Ataque.  
     + Fase **Zona Débil**: 0.4 segundos --> si le atacas recibirá daño, si no, se dará la vuelta y se pondrá en modo Defensa.  
     + Fase **Ataque**: 0.5 segundos --> después de hacerte daño pasará al modo Defensa.    
     ![Punto Débil](https://github.com/FormidableGames/generation-y/blob/master/assets/sprites/spr_kappa.png "Kappa")
     
-+ **Contraataque**: Vidas: /3 corazones/ Daño (en fase Ataque): /medio corazón/  
++ **Contraataque**: Vidas: /3 corazones/ Daño (en fase Ataque): /medio corazón/  Puntos: 350
     + Fase **En Guardia**: 2-2.8 segundos --> si le golpeas pasará a la fase de Contraataque.  
     + Fase **Preparación de Ataque**: 0.35 segundos --> si le atacas en este momento le quitarás una vida, entonces el enemigo se dará la vuelta inmediatamente y cambiará a modo de defensa. Si no, pasará a modo de ataque.  
     + Fase **Ataque**: 0.3 segundos --> después de hacerte daño pasará al modo En Guardia.  
     + Fase **Contraataque**: 0.3 segundos --> es lo mismo que en ataque pero te quitará 1 corazón en vez de medio.  
       ![Contraataque](https://github.com/FormidableGames/generation-y/blob/master/assets/sprites/spr_counter.png "Tengu Invernal")
       
-+ **Invisible**: Vidas: /1 corazón/ Daño: /medio corazón/  
++ **Invisible**: Vidas: /1 corazón/ Daño: /medio corazón/  Puntos: 500
     + Fase **Inicio**: no se ve ningún enemigo, ¥ detecta algo extraño (?).
     + Fase **Escondido**: hasta que le golpees cuando es visible --> cuando ¥ detecte algún movimiento te avisará (!) entonces deberás atacar para contrarrestar el ataque del enemigo. Si contrarrestas el ataque del enemigo pasarás al otro lado (sin hacerle daño), si no recibirás daño. El aviso será 0.6 segundos antes del ataque del enemigo. Si consigues contrarrestar el ataque 3 veces el enemigo se mostrará ante ti, estará inmóvil en el centro hasta que le golpees (no le hará daño ya que estará transparente), entonces pasará a modo Furia.
     + Fase **Furia**: hasta que le vuelvas "sólido" --> el enemigo se ha enfurecido (seguirá siendo invisible a no ser que se diga lo contrario), ahora cada vez que ataque serán dos golpes seguidos. Cada vez que te vaya a atacar ¥ te alertará igual que antes pero con solo 0.5 segundos de diferencia. De vez en cuando entre ataques el enemigo se mostrará en el centro (durante 0.5 segundos) y desaparecerá. Si le golpeas 3 veces seguidas cuando se muestra este se volverá completamente opaco (cada vez que golpees se volverá menos transparente), es decir "sólido". Si no golpeas cada vez que se muestra el ciclo de veces que tengas que golpearle se reiniciará (volverá a estar completamente transparente). Al volverle "sólido" pasará al modo Fin.
@@ -125,19 +127,19 @@ Dentro de la dificultad de cada nivel (Infierno, Purgatorio, Paradiso) habrá tr
   
 3. **Paraiso (difícil)**  
   
-+ **Ronda de ataques**: Vidas: /5 corazones/ Daño: /1-3 corazones/  
++ **Ronda de ataques**: Vidas: /5 corazones/ Daño: /1-3 corazones/  Puntos: 650
     + Fase **Defensa**: 1-1.5 segundos --> si le atacas quedarás aturdida.  
     + Fase **Preparación de Ataque**: 0.3 segundos --> si le atacas le quitarás un corazón y se pondrá otra vez en modo Preparación de Ataque, si no, pasará a modo Ataque.
     + Fase **Ataque**: 0.3 segundos por cada ataque (cada ataque quita 1 corazón) --> se calcurará de manera aleatoria el número de veces que te ataque, las probabilidades serán: 50%-1 ataque, 40%-2 ataques, 10%-3 ataques. Cuando acabe de atacarte se pondrá en modo Defensa.  
     ![Ronda de ataques](https://github.com/FormidableGames/generation-y/blob/master/assets/sprites/spr_tiger.png "Byakko")
     
-+ **El ilusionista (fase Paraiso)**: Vidas (modo *NO ILUSIÓN*): /3 corazones/ Daño: /1 corazón(excepto Ataque a Distancia)/  
++ **El ilusionista (fase Paraiso)**: Vidas (modo *NO ILUSIÓN*): /3 corazones/ Daño: /1 corazón(excepto Ataque a Distancia)/  Puntos: 650
     + Fase **Ilusión**: hasta que le venzas --> se hará pasar por un *Ronda de ataques* pero de solo un corazón, si te hace daño solo recibirás un ataque, cuando le derrotes pasará a modo *NO ILUSIÓN*.  
     + Fase **Ataque a Distancia**: 7-10 ataques --> en esta fase no podrás atacar al enemigo (lanzará ataques hacia el cielo primero y desaparecerá), los ataques a distancia caerán del cielo, deberás esquivarlos para que no te dañen, es decir, caerán uno detrás de otro en un lado u otro de manera aleatoria (50-50 de posibildades en cada lado). Estos ataques te quitarán medio corazón.   
     + Fase **Aparición**: 5 ataques --> en esta fase deberás esperar a que aparezca el enemigo por uno de los lados (de manera aleatoria (50-50 de posibilidades en cada lado), este mostrará parte de su cuerpo primero (su cabeza) para avisarte de que va a salir por ese lado (0.2 segundos), entonces cargará contra ti. Si estás de espaldas a él cuando carga recibirás daño, si estás de frente sin atacar también, pero si le atacas mientras carga contra ti (es decir le contraatacas) él será quien reciba daño. Si le golpeas desaparecerá immediatamente y pasará a hacer otro ataque. Una vez acabada esta fase pasará de nuevo a la fase de Ataque a Distancia.  
     ![Ilusionista paraiso](https://github.com/FormidableGames/generation-y/blob/master/assets/sprites/spr_heavenFox.png "Kitsune-zenko")
       
-+ **Dragón**: Vidas: /4 corazones/ Daño: /medio corazón/
++ **Dragón**: Vidas: /4 corazones/ Daño: /medio corazón/ Puntos: 750
     + Fase **Presentación**: el enemigo se percatará de tu presencia (no podrás golpearle) y volará por encima de ti (yendo hacia la izquierda dutrante 3 segundos). Pasará al modo Vuelo.
    + Fase **Vuelo**: hasta que le elimines --> el enemigo irá pasando por el cielo todo el rato (estará en todo momento encima de ¥ y tardará 1.5 segundos en recorrer la pantalla), irá ejecutando dos clases de ataques diferentes y mostrará el orbe según una serie.  
    
@@ -153,7 +155,7 @@ Dentro de la dificultad de cada nivel (Infierno, Purgatorio, Paradiso) habrá tr
    
 ### Flujo de juego
 Desde el menú principal puedes acceder a la pantalla de selección de nivel. Aquí podrás empezar una partida en el nivel que elijas. Avanzarás por el escenario hasta encontrar a un enemigo al que enfrentarte. Durante el combate no podrás continuar hasta derrotarlo. Al terminar el combate seguirás avanzando por el nivel hasta que encuentres a otro enemigo. 
-Cuando logres la victoria, seas derrotado o abandones, saldrá la pantalla de fin del juego desde la que podrás volver a rejugar el nivel, volver al selector de niveles o volver al menú principal.
+Cuando logres la victoria, seas derrotado o abandones, saldrá la pantalla de fin del juego desde la que podrás volver a rejugar el nivel, volver al selector de niveles o volver al menú principal. En esta pantalla se mostrará la puntuación que has obtenido.
 
 ## Interfaz
 
@@ -300,34 +302,18 @@ Siguiendo la estética visual establecida:
 - Efectos de sonido de la protagonista:  
     - __*Dash*__
     - __Sonido de espada__ (cuando ataca)
+    - __Bloqueada__
     - __Herida__
 - Enemigos:  
-
-    Base (cada uno una versión aguda y una grave): 
-    - __Preparación ataque__
-    - __Herido__ 
-    
-    Específico:
-    - **Guardia enigma**: Base grave.
-    - **Esquiva**: Base aguda.
-        - __Esquiva__ (soindo de aire *whushh*)
-        - Mareado
-        - Celebración
     - **El ilusionista (modo infierno (I)/modo paraiso (P))**:
-        - Fuegos
-        - Aparición/Desaparición (nubes grises como ninja) *las dos versiones son iguales*
-        - __Herido__ (I) (P)
-        - __Cargando contra ti__ (sonido trotando, ten en cuenta que es un zorro no un caballo) (P)  
-    - **Punto débil**: Base grave.
-    - **Contraataque**: Base aguda.
+        - __Fuegos__
+        - __Aparición/Desaparición__ (nubes grises como ninja) *las dos versiones son iguales*
     - **Invisible(?)**: 
-        - Sonido aura
-        - Sonido espada golpeando
+        - __Sonido aura__
+        - __Sonido espada golpeando__
         - __Sonido espadas chocandose__
     - **Ronda de ataques**:
-        - __Preparación ataque__ (gruñidos de tigre)
         - __Ataque__ (gruñidos de tigre)
-        - __Herido__ (gruñidos de tigre)
     - **Dragón**: continuar en un futuro
 
 ## Planes de futuro
