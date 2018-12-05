@@ -14,7 +14,24 @@
 .game-over-content{
     padding: 20px;
     margin: 20px;
+    height: 640px;
 }
+.game-over-bg{
+    background-image: url("../img/web/prota-gameover.png");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    height: 640px;
+
+}
+.results{
+    font-family: 'Rock Salt';
+    font-size: 40px;
+    color: #ffffff;
+    padding-bottom: 10px;
+}
+
+
 
 
 
