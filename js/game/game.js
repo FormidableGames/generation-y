@@ -9,6 +9,7 @@ class Game {
         this.killedEnemyList = [];
 
         //Difficulty
+        console.log(localStorage.getItem('wins'));
         this.wins = localStorage.getItem("wins");
         this.losses = localStorage.getItem("losses");
         if(this.wins == undefined || isNaN(this.wins)) this.wins = 0;
@@ -17,9 +18,7 @@ class Game {
         //3 games or less OR <70% winrate -> easy
         //70% winrate -> medium
         //90% winrate -> hard
-        console.log(this.wins);
-        
-        console.log(this.wins);
+
         if(this.totalGames > 3 && this.wins*100/this.totalGames >= 90)
             this.difficulty = "hard";
         else if(this.totalGames > 3 && this.wins*100/this.totalGames >= 70)
@@ -131,8 +130,6 @@ class Game {
                     audioResources["musicLoop"].volume = Math.floor((1 - this.fadeAlpha)*100)/100;
                 }
                 if(this.fadeAlpha >= 1.1) {
-                    this.wins++;
-                    localStorage.setItem("wins", this.wins);
                     window.location = "gameOver.html";
                 }
             },
@@ -145,7 +142,7 @@ class Game {
         this.entities.push(fade);
         if(this.player.health > 0) this.wins++;
         else this.losses++;
-        localStorage.setItem("wins", this.wins);
+        localStorage.setItem('wins', this.wins);
         localStorage.setItem("losses", this.losses);
 
         localStorage.setItem("alreadySent", false);
