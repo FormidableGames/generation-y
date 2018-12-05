@@ -145,19 +145,19 @@
 
 @keyframes btn-text {
     0% {
-        text-shadow: -3px -3px 0 #ffffff, 6px -3px 0 #ff00bf;
+        text-shadow: -3px -3px 0 #ffffff, 4px -2px 0 #ff00bf;
     }
     25% {
         text-shadow: -3px 3px 0 #ffffff, 0px 0px 0 #ff00bf;
     }
     50% {
-        text-shadow: 3px -1px 0 #ffffff, -6px -6px 0 #ff00bf;
+        text-shadow: 3px -1px 0 #ffffff, -4px -4px 0 #ff00bf;
     }
     75% {
-        text-shadow: 0px 0px 0 #ffffff, -3px 6px 0 #ff00bf;
+        text-shadow: 0px 0px 0 #ffffff, -2px 4px 0 #ff00bf;
     }
     100% {
-        text-shadow: -3px -3px 0 #ffffff, 6px -3px 0 #ff00bf;
+        text-shadow: -3px -3px 0 #ffffff, 4px -2px 0 #ff00bf;
     }
 }
 
