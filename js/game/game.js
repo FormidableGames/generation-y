@@ -9,8 +9,8 @@ class Game {
         this.killedEnemyList = [];
 
         //Difficulty
-        this.wins = Integer.parseInt(localStorage.getItem("wins"));
-        this.losses = Integer.parseInt(localStorage.getItem("losses"));
+        this.wins = parseInt(localStorage.getItem("wins"));
+        this.losses = parseInt(localStorage.getItem("losses"));
         if(this.wins == undefined || isNaN(this.wins)) this.wins = 0;
         if(this.losses == undefined || isNaN(this.losses)) this.losses = 0;
         this.totalGames = this.wins + this.losses;
