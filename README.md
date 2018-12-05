@@ -29,6 +29,7 @@
     - Pistas
     - Efectos de sonido
 7. **Planes de futuro**
+8. **Concept Art**
 ---
 
 ## Introducción
@@ -204,15 +205,6 @@ El juego se desarrolla en un universo alternativo en el que la guerra entre dios
 
 ## Arte 2D
 
-### Concept art
-Nuestra protagonista:
-![Concept1](https://github.com/FormidableGames/generation-y/blob/master/concept/concept1.png "Protagonista")  
-![Concept2](https://github.com/FormidableGames/generation-y/blob/master/concept/concept2.png "Busto protagonista")  
-En combate:
-![Concept3](https://github.com/FormidableGames/generation-y/blob/master/concept/concept3.png "Protagonista luchando")  
-Paradiso, uno de los 3 niveles del juego:
-![Concept4](https://github.com/FormidableGames/generation-y/blob/master/concept/concept4-paradiso.png "Paradiso")  
-
 ### Sprites
 Siguiendo la estética visual establecida:
 - Sprites en 2d de la **protagonista**:
@@ -337,3 +329,18 @@ Siguiendo la estética visual establecida:
 ## Planes de futuro
 
 Nos hubiese gustado poder meter el enemigo **Dragón** y hacer más enemigos, también añadir en el juego objetos que el jugador fuese encontrado a lo largo de los niveles y que le diesen ventajas o desventajas, por ejemplo, un aumento de la fuerza de tus ataques o que para poder hacer el *dash* tengas que dar dos taps seguidos en vez de solo uno.
+
+## Concept art
+
+Nuestra protagonista:
+![Concept1](https://github.com/FormidableGames/generation-y/blob/master/concept/concept1.png "Protagonista")  
+![Concept2](https://github.com/FormidableGames/generation-y/blob/master/concept/concept2.png "Busto protagonista")  
+En combate:
+![Concept3](https://github.com/FormidableGames/generation-y/blob/master/concept/concept3.png "Protagonista luchando")  
+Paradiso y Purgatorio, dos de los tres niveles del juego:
+![Concept4](https://github.com/FormidableGames/generation-y/blob/master/concept/paradiso-concept.png "Paradiso")
+![Concept5](https://github.com/FormidableGames/generation-y/blob/master/concept/purgatorio-concept.png "Purgatorio")
+Kitsune-yako y Tengu, dos de los enemigos:
+![Concept6](https://github.com/FormidableGames/generation-y/blob/master/concept/kitsune-concept.png "Kitsune-yako")
+![Concept7](https://github.com/FormidableGames/generation-y/blob/master/concept/tengu-concept.png "Tengu")
+
