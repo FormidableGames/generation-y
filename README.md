@@ -1,6 +1,8 @@
 # Gen¥
 
-[Gen¥](https://formidablegames.github.io/generation-y)
+[Link al repositorio](https://formidablegames.github.io/generation-y)  
+[Link al portfolio](https://formidablegames.github.io/portfolio/)
+
 
 ## Índice
 
