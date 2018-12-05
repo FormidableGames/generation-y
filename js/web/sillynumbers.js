@@ -7,5 +7,9 @@ $(document).ready(function(){
         numberelements[i].innerHTML = Math.floor(Math.random() * (500 - 20) + 20);
     }
 
-    $(".followers-num").html(Math.floor(Math.random() * (100 - 50) + 50));
+    var numberfollowers = $(".followers-num");
+
+    for (var i = 0; i < numberfollowers.length; i++) {
+        numberfollowers[i].innerHTML = Math.floor(Math.random() * (100 - 50) + 50);
+    }
 })
