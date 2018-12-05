@@ -10,6 +10,42 @@
 
 
 
+/* PANTALLA LEVEL SELECTOR */
+.level-hell-container{
+    background-color: #000000;
+    background-image: url("../assets/sprites/fondo-infierno.png");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding-top: 50px;
+    margin-bottom: 10px; 
+    height: 320px;
+}
+.level-purgatory-container{
+    background-color: #000000;
+    background-image: url("../assets/sprites/fondo-purgatorio.png");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding-top: 50px;
+    margin-bottom: 10px; 
+    height: 320px;
+}
+.level-paradiso-container{
+    background-color: #000000;
+    background-image: url("../assets/sprites/fondo-paradiso.png");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding-top: 50px;
+    margin-bottom: 10px; 
+    height: 320px;
+}
+
+
+
+
+
 
 /* PANTALLA CREDITOS */ 
 
@@ -19,12 +55,6 @@
     padding: 15px 20px;
     margin: 20px 0px 30px 10px;
 	word-wrap: break-word;
-}
-.level-buttons-container{
-    background-color: #000000;
-    text-align: center;
-    padding-top: 70px;
-    padding-bottom: 70px;
 }
 .profile-follower-avatar {
     position: relative;

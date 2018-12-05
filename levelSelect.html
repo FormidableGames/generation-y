@@ -4,13 +4,18 @@
 <head>
     <!-- IMPORTS -->
     <!-- Libraries/Frameworks: Bootstrap, JQuery -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- Latest compiled and minified CSS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!-- jQuery library -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- Latest compiled JavaScript -->
-    <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet"> <!-- Google font -->
-	
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+    <!-- Google font -->
+
     <!-- Our scripts & css -->
-    <link rel="stylesheet" href="style/index.css"> <!-- Extra css on top of Bootstrap framework -->
+    <link rel="stylesheet" href="style/index.css">
+    <!-- Extra css on top of Bootstrap framework -->
 
 
     <!-- METADATA -->
@@ -24,34 +29,83 @@
 </head>
 
 <body>
-    
+
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <!-- Navbar at the top -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">Chirper <span class="glyphicon glyphicon-bullhorn"></span></a>
+                <a class="navbar-brand" href="index.html">Chirper
+                    <span class="glyphicon glyphicon-bullhorn"></span>
+                </a>
             </div>
             <ul class="nav navbar-nav">
-                <li><a href="index.html">Dashboard</a></li>
-                <li class="active"><a href="#">Game</a></li>
-                <li><a href="credits.html">About</a></li>
-                <li><a href="#">Rankings</a></li>
-                <button class="btn btn-outline" type="button">Back to FormidableGames</button>
+                <li>
+                    <a href="index.html">Dashboard</a>
+                </li>
+                <li class="active">
+                    <a href="#">Game</a>
+                </li>
+                <li>
+                    <a href="credits.html">About</a>
+                </li>
+                <li>
+                    <a href="#">Rankings</a>
+                </li>
+                
             </ul>
         </div>
     </nav>
 
+<!--
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">Chirper
+                <span class="glyphicon glyphicon-bullhorn"></span>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Dashboard
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Game</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="credits.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Ranking</a>
+                </li>
+                <button class="btn btn-outline" type="button">Back to FormidableGames</button>
+            </ul>
+        </div>
+    </nav>
+-->
+
+    <div class="jumbotron">
+        <a href="index.html" class="btn btn-main">BACK</a>
+    </div>
+
     <div class="container-fluid" style="padding:0px;">
-        <div class="level-buttons-container">
-            <div class="row">
-                <div class="col-md-4"> <a href="game.html" onclick="localStorage.setItem('level', 'hell');" class="btn btn-main">Hell</a> </div>
-                <div class="col-md-4"> <a href="game.html" onclick="localStorage.setItem('level', 'purgatory');" class="btn btn-main">Purgatory</a></div>
-                <div class="col-md-4"> <a href="game.html" onclick="localStorage.setItem('level', 'paradiso');" class="btn btn-main">Heaven</a></div>           
+        <div class="row">
+            <div class="col-md-4 level-hell-container">
+                <a href="game.html" onclick="localStorage.setItem('level', 'hell');" class="btn btn-main">Hell</a>
+            </div>
+            <div class="col-md-4 level-purgatory-container">
+                <a href="game.html" onclick="localStorage.setItem('level', 'purgatory');" class="btn btn-main">Purgatory</a>
+            </div>
+            <div class="col-md-4 level-paradiso-container">
+                <a href="game.html" onclick="localStorage.setItem('level', 'paradiso');" class="btn btn-main">Paradiso</a>
             </div>
         </div>
     </div>
 
     <footer class="container-fluid bg-footer text-center">
-		<p>Repositorio <a href="https://github.com/FormidableGames/generation-y">generation y</a></p> 
-	</footer>
+        <p>Repositorio
+            <a href="https://github.com/FormidableGames/generation-y">generation y</a>
+        </p>
+    </footer>
 </body>
