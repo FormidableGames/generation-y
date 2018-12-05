@@ -1,5 +1,7 @@
 # Gen¥
 
+[Gen¥](formidablegames.github.io/generation-y)
+
 ## Índice
 
 1. **Introducción**
@@ -30,6 +32,7 @@
     - Efectos de sonido
 7. **Planes de futuro**
 8. **Concept Art**
+9. **Enlaces**
 ---
 
 ## Introducción
@@ -334,7 +337,7 @@ Nos hubiese gustado poder meter el enemigo **Dragón** y hacer más enemigos, ta
 
 Nuestra protagonista:
 ![Concept1](https://github.com/FormidableGames/generation-y/blob/master/concept/concept1.png "Protagonista")  
-![Concept2](https://github.com/FormidableGames/generation-y/blob/master/concept/concept2.png "Busto protagonista")  
+![Concept2](https://github.com/FormidableGames/generation-y/blob/master/concept/prota-ilustracion.png "Cara protagonista")  
 En combate:
 ![Concept3](https://github.com/FormidableGames/generation-y/blob/master/concept/concept3.png "Protagonista luchando")  
 Paradiso y Purgatorio, dos de los tres niveles del juego:
@@ -344,3 +347,6 @@ Kitsune-yako y Tengu, dos de los enemigos:
 ![Concept6](https://github.com/FormidableGames/generation-y/blob/master/concept/kitsune-concept.png "Kitsune-yako")
 ![Concept7](https://github.com/FormidableGames/generation-y/blob/master/concept/tengu-concept.png "Tengu")
 
+## Enlaces
+[url al GitHub del código](https://github.com/FormidableGames/generation-y)
+[url al portfolio](https://formidablegames.github.io/portfolio/)
