@@ -112,7 +112,7 @@ Dentro de la dificultad de cada nivel (Infierno, Purgatorio, Paradiso) habrá tr
     + Fase **Preparación de Ataque**: 0.35 segundos --> si le atacas en este momento le quitarás una vida, entonces el enemigo se dará la vuelta inmediatamente y cambiará a modo de defensa. Si no, pasará a modo de ataque.  
     + Fase **Ataque**: 0.3 segundos --> después de hacerte daño pasará al modo En Guardia.  
     + Fase **Contraataque**: 0.3 segundos --> es lo mismo que en ataque pero te quitará 1 corazón en vez de medio.  
-      ![Contraataque](https://github.com/FormidableGames/generation-y/blob/master/assets/sprites/spr_tenguPrg.png "Tengu Invernal")
+      ![Contraataque](https://github.com/FormidableGames/generation-y/blob/master/assets/sprites/spr_counter.png "Tengu Invernal")
       
 + **Invisible**: Vidas: /1 corazón/ Daño: /medio corazón/  
     + Fase **Inicio**: no se ve ningún enemigo, ¥ detecta algo extraño (?).
