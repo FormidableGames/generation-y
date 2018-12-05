@@ -28,6 +28,7 @@
 6. **Audio**
     - Pistas
     - Efectos de sonido
+7. **Planes de futuro**
 ---
 
 ## Introducción
@@ -275,7 +276,7 @@ Siguiendo la estética visual establecida:
         - Aparición (con nubes grises)/Desaparición
         - Cargando contra ti
         - Herido  
-    - **Dragón**: 
+    - **Dragón**: continuar en el futuro
 - Fondos 2d en diferentes capas:  
     - Infierno
     - Purgatorio
@@ -295,7 +296,6 @@ Siguiendo la estética visual establecida:
 - Efectos de sonido de la protagonista:  
     - __*Dash*__
     - __Sonido de espada__ (cuando ataca)
-    - __Aturde__ 
     - __Herida__
 - Enemigos:  
 
@@ -327,4 +327,8 @@ Siguiendo la estética visual establecida:
         - __Preparación ataque__ (gruñidos de tigre)
         - __Ataque__ (gruñidos de tigre)
         - __Herido__ (gruñidos de tigre)
-    - **Dragón**: 
+    - **Dragón**: continuar en un futuro
+
+## Planes de futuro
+
+Nos hubiese gustado poder meter el enemigo **Dragón** y hacer más enemigos, también añadir en el juego objetos que el jugador fuese encontrado a lo largo de los niveles y que le diesen ventajas o desventajas, por ejemplo, un aumento de la fuerza de tus ataques o que para poder hacer el *dash* tengas que dar dos taps seguidos en vez de solo uno.
