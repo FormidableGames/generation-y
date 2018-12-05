@@ -28,8 +28,6 @@ class Game {
         if(repeating == "true") this.structure = localStorage.getItem("levelStructure", this.structure);
         else this.structure = levels[level][this.difficulty][Math.floor(Math.random()*levels[level][this.difficulty].length)];
         
-        console.log(this.structure);
-        
         localStorage.setItem("levelStructure", this.structure);
         this.room = 0;
         this.map = new Map();
