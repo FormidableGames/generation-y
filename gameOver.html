@@ -140,11 +140,14 @@
 
                 if (chirps != undefined) {
                     chirps.push(JSON.stringify(chirp));
+                    console.log("not undefined");
                 } else {
                     var c = JSON.stringify(chirp)
                     chirps = [c];
-                }
 
+                    console.log("i create "+chirps);
+                }
+                localStorage.setItem("chirps", JSON.stringify(chirps));
                 localStorage.setItem("already_sent", true);
             }
 
@@ -163,8 +166,10 @@
             level = localStorage.getItem("level");
             score = 0;
             var list = localStorage.getItem('killedEnemyList');
-            var enemyList = list.split(',');
+            enemyList = list.split(',');
             chirps = JSON.parse(localStorage.getItem("chirps"));
+            console.log(chirps);
+            console.log(localStorage.getItem("chirps"));
 
             // Debug
             killedEnemies = enemyList.length;
