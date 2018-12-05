@@ -154,10 +154,19 @@ class Player {
         this.attackable = false;     
         audioResources["playerHurt"].play();
         this.dashSound.stop();
+        if(this.health <= 0){
+            this.toDie();
+            game.removeEnemy();
+            game.toGameOver();
+        }
     }
     toEndFight(){
         this.state = "endFight";
         this.facing = 1;
         this.spriteH = 0;
+    }
+    toDie(){
+        this.state = "dead";
+        this.spriteH = 1;
     }
 }
