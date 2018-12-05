@@ -77,6 +77,7 @@ Tendrás 3 vidas en todos los niveles, cada enemigo quitará más o menos vidas.
     + Fase **Defensa**: 1-3 segundos (variará aleatoriamente el tiempo que tengas que esperar) --> si le atacas quedarás aturdida.  
     + Fase **Preparación de Ataque**: 0.7 segundos --> si le atacas en este momento le quitarás una vida, entonces el enemigo se dará la vuelta inmediatamente y cambiará a modo de defensa. Si no, pasará a modo de ataque.  
     + Fase **Ataque**: 0.5 segundos --> al acabar pasará a modo defensa.  
+  ![Guardia Enigma](https://github.com/FormidableGames/generation-y/blob/master/assets/sprites/spr_demon.png "Demonio")
   
 + **Esquiva**: Vidas: /2 corazones/ Daño: /1 corazón/  
     + Fase **Defensa**: 1-2 segundos --> si le atacas quedarás aturdida.
@@ -84,11 +85,13 @@ Tendrás 3 vidas en todos los niveles, cada enemigo quitará más o menos vidas.
     + Fase **Ataque**: 0.5 segundos --> después de hacerte daño pasará a fase de celebración.  
     + Fase **Celebración**: 0.6 segundos --> al haberte hecho daño lo celebrará, por lo que estará distraido y podrás atacarle (harás solo media vida de daño, a diferencia de la fase de mareo). Una vez golpeado pasará a la fase de defensa hacia el lado en el que estés.
     + Fase **Mareo**: 1-1.5 segundos --> si le atacas 3 veces seguidas en la fase de preparación el enemigo se "mareará" al haber esquivado tantas veces. Entonces podrás dañarle de manera normal (un corazón). Una vez golpeado pasará a la fase de defensa hacia el lado en el que estés.  
+    ![Esquiva](https://github.com/FormidableGames/generation-y/blob/master/assets/sprites/spr_tengu.png "Tengu")
       
 + **El ilusionista (fase Infierno)**: Vidas (modo *NO ILUSIÓN*): /2 corazones/ Daño: /medio corazón/  
     + Fase **Ilusión**: hasta que le venzas --> se hará pasar por un *Guardia Enigma* pero de solo un corazón, en todo lo demás funcionará igual que este, cuando le derrotes pasará a modo *NO ILUSIÓN*.  
     + Fase **Ataque a Distancia**: 3-5 ataques --> en esta fase no podrás atacar al enemigo (lanzará ataques hacia el cielo primero y desaparecerá), los ataques a distancia caerán del cielo lentamente, deberás esquivarlos para que no te dañen, es decir, caerán uno detrás de otro en un lado u otro de manera aleatoria (50-50 de posibildades en cada lado).   
     + Fase **Aparición**: 5 ataques --> en esta fase deberás esperar a que aparezca el enemigo mientras esquivas sus ataques de *halo*. Cada vez que vaya a hacer un ataque el lado en el que vaya a atacar (se escogerá aleatoriamente igual que en la anterior fase) se "encenderá" en forma de *halo* para indicar que va a atacar ahí (durante 0.7-1 segundos), entonces deberás cambiar de lado para evitar ser dañado (el ataque durará 0.3 segundos). Cada vez que acaba de hacer un ataque el enemigo aparecerá y podrás atacarle en ese momento (0.5 segundos). Si le golpeas desaparecerá immediatamente y pasará a hacer otro ataque. Una vez acabada esta fase pasará de nuevo a la fase de Ataque a Distancia.  
+      ![Ilusionista Infierno](https://github.com/FormidableGames/generation-y/blob/master/assets/sprites/spr_hellFox.png "Kitsune-yako")
       
 2. **Purgatorio (normal)**  
   
@@ -97,12 +100,14 @@ Tendrás 3 vidas en todos los niveles, cada enemigo quitará más o menos vidas.
     + Fase **Preparación de Ataque**: 0.4 segundos --> si le atacas no le causarás daño (por culpa de su escudo/barrera especial) pero pasarás al otro lado, entonces entrarás en la fase Zona Débil ya que el enemigo no se dará la vuelta al instante; si no, pasará a la fase de Ataque.  
     + Fase **Zona Débil**: 0.4 segundos --> si le atacas recibirá daño, si no, se dará la vuelta y se pondrá en modo Defensa.  
     + Fase **Ataque**: 0.5 segundos --> después de hacerte daño pasará al modo Defensa.    
+    ![Punto Débil](https://github.com/FormidableGames/generation-y/blob/master/assets/sprites/spr_kappa.png "Kappa")
     
 + **Contraataque**: Vidas: /3 corazones/ Daño (en fase Ataque): /medio corazón/  
     + Fase **En Guardia**: 2-2.8 segundos --> si le golpeas pasará a la fase de Contraataque.  
     + Fase **Preparación de Ataque**: 0.35 segundos --> si le atacas en este momento le quitarás una vida, entonces el enemigo se dará la vuelta inmediatamente y cambiará a modo de defensa. Si no, pasará a modo de ataque.  
     + Fase **Ataque**: 0.3 segundos --> después de hacerte daño pasará al modo En Guardia.  
     + Fase **Contraataque**: 0.3 segundos --> es lo mismo que en ataque pero te quitará 1 corazón en vez de medio.  
+      ![Contraataque](https://github.com/FormidableGames/generation-y/blob/master/assets/sprites/spr_tenguPrg.png "Tengu Invernal")
       
 + **Invisible**: Vidas: /1 corazón/ Daño: /medio corazón/  
     + Fase **Inicio**: no se ve ningún enemigo, ¥ detecta algo extraño (?).
@@ -111,6 +116,7 @@ Tendrás 3 vidas en todos los niveles, cada enemigo quitará más o menos vidas.
     + Fase **Fin**: en esta fase será visible. Realizará ataques igual que en la fase anterior (dos cada vez) pero si le contrarrestas, al estar "sólido", le quitarás vida (y al tener solo una le eliminarás).  
     
     **NOTAS**: el tiempo entre ataque y ataque es de 2-2.5 segundos, el tiempo entre ataque y aparición en el centro es de 0.3 segundos. En la fase Furia seguirá un patrón de: 2 ataques (cada uno de dos golpes) 1 aparición 2 ataques 1 aparición 1 ataque 1 aparición (se repite en bucle)
+    ![Invisible](https://github.com/FormidableGames/generation-y/blob/master/assets/sprites/spr_katana.png "Honjo Masamune")
   
 3. **Paraiso (difícil)**  
   
@@ -118,11 +124,13 @@ Tendrás 3 vidas en todos los niveles, cada enemigo quitará más o menos vidas.
     + Fase **Defensa**: 1-1.5 segundos --> si le atacas quedarás aturdida.  
     + Fase **Preparación de Ataque**: 0.3 segundos --> si le atacas le quitarás un corazón y se pondrá otra vez en modo Preparación de Ataque, si no, pasará a modo Ataque.
     + Fase **Ataque**: 0.3 segundos por cada ataque (cada ataque quita 1 corazón) --> se calcurará de manera aleatoria el número de veces que te ataque, las probabilidades serán: 50%-1 ataque, 40%-2 ataques, 10%-3 ataques. Cuando acabe de atacarte se pondrá en modo Defensa.  
+    ![Ronda de ataques](https://github.com/FormidableGames/generation-y/blob/master/assets/sprites/spr_tiger.png "Byakko")
     
 + **El ilusionista (fase Paraiso)**: Vidas (modo *NO ILUSIÓN*): /3 corazones/ Daño: /1 corazón(excepto Ataque a Distancia)/  
     + Fase **Ilusión**: hasta que le venzas --> se hará pasar por un *Ronda de ataques* pero de solo un corazón, si te hace daño solo recibirás un ataque, cuando le derrotes pasará a modo *NO ILUSIÓN*.  
     + Fase **Ataque a Distancia**: 7-10 ataques --> en esta fase no podrás atacar al enemigo (lanzará ataques hacia el cielo primero y desaparecerá), los ataques a distancia caerán del cielo, deberás esquivarlos para que no te dañen, es decir, caerán uno detrás de otro en un lado u otro de manera aleatoria (50-50 de posibildades en cada lado). Estos ataques te quitarán medio corazón.   
     + Fase **Aparición**: 5 ataques --> en esta fase deberás esperar a que aparezca el enemigo por uno de los lados (de manera aleatoria (50-50 de posibilidades en cada lado), este mostrará parte de su cuerpo primero (su cabeza) para avisarte de que va a salir por ese lado (0.2 segundos), entonces cargará contra ti. Si estás de espaldas a él cuando carga recibirás daño, si estás de frente sin atacar también, pero si le atacas mientras carga contra ti (es decir le contraatacas) él será quien reciba daño. Si le golpeas desaparecerá immediatamente y pasará a hacer otro ataque. Una vez acabada esta fase pasará de nuevo a la fase de Ataque a Distancia.  
+    ![Ilusionista paraiso](https://github.com/FormidableGames/generation-y/blob/master/assets/sprites/spr_heavenFox.png "Kitsune-zenko")
       
 + **Dragón**: Vidas: /4 corazones/ Daño: /medio corazón/
     + Fase **Presentación**: el enemigo se percatará de tu presencia (no podrás golpearle) y volará por encima de ti (yendo hacia la izquierda dutrante 3 segundos). Pasará al modo Vuelo.
