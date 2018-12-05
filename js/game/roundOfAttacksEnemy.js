@@ -4,9 +4,9 @@ class RoundOfAttacksEnemy extends Enemy{
         this.identifier = 7;
         this.consecutiveAttacks = 0;
         this.maxConsecutiveAttacks = this.generateAttacks();
-        this.width = 600;
-        this.height = 400;
-        this.sprite = new Sprite("weakSpotEnemy", this.width, this.height, 4, 1);
+        this.width = 503;
+        this.height = 440;
+        this.sprite = new Sprite("roundOfAttacksEnemy", this.width, this.height, 4, 1);
     }
     setTimes(){
         this.initialAttackTime = Math.random()*0.5+1; //In seconds
@@ -59,8 +59,14 @@ class RoundOfAttacksEnemy extends Enemy{
     }
     toAttack(){
         super.toAttack();
-        if(this.consecutiveAttacks % 2 == 0) this.spriteH = 3;
-        else this.spriteH = 4;
+        this.spriteH = 3;
+        if(this.consecutiveAttacks % 2 == 0){
+            if(this.facing == -1) game.particleController.create("attack1", this.x, this.y + this.height/2);
+            else game.particleController.create("attack1", this.x + this.width, this.y + this.height/2);
+        }else{
+            if(this.facing == -1) game.particleController.create("attack2", this.x, this.y + this.height/2);
+            else game.particleController.create("attack2", this.x + this.width, this.y + this.height/2);
+        }
         this.consecutiveAttacks++;
     }
     toAnticipate(){

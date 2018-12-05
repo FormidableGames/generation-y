@@ -2,9 +2,10 @@ class WeakSpotEnemy extends Enemy{
     constructor(){
         super(2, 1);
         this.identifier = 4;
-        this.width = 600;
-        this.height = 400;
-        this.sprite = new Sprite("weakSpotEnemy", this.width, this.height, 4, 1);
+        this.width = 343;
+        this.height = 250;
+        this.y = canvasHeight - this.height - 25;
+        this.sprite = new Sprite("weakSpotEnemy", this.width, this.height, 5, 1);
     }
     setTimes(){
         this.initialAttackTime = Math.random() * 2 + 2; //In seconds
@@ -65,7 +66,7 @@ class WeakSpotEnemy extends Enemy{
     }
     toWeak(){
         this.state = "weak";
-        this.spriteH = 4;
+        this.spriteH = 5;
         this.setTimes();
     }
     damaged(){

@@ -4,15 +4,26 @@
 <head>
     <!-- IMPORTS -->
     <!-- Libraries/Frameworks: Bootstrap, JQuery -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- Latest compiled and minified CSS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!-- jQuery library -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- Latest compiled JavaScript -->
-    <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet"> <!-- Google font -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+    <!-- Google font -->
 
     <!-- Our scripts & css -->
+<<<<<<< HEAD
     <script src="js/web/sillynumbers.js"></script> <!-- Silly script to set random numbers for tweet feedback (rts/likes) & followers-->
     <script src="js/web/fakefollow.js"></script> <!-- Silly script that checks if you "follow" yen or not (it doesnt do anything else) -->
     <link rel="stylesheet" href="style/index.css"> <!-- Extra css on top of Bootstrap framework -->
+=======
+    <script src="js/web/sillynumbers.js"></script>
+    <!-- Silly script to set random numbers for tweet feedback (rts/likes) & followers-->
+    <link rel="stylesheet" href="style/index.css">
+    <!-- Extra css on top of Bootstrap framework -->
+>>>>>>> 563d81dce95b61fd63dca2fedf2fa68e9d848b47
 
     <!-- METADATA -->
     <title>Práctica W3C</title>
@@ -28,22 +39,14 @@
 
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
-            <!-- Navbar at the top -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Chirper <span class="glyphicon glyphicon-bullhorn"></span></a>
             </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Dashboard</a></li>
-                <li><a href="levelSelect.html">Game</a></li>
-                <li><a href="credits.html">About</a></li>
-                <li><a href="#">Rankings</a></li>
-                <button class="btn btn-outline" type="button">Back to FormidableGames</button>
-            </ul>
         </div>
     </nav>
 
     <div class="jumbotron">
-        <a href="levelSelect.html" class="btn btn-main">PLAY</a> <a href="credits.html"class="btn btn-main">ABOUT</a>
+        <a href="levelSelect.html" class="btn btn-main">PLAY</a>
+        <a href="credits.html" class="btn btn-main">ABOUT</a>
     </div>
 
     <div class="main-container">
@@ -52,11 +55,19 @@
             <div class="col-lg-3">
                 <!-- Profile Sidebar -->
                 <div class="content-block">
-                    <img class="profile-avatar" src="img/web/avatar.png"><br>
+                    <img class="profile-avatar" src="img/web/avatar.png">
+                    <br>
                     <p class="profile-username">@protagonistaEdgy</p>
                     <p class="profile-bio">can't hear you these shades are gucci</p>
+<<<<<<< HEAD
                     <button type="button" onclick="followBtn();" class="btn btn-lg btn-default" id="followBtn">Follow</button>
                     <span style="color:#91a1b6; margin-left: 10px;"><b>Followers:</b> <span class="followers-num"></span>K</span>
+=======
+                    <button type="button" class="btn btn-lg btn-default">Follow</button>
+                    <span style="color:#91a1b6; margin-left: 10px;">
+                        <b>Followers:</b>
+                        <span class="followers-num"></span>K</span>
+>>>>>>> 563d81dce95b61fd63dca2fedf2fa68e9d848b47
                 </div>
             </div>
 
@@ -67,7 +78,8 @@
                 <div class="content-block tweet">
                     <div class="tweet-author">
                         <!-- TWEET HEADER -->
-                        <img src="img/web/avatar.png"><span>@protagonistaEdgy</span>
+                        <img src="img/web/avatar.png">
+                        <span>@protagonistaEdgy</span>
                     </div>
                     <div class="tweet-content">
                         <!-- WRITE TWEET CONTENT HERE -->
@@ -75,8 +87,12 @@
                     </div>
                     <div class="tweet-feedback">
                         <!-- TWEET FEEDBACK -->
-                        <span class="glyphicon glyphicon-retweet rts"></span> <span class="feedback-num rts">69</span> people have rechirped this<br>
-                        <span class="glyphicon glyphicon-fire likes"></span> <span class="feedback-num likes">420</span> people have found this <i>lit af</i>
+                        <span class="glyphicon glyphicon-retweet rts"></span>
+                        <span class="feedback-num rts">69</span> people have rechirped this
+                        <br>
+                        <span class="glyphicon glyphicon-fire likes"></span>
+                        <span class="feedback-num likes">420</span> people have found this
+                        <i>lit af</i>
                     </div>
                 </div>
 
@@ -84,21 +100,29 @@
                 <div class="content-block tweet">
                     <div class="tweet-author">
                         <!-- TWEET HEADER -->
-                        <img src="img/web/avatar.png"><span>@protagonistaEdgy</span> <!-- PUT AVATAR IMAGE HERE -->
+                        <img src="img/web/avatar.png">
+                        <span>@protagonistaEdgy</span>
+                        <!-- PUT AVATAR IMAGE HERE -->
                     </div>
                     <div class="tweet-content">
                         <!-- WRITE TWEET CONTENT HERE -->
                         lmaoo check this out
                         <div class="tweet-multimedia">
-                            <img src="concept/combate2.png"><br>
-                            <span class="tags"><span class="glyphicon glyphicon-tags"></span> tags tags tags</span>
+                            <img src="concept/combate2.png">
+                            <br>
+                            <span class="tags">
+                                <span class="glyphicon glyphicon-tags"></span> tags tags tags</span>
                         </div>
                     </div>
                     <div class="tweet-feedback">
                         <!-- TWEET FEEDBACK -->
-                        <span class="glyphicon glyphicon-retweet rts"></span> <span class="feedback-num rts">69</span> people have rechirped this<br>
+                        <span class="glyphicon glyphicon-retweet rts"></span>
+                        <span class="feedback-num rts">69</span> people have rechirped this
+                        <br>
                         <!-- RETWEETS -->
-                        <span class="glyphicon glyphicon-fire likes"></span> <span class="feedback-num likes">420</span> people have found this <i>lit af</i>
+                        <span class="glyphicon glyphicon-fire likes"></span>
+                        <span class="feedback-num likes">420</span> people have found this
+                        <i>lit af</i>
                         <!-- LIKES -->
                     </div>
                 </div>
@@ -107,7 +131,8 @@
                 <div class="content-block tweet">
                     <div class="tweet-author">
                         <!-- TWEET HEADER -->
-                        <img src="img/web/avatar.png"><span>@protagonistaEdgy</span>
+                        <img src="img/web/avatar.png">
+                        <span>@protagonistaEdgy</span>
                     </div>
                     <div class="tweet-content">
                         <!-- WRITE TWEET CONTENT HERE -->
@@ -115,8 +140,12 @@
                     </div>
                     <div class="tweet-feedback">
                         <!-- TWEET FEEDBACK -->
-                        <span class="glyphicon glyphicon-retweet rts"></span> <span class="feedback-num rts">69</span> people have rechirped this<br>
-                        <span class="glyphicon glyphicon-fire likes"></span> <span class="feedback-num likes">420</span> people have found this <i>lit af</i>
+                        <span class="glyphicon glyphicon-retweet rts"></span>
+                        <span class="feedback-num rts">69</span> people have rechirped this
+                        <br>
+                        <span class="glyphicon glyphicon-fire likes"></span>
+                        <span class="feedback-num likes">420</span> people have found this
+                        <i>lit af</i>
                     </div>
                 </div>
 
@@ -155,8 +184,8 @@
                     <div class="follower">
                         <img src="img/web/avatar.png">
                         <div class="follower-bio">
-                                <span>@username</span>
-                                <p>bio aqui blablablabla</p>
+                            <span>@username</span>
+                            <p>bio aqui blablablabla</p>
                         </div>
                     </div>
 
@@ -164,13 +193,13 @@
             </div>
         </div>
     </div>
-	
-	<footer class="container-fluid bg-footer text-center">
+
+    <footer class="container-fluid bg-footer text-center">
         <p>Repositorio
             <a href="https://github.com/FormidableGames/generation-y">generation y</a>
         </p>
     </footer>
-	
+
 </body>
 
 </html>

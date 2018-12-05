@@ -153,7 +153,13 @@ class Player {
         this.state = "hurt";
         this.health -= damage;
         this.spriteH = 1;
-        this.attackable = false;
+        this.attackable = false;     
+        audioResources["playerHurt"].play();
         this.dashSound.stop();
+    }
+    toEndFight(){
+        this.state = "endFight";
+        this.facing = 1;
+        this.spriteH = 0;
     }
 }

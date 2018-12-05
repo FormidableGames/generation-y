@@ -7,7 +7,24 @@ class Game {
         this.player = new Player();
         this.enemy = undefined;
         this.killedEnemyList = [];
-        this.structure = levels[level]["easy"][0];
+
+        //Difficulty
+        this.wins = localStorage.getItem("wins");
+        this.losses = localStorage.getItem("losses");
+        if(this.wins == undefined) this.wins = 0;
+        if(this.losses == undefined) this.losses = 0;
+        this.totalGames = this.wins + this.losses;
+        //3 games or less OR <70% winrate -> easy
+        //70% winrate -> medium
+        //90% winrate -> hard
+        if(this.totalGames > 3 && this.wins*100/this.totalGames >= 90)
+            this.difficulty = "hard";
+        else if(this.totalGames > 3 && this.wins*100/this.totalGames >= 70)
+            this.difficulty = "medium";
+        else
+            this.difficulty = "easy";
+        
+        this.structure = levels[level][this.difficulty][0];
         this.room = 0;
         this.map = new Map();
         this.particleController = new ParticleController();
@@ -57,10 +74,7 @@ class Game {
                             this.map.toMove();
                             
                             if(this.player.state == "idle") this.player.toWalk();
-
-                            this.entities.sort(function(a, b) {
-                                return a.depth - b.depth;
-                            });
+                            
                         }
                         inputDisponibility = false;
                     }
@@ -86,6 +100,8 @@ class Game {
     }
     toFight(){
         this.gameState = "fight";
+        if(this.enemy.identifier == 6) 
+            this.particleController.create("question", this.player.x + this.player.width/2, this.player.y);  
         this.enemy.toIdle();
         this.player.relocate();
     }
@@ -94,7 +110,7 @@ class Game {
         localStorage.setItem("killedEnemyList", this.killedEnemyList);
         this.removeEnemy();
         this.gameState = "walkTransition";
-        this.player.state = "endFight"
+        this.player.toEndFight();
     }
     toGameOver(){
         var fade = {     
@@ -107,11 +123,15 @@ class Game {
                     audioResources["musicIntro"].volume = Math.floor((1 - this.fadeAlpha)*100)/100;
                     audioResources["musicLoop"].volume = Math.floor((1 - this.fadeAlpha)*100)/100;
                 }
-                if(this.fadeAlpha >= 5) window.location = "gameOver.html";
+                if(this.fadeAlpha >= 1.1) {
+                    this.wins++;
+                    localStorage.setItem("wins", this.wins);
+                    window.location = "gameOver.html";
+                }
             },
             draw:function(){
                 context.globalAlpha = this.fadeAlpha;
-                context.fillRect(0,0,canvasWidth,canvasHeight);
+                context.fillRect(0, 0, canvasWidth, canvasHeight);
                 context.globalAlpha = 1.0;
             }
         }

@@ -142,6 +142,9 @@ class Map {
 
         }
         game.entities.push(game.enemy);
+        game.entities.sort(function(a, b) {
+            return a.depth - b.depth;
+        });
     }
     
 }

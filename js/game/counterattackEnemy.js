@@ -4,12 +4,12 @@ class CounterattackEnemy extends BasicEnemy{
         this.identifier = 5;
         this.health = 3;
         this.damage = 0.5;
-        this.width = 330;
-        this.height = 364;
+        this.width = 420;
+        this.height = 420;
         this.sprite = new Sprite("counterattackEnemy", this.width, this.height, 4, 1);
     }
     setTimes(){
-        this.initialAttackTime = Math.random() * 0.8 + 2; //In seconds
+        this.initialAttackTime = Math.random() * 3 + 2; //In seconds
         this.attackTime = this.initialAttackTime;
         this.initialAnticipationTime = 0.35; //In seconds
         this.anticipationTime = this.initialAnticipationTime;
@@ -23,7 +23,7 @@ class CounterattackEnemy extends BasicEnemy{
     //In this enemy protect is the equivalent of counterattack
     toProtect(){
         this.state = "protect";
-        this.spriteH = 4;
+        this.spriteH = 3;
         game.player.toHurt(this.damage*2);
         //game.particleController.create("", game.particleController.getRandomRange(this.x+this.width/3, this.x+2*this.width/3), 
                                                     //game.particleController.getRandomRange(this.y+this.height/3, this.y+2*this.height/3));

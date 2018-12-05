@@ -1,8 +1,8 @@
 class Halo{
     constructor(pos){
         this.damage = 1;
-        this.width = 300;
-        this.height = 100;
+        this.width = 384;
+        this.height = 138;
         this.spriteV = 0;
         this.sprite = new Sprite("halo", this.width, this.height, 0, 1);
         if(pos == 0){
@@ -12,7 +12,7 @@ class Halo{
             this.x = game.player.positions["rightCombat"];
             this.side = 1;
         } 
-        this.y = canvasHeight - this.height - 25;
+        this.y = canvasHeight - this.height;
         this.hurt = false;
         this.changeTime = Math.random() * 0.3 + 0.7; //In seconds
         this.destroyTime = 0.5; //In seconds
