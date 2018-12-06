@@ -3,7 +3,8 @@ class Game {
         this.that = this;
 
         this.pause =  false;
-        
+        this.ended = false;
+
         this.player = new Player();
         this.enemy = undefined;
         this.killedEnemyList = [];
@@ -45,7 +46,7 @@ class Game {
 
     update(deltaTime) {
         this.inputHandler();
-        if(!this.pause){
+        if(!this.pause && !this.ended){
             for (let i = 0; i < this.entities.length; i++) {
                 this.entities[i].update(deltaTime);
             }
@@ -129,6 +130,7 @@ class Game {
                 }
                 if(this.fadeAlpha >= 1.1) {
                     window.location.assign("gameOver.html");
+                    this.ended = true;
                 }
             },
             draw:function(){
