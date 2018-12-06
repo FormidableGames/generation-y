@@ -48,7 +48,7 @@ class Particle{
             case "attack1":
                 this.spriteH = 0;
                 this.spriteV = (-game.enemy.facing+1)/2;
-                if(level == "purgatory"){
+                if(level == "purgatorio"){
                     this.width = 276;
                     this.height = 346;
                     this.sprite = new Sprite("attack", this.width, this.height, 1, 1);
@@ -61,7 +61,7 @@ class Particle{
             case "attack2":
                 this.spriteH = 1;
                 this.spriteV = (-game.enemy.facing+1)/2;
-                if(level == "purgatory"){
+                if(level == "purgatorio"){
                     this.width = 276;
                     this.height = 346;
                     this.sprite = new Sprite("attack", this.width, this.height, 1, 1);

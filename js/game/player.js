@@ -17,8 +17,11 @@ class Player {
         this.initialWalkTime = 0.5; //In seconds
         this.walkTime = this.initialWalkTime;
 
-        this.initialRecoverTime = 0.5; //In seconds
+        this.initialRecoverTime = 0.8; //In seconds
         this.recoverTime = this.initialRecoverTime;
+
+        this.initialHurtTime = 0.5; //In seconds
+        this.hurtTime = this.initialHurtTime;
 
         this.walkOffset = 150;
         this.combatOffset = 250;
@@ -85,15 +88,15 @@ class Player {
                 }
                 break;
             case "hurt":
-                this.recoverTime -= deltaTime / 1000;
+                this.hurtTime -= deltaTime / 1000;
                 //Positioning the player
                 if (this.x - this.facing * this.spd * deltaTime * 0.5 < this.positions["leftCombat"] || 
                     this.x - this.facing * this.spd * deltaTime * 0.5 > this.positions["rightCombat"]) 
                         this.relocate();
                 else this.x -= this.facing * this.spd * deltaTime * 0.5;
 
-                if(this.recoverTime <= 0){
-                    this.recoverTime = this.initialRecoverTime;
+                if(this.hurtTime <= 0){
+                    this.hurtTime = this.initialHurtTime;
                     //Make sure that the player is well positioned (not transitioning)
                     this.relocate();
                     this.toIdle();   

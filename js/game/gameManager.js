@@ -71,7 +71,7 @@ window.addEventListener("load", function () {
 
     level = localStorage.getItem("level");
     //Load hell resources
-    if(level == "hell"){
+    if(level == "inferno"){
         //Load resources
         resourcesLoader(
             //Image list
@@ -96,7 +96,7 @@ window.addEventListener("load", function () {
                 {name: "protect", path: "aud_protect.mp3", loop: false}
             ]
         );
-    }else if(level == "purgatory"){
+    }else if(level == "purgatorio"){
         resourcesLoader(
             //Image list
             [   
@@ -250,11 +250,20 @@ function loadSounds(audios, callback) {
         count  = audios.length,
         canplay = function() { if (--count == 0) {
                 load = document.getElementById("loadingDiv");
-                load.textContent = "Loaded";
+                load.innerHTML = "Loaded";
                 load.style.color = "#ffffff";
                 load.style.backgroundColor = "#ff00bf";
-                load.style.animation = "none";
-                
+                load.style.animation = "none";           
+                let text2 = document.createElement('div');
+                text2.style.color = "#ffffff";
+                text2.style.paddingTop = "10vh";
+                text2.style.paddingLeft = "5vw";
+                text2.style.paddingRight = "5vw";
+                text2.style.position = "absolute";
+                text2.textContent = "TAP or CLICK the screen WISELY to move and slain your ENEMIES";
+                text2.style.fontSize = "3vw";
+                load.appendChild(text2);
+
                 window.addEventListener("keydown", callback, false);
                 window.addEventListener("click", callback, false);
                 window.addEventListener("touchstart", callback, false);

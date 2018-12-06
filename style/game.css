@@ -11,12 +11,14 @@ body {
     color: #ffffff;
     font-family: 'Rock Salt';
     font-weight: bold;
-    font-size: 5em;
+    font-size: 10vw;
     animation: loadingText 0.75s linear 0s infinite normal;
     text-align: center;
     vertical-align: middle;
     height: 100vh;
-    display: flex;
+    padding-top: 20vh; 
+    padding-bottom: 20vh;
+    /*display: flex;*/
     justify-content: center;
     /* align horizontal */
     align-items: center;
@@ -49,7 +51,6 @@ canvas {
 }
 
 #loading {
-    font-size: 10vw;
     text-align: center;
     animation: loadingText 0.75s linear 0s infinite normal;
     color: #303030;

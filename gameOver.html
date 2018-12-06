@@ -124,7 +124,6 @@
 
 
         function Send() {
-            console.log(localStorage.getItem("already_sent"));
             if (localStorage.getItem("already_sent")=="false") {
 
                 chirp_txt = document.getElementById("chirp");
@@ -199,8 +198,6 @@
             d = new Date();
             hours = d.getHours();
             mins = d.getMinutes();
-
-
         });
 
 

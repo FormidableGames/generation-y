@@ -1,5 +1,5 @@
 var levels = {
-        "hell":
+        "inferno":
                 {
                 "easy":[
                         "SSS1SS2SS3S1SS",
@@ -19,7 +19,7 @@ var levels = {
                         "S1S2SS3SS2SS3SS2S3SS2S2S1SS3SS3SS",
                         ]
                 },
-        "purgatory":
+        "purgatorio":
                 {
                 "easy":[
                         "SS4SS5SS4S6SSS",

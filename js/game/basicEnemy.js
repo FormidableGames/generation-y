@@ -5,7 +5,7 @@ class BasicEnemy extends Enemy{
         this.sprite = new Sprite("basicEnemy", this.width, this.height, 3, 1);
     }
     setTimes(){
-        this.initialAttackTime = Math.random() * 2 + 1; //In seconds
+        this.initialAttackTime = Math.random() * 1 + 0.5; //In seconds
         this.attackTime = this.initialAttackTime;
         this.initialAnticipationTime = 0.7; //In seconds
         this.anticipationTime = this.initialAnticipationTime;
