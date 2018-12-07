@@ -260,7 +260,7 @@ function loadSounds(audios, callback) {
                 text2.style.paddingLeft = "5vw";
                 text2.style.paddingRight = "5vw";
                 text2.style.position = "absolute";
-                text2.textContent = "TAP or CLICK the screen WISELY to move and slain your ENEMIES";
+                text2.textContent = "TAP or CLICK the screen WISELY to move and slay your ENEMIES";
                 text2.style.fontSize = "3vw";
                 load.appendChild(text2);
 
