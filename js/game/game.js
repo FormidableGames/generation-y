@@ -130,7 +130,7 @@ class Game {
                 }
                 if(this.fadeAlpha >= 1.1) {
                     window.location.assign("gameOver.html");
-                    this.ended = true;
+                    game.ended = true;
                 }
             },
             draw:function(){
